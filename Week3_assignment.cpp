@@ -121,7 +121,7 @@ using namespace std;
 
 
 
-    // Approach 2     REMEMBER++
+    // Approach 2     REMEMBER++    
     //Negative marking Method
     // int ans=-1;
     // for(int i=0;i<nums.size();i++)
@@ -132,17 +132,16 @@ using namespace std;
     //     {
     //         ans=index;
     //         break;
-    //     }
+    //     } 
     //     //visited mark
-    //     nums[index]=nums[index]*(-1);
+    //     nums[index]=nums[index]*(-1);          
     // }
-
-    // return ans;
-
+    // return ans ;    
 
 
-    // Approach 3 best one
- // positioning method try it once
+
+// Approach 3 best one
+// positioning method try it once
 //     while(nums[0]!=nums[nums[0]])
 //     {
 //         swap(nums[0],nums[nums[0]]);

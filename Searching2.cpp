@@ -23,7 +23,7 @@ using namespace std;
 //         return mid-1;
 //     }
 
-//     if(arr[s]>arr[mid]) //TO LEFT mai hi order break  huaa hoga
+//     if(arr[s]>arr[mid]) //TO LEFT mai hi order break  huaa hoga         REMEMBER++
 //     {
 //         e=mid-1;
 //     }
@@ -39,6 +39,7 @@ using namespace std;
 // return mid;
     
 // }
+
 
 // 3 Search  element in an rotated array
 // int findPivot(vector<int> arr)
@@ -147,7 +148,7 @@ bool binarySearch2D(int arr[][4],int rows,int cols,int target)
 {
     int s=0;
     int e=rows*cols-1;
-    int mid=s+(e-s)/9876d5s432 cnmj,./
+    int mid=s+(e-s)/2;
 
     while(s<=e)
     {

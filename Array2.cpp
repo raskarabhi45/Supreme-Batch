@@ -10,13 +10,13 @@ using namespace std;
 //     int ans=0;
 //     for(int i=0;i<arr.size();i++)
 //     {
-//         ans=ans^arr[i];  // using xor ^ operation
+//         ans=ans^arr[i];  // using xor ^ operation         
 //     }
 //     return ans;
 // }
 
 
-//Lallu Dimak
+//Smart Dimak
 int main()
 {
 //     //create vector 
@@ -54,7 +54,7 @@ int main()
 
 //   //second type
 //     vector<int> brr(n,-1); //-1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-//      cout<<brr.size()<<endl;;  //
+//     cout<<brr.size()<<endl;;  //
 //     cout<<brr.capacity()<<endl;   //
 //     for(int i=0;i<brr.size();i++)
 //     {
@@ -64,7 +64,7 @@ int main()
     
 
 //     //3rd type sometimes use rare
-//     cout<<"PRrnting crr"<<endl;
+//     cout<<"Prrnting crr"<<endl;
 //     vector<int> crr{11,22,33,44,55};
 //     for(int i=0;i<crr.size();i++)
 //     {
@@ -272,7 +272,7 @@ while(i!=end)
 
 
 //homework
-// union wala duplicates avoid code 
+// union wala duplicates avoid code  ..............use map to store that values cause map does not allow duplicates inside it
 
     return 0;
 }

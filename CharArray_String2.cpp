@@ -13,14 +13,13 @@ using namespace std;
 //op: ans:
 // class Solution {        
 // public:
-//     string removeDuplicates(string s) {
-        
+//     string removeDuplicates(string s) {   
 //         string ans="";
 //         int i=0;
-         // int n=ans.length();
+         //int n=ans.length();
 //         while(i<s.length())
 //         {
-               // before popback check whether there is element in the array or not ...
+               // before popback check whether there is element in the array or not ...      
 //             if(ans.length()>0 && ans[n-1]==s[i])
 //             {
 //                 ans.pop_back();

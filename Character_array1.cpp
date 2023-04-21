@@ -79,7 +79,7 @@ using namespace std;
     {
         
             arr[i]=arr[i]-'a'+'A';  
-    }Cvcx.v.cv
+    }
  }
 
   //6 conver into Lowercase

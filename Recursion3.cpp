@@ -54,12 +54,12 @@ int binarySearch(vector<int> &v,int s,int e,int key)
     //baki recursion kr dega
 }
 
-//3 very important best problem to understand recursion tree in depth pure example    
+//3 very important best problem to understand recursion tree in depth pure example            revise 
 // subsequence of a string
 // c b bc a ac ab abc 
 void  printSubsequence(string str,string op,int i,vector<string> &v)
 {
-    //base case
+   //base case 
     if(i>=str.length())
     {
        // cout<<op<<" ";
@@ -100,7 +100,7 @@ int main()
     // int ans=binarySearch(v,s,e,target);
     // cout<<"Answer is "<<ans<<endl;
 
-    string str="abc";
+    string str="ABHI";
     string op="";
     vector<string>v;
 

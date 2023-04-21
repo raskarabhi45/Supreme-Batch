@@ -63,7 +63,7 @@ int solve2(int n,int x,int y,int z)
     int ans3=solve2(n-z,x,y,z)+1;
     
 
-    int ans=max(ans1,max(ans2,ans3));
+    int ans=max(ans1,max(ans2,ans3));                                                                                                               
     return ans;
 }
 
@@ -81,7 +81,7 @@ void solve3(vector<int>& arr,int i,int sum,int &maxi)
     }
 
     //include
-    solve3(arr,i+2,sum+arr[i],maxi);
+    solve3(arr,i+2,sum+arr[i],maxi);                                                                
 
     //exclude
     solve3(arr,i+1,sum,maxi);

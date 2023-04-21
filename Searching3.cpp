@@ -93,7 +93,7 @@ int oddOccurance(vector<int> arr)
     while(s<=e)
     {
         if(s==e)
-        {//single element
+        {//single element  
             return s;
         }
 
@@ -124,7 +124,6 @@ int oddOccurance(vector<int> arr)
         mid=s+(e-s)/2;
     }
     return -1;
-
 }
 
 //homework 

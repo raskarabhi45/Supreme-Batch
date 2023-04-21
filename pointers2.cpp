@@ -4,13 +4,13 @@
 using namespace std;
 
 void solve(int arr[])
-{
+{            
     cout<<"Size inside solve function "<<sizeof(arr)<<endl;
 }
 
 int main()
 {
-    // int arr[10]={1,2,3,4,5,6,7,8,9,1};
+    // int arr[10]={1,2,3,4,5,6,7,8,9,1};  arr[2]  2[arr] *(arr+2) *(2+arr) same
     // cout<<"This all are same "<<endl;
     // cout<<2[arr]<<endl;
     // cout<<arr[2]<<endl;

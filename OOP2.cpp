@@ -7,7 +7,7 @@ using namespace std;
 // abstrcation  ex girlfriend thappd  
 // isme hm implementation hide krte hai
 // encapsulation inheritance polymorphism abstraction
-// sbke pitaji abstracion pr base hai sare OOP concepts
+// sbke pitaji abstracion is pr base hai sare OOP concepts
 
 // 1 encapulation    (data hiding)
 // class capsule jaisa work kr rhi hai

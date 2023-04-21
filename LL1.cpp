@@ -16,7 +16,7 @@
 
 /////////////////////////////////////////////////
 // ek bat dhyan me rkho ki linked list ke code me tum glti krne hi wale hai edge case pe
-// so handle it lated
+// so handle it latedr
 
 #include <iostream>
 using namespace std;
@@ -74,7 +74,6 @@ void insertAtHead(Node *&head, Node *&tail, int data)
     }
     else
     {
-
         // step 1
         Node *newNode = new Node(data);
 
@@ -86,7 +85,7 @@ void insertAtHead(Node *&head, Node *&tail, int data)
         //  {
         //      //empty list first node add hogi
         //     tail=newNode;
-        //  }
+        //  }                                              
         head = newNode;
     }
 }
@@ -269,7 +268,7 @@ Node* reverseusingLoop(Node* head ) {
         return prev;
 }
 Node* reverseusingRecursion(Node* prev, Node* curr) {
-        //base case
+        //base case                    
         if(curr == NULL) 
                 return prev;
 

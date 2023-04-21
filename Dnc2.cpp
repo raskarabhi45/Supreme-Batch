@@ -12,7 +12,7 @@ int partition(int arr[],int s,int e)
     int pivotIndex=s;
     int pivotElement=arr[s];
 
-    //step2 : find right position for pivot element and place it there
+    //step2 : find right position for pivot element and place it there    
     int cnt=0;
     for(int i=s+1;i<=e;i++)
     {
@@ -73,7 +73,7 @@ void quickSort(int arr[],int s,int e)
     quickSort(arr,s,p-1);     
 
     //pivot element->right
-    quickSort(arr,p+1,e);
+    quickSort(arr,p+1,e);                                
 }
 
 
@@ -104,7 +104,7 @@ void printPermutation(string &str,int i)
         //swap
         swap(str[i],str[j]);
 
-        //recursion call
+        //recursion call                             Revise again and again
         printPermutation(str,i+1);
 
         // backtracking
