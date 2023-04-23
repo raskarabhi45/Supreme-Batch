@@ -4,7 +4,7 @@
 using namespace std;
 ///problems
 
-
+`123
 class Node
 {
     public:
@@ -92,6 +92,7 @@ Node* reversekNodes(Node* &head,int k)
     if(head==NULL)
     {
         cout<<"LL is empty"<<endl;
+        return head;
     }
 
     int len=getLength(head);
@@ -122,7 +123,7 @@ Node* reversekNodes(Node* &head,int k)
     if(forward!=NULL)
     {
         //we still have nodes left to reverse
-        Node* recursionKaAns=reversekNodes(forward,k);
+        Node* recursionKaAns=reversekNodes(forward,k); // yaha pr forward hi head node hoga
        head->next= recursionKaAns;
     }
 
@@ -133,7 +134,7 @@ Node* reversekNodes(Node* &head,int k)
 
 
 //3 check whether LL is circular or not  //homework
-//bhai tum head ho
+//bhai tum head ho tum head ho tum head ho aise puchna hai
 
 
 
@@ -149,7 +150,7 @@ Node* reversekNodes(Node* &head,int k)
 //to garanty se o ekbar to milegi hi   that is the logic behind it
 
 // Loop is present or not 1  1 means loop is present
-bool checkForLopp(Node* &head)
+bool checkForLoop(Node* &head)
 {
     if(head==NULL)
     {
@@ -185,11 +186,94 @@ bool checkForLopp(Node* &head)
 //step A slow of fast ko meet kravo taki pta chle loop hai
 //step B  slow ko start se shuru kro
 //step C fir jaha slow and fast meet kegenge no wo starting point hoga
+//Starting point of loop is 50
+Node* startingPointLoop(Node* &head)
+{
+    if(head==NULL)
+    {
+        cout<<"LL is empty"<<endl;
+       
+    }
+
+    Node* slow=head;
+    Node* fast=head;
+
+    while(fast!=NULL )
+    {
+        fast=fast->next;
+        if(fast!=NULL)
+        {
+            fast=fast->next;
+            slow=slow->next;
+        }
+
+        if(slow==fast)
+        {
+            slow=head;
+            break;
+        }
+    }
+
+    while(slow!=fast)
+    {
+        slow=slow->next;
+        fast=fast->next;
+    }
+
+    return fast;  //or return slow
+
+    
+}
 
 
 
+
+//ud ja re panchi hua desh gana hai achha akele me suno @ babbar bhaiya talks
 
 //6 remove loop
+//starting point se pehle wala pointer Null ko point kro simple
+// loop remove ho jayegi
+//|10|->|20|->|30|->|40|->|50|->|60|->|70|->|80|->|90|->  
+void removeLoop(Node* &head)
+{
+    if(head==NULL)
+    {
+        cout<<"LL is empty"<<endl;
+       
+    }
+
+    Node* slow=head;
+    Node* fast=head;
+
+    while(fast!=NULL )
+    {
+        fast=fast->next;
+        if(fast!=NULL)
+        {
+            fast=fast->next;
+            slow=slow->next;
+        }
+
+        if(slow==fast)
+        {
+            slow=head;
+            break;
+        }
+    }
+    Node* prev=fast;
+
+    while(slow!=fast)
+    {
+        prev=fast;
+        slow=slow->next;
+        fast=fast->next;
+    }
+    prev->next=NULL;
+
+      //slow
+
+    
+}
 
 
 
@@ -225,8 +309,10 @@ int main()
     // head=reversekNodes(head,3);                  2
     // print(head);
 
-    cout<<"Loop is present or not "<<checkForLopp(head)<<endl;              //3
-
+    cout<<"Loop is present or not "<<checkForLoop(head)<<endl;              //3
+    cout<<"Starting point of loop is "<<startingPointLoop(head)->data<<endl;
+    removeLoop(head);
+    print(head);
 
     return 0;
 }
