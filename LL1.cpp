@@ -16,7 +16,7 @@
 
 /////////////////////////////////////////////////
 // ek bat dhyan me rkho ki linked list ke code me tum glti krne hi wale hai edge case pe
-// so handle it latedr
+// so handle it later
 
 #include <iostream>
 using namespace std;
@@ -164,6 +164,7 @@ void insertAtPosition(Node *&head, Node *&tail, int data, int pos)
         insertAtTail(head, tail, data);
         return;
     }
+    // bich me insert 
     // step 1 find that position
     int i = 1;
     Node *prev = head;
