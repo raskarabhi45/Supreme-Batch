@@ -5,7 +5,7 @@
 // collection of nodes
 // node contains data and pointer to next node  [data,address]
 // singly circular doubly circular doubly
-
+//used in free memey in ram
 //
 // maggi ka packet phod do
 // pani grm krlo
@@ -210,7 +210,7 @@ void deleteNode(int pos, Node *&head, Node *&tail)
         return;
     }
 
-    int len = findLength(head);
+    int len = findLength(head);       
     if (pos == len)
     {
         // delete last
@@ -222,7 +222,6 @@ void deleteNode(int pos, Node *&head, Node *&tail)
             prev = prev->next;
             i++;
         }
-
         prev->next = NULL;
         // tail=prev
         Node *temp = tail;
@@ -231,6 +230,7 @@ void deleteNode(int pos, Node *&head, Node *&tail)
         delete temp;
         return;
     }
+
 
 
     //deleting middle node
@@ -261,10 +261,10 @@ Node* reverseusingLoop(Node* head ) {
         Node* curr = head;
 
         while(curr != NULL ) {
-                Node* temp = curr ->next;
+                Node* forward = curr ->next;
                 curr ->next = prev;
                 prev = curr;
-                curr = temp;
+                curr = forward;
         }
         return prev;
 }
@@ -273,14 +273,16 @@ Node* reverseusingRecursion(Node* prev, Node* curr) {
         if(curr == NULL) 
                 return prev;
 
-        Node* temp = curr ->next;
+        Node* forward = curr ->next;
         curr ->next = prev;
         prev = curr;
-        curr = temp;
+        curr = forward;
 
         //recursion sambhal lega
         return reverseusingRecursion(prev, curr);
 }
+
+
 int main() {
 
         Node* head = NULL;

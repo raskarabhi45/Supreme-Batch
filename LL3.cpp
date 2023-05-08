@@ -2,9 +2,9 @@
 //21/04/2023
 #include<iostream>
 using namespace std;
+
 ///problems
 
-`123
 class Node
 {
     public:
@@ -75,7 +75,6 @@ Node* getMiddle(Node* &head)
             slow=slow->next;
         }
     }
-
     return slow;
 }
 
@@ -83,7 +82,7 @@ Node* getMiddle(Node* &head)
 
 //very very very very very important
 //2 Reverse linked list in K groups
-//1 case hum solve kargenge baki recursion kr dega
+//1 case hum solve kargenge baki recursion kr dega   here k=3          
 // |10|->|20|->|30|->|40|->|50|->|60|->
 // |30|->|20|->|10|->|60|->|50|->|40|->
 
@@ -118,8 +117,7 @@ Node* reversekNodes(Node* &head,int k)
         cnt++;
 
     }
-
-    //step B : ecursive call
+    //step B : recursive call
     if(forward!=NULL)
     {
         //we still have nodes left to reverse

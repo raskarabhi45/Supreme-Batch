@@ -63,14 +63,13 @@ bool checkPalindrome(Node* head)
         cout<<"LL is empty"<<endl;
         return true;
     }
-
     if(head->next==NULL)
     {
         return true;
     }
-
-    //for greater than one node
-    //step A find middle node
+    
+    // for greater than one node     
+    //   step A find middle node
     Node* slow=head;
     Node* fast=head->next;  //just for we want exact half middle not )n+1 / wala    while(fast!=NULL)
     {
@@ -81,12 +80,11 @@ bool checkPalindrome(Node* head)
         fast=fast->next;
         slow=slow->next;
     }
-
     }
 
-    //slow pointer middle ko point kr rha hoga
+    //  slow pointer middle ko point kr rha hoga     
 
-    //step 2 reverse LL after middle
+    // step 2 reverse LL after middle  
     Node* reverseLLHead=reverse(slow->next);
     //join the reverse LL to left part
     slow->next=reverseLLHead;
@@ -224,7 +222,8 @@ Node* sort2(Node* head)
     {
         return NULL;
     }
-    //create dummy node
+
+    // create dummy node  
     Node* zeroHead=new Node(-1);
     Node* zeroTail=zeroHead;
 
@@ -234,13 +233,13 @@ Node* sort2(Node* head)
     Node* twoHead=new Node(-1);
     Node* twoTail=twoHead;
 
-    //traverse original LL
+    // traverse original LL
     Node* curr=head;
     while(curr!=NULL)
     {
         if(curr->data==0)
         {
-            Node* temp=curr;  //zero wali node deparate ki
+            Node* temp=curr;  //zero wali node separate ki  
             curr=curr->next;
             temp->next=NULL;
 
@@ -251,7 +250,7 @@ Node* sort2(Node* head)
         }
         else if(curr->data==1)
         {
-             Node* temp=curr;  //zero wali node deparate ki
+             Node* temp=curr;  //one wali node deparate ki
             curr=curr->next;
             temp->next=NULL;
 
@@ -262,14 +261,13 @@ Node* sort2(Node* head)
         }
         else if(curr->data==2)
         {
-            Node* temp=curr;  //zero wali node deparate ki
+            Node* temp=curr;  //two wali node deparate ki
             curr=curr->next;
             temp->next=NULL;
 
             //append 0 node in zeroHead LL
             twoTail->next=temp;
-            twoTail=temp;
-            
+            twoTail=temp; 
         }
     }
 
@@ -327,6 +325,7 @@ Node* sort2(Node* head)
 // |2|->|3|->|4|->
 // |2|->|5|->|8|->  sum
 //tc O(n)  sc(1)
+
 Node* solve(Node* &head1,Node* head2)
 {
     if(head1==NULL)
@@ -352,12 +351,12 @@ if(head2==NULL)
     {
         //calculate sum
         int sum = carry + head1->data + head2->data;
-        int digit=sum%10;  //find digit to crceate node
+        int digit=sum%10;  //find digit to create node
         carry = sum/10;  //calculate carry
 
         //created new node digit
         Node* newNode=new Node(digit);
-        if(ansHead==NULL)  //attach newnode to wnaswr wali ll
+        if(ansHead==NULL)  //attach newnode to answer wali ll
         {
             //1st node insert
             ansHead=newNode;

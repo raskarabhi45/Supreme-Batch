@@ -56,7 +56,7 @@ cout<<"Selection Sort"<<endl;
         bool swapped=false;
         for(int j=0;j<n1-round-1;j++)
         {
-            if(brr[j]>brr[j+1])
+ if(brr[j]>brr[j+1])
             {
                 swapped=true;
                 swap(brr[j],brr[j+1]);
@@ -115,8 +115,8 @@ cout<<"Bubble Sort"<<endl;
     }
       cout<<endl;
       
-
       //sort using inbuilt methods
+      
 
 vector<int>v{3,6,8,6,5,3,1,2,9,8};
 int n4=v.size();

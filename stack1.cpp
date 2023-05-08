@@ -1,8 +1,8 @@
 //stack started
 //sunday 23/4/2023
-//follows LIFO order last in first out order
+//follows LIFO order last in first out order   
 
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 class Stack {
@@ -19,8 +19,8 @@ class Stack {
                 top = -1;
         }
 
-        //functions
-         
+
+        //functions 
         void push(int data) {
                 if(size - top > 1) {
                         //space available
@@ -36,8 +36,8 @@ class Stack {
 
         void pop() {
                 if(top == -1 ) {
-                        //stack is empty
-                        cout << "Stack underflow, cant delete element" << endl;
+                        //stack is empty                                                                                                                                                             
+                        cout << "Stack underflow, cant delete element" << endl;                     
                 }
                 else {
                         //stack is not empty
@@ -54,7 +54,7 @@ class Stack {
                 }
         }
 
-        //return number of valid elements present in stack
+        //return number of valid elements present in stack  
         int getSize() {
                 return top + 1;
         }
@@ -66,12 +66,13 @@ class Stack {
                 else {
                         return false;
                 }
-
         }
 };
 
 
-class Stack2{
+
+class Stack2
+{
         public:
         int *arr;
         int size;
@@ -89,7 +90,7 @@ class Stack2{
         void push1(int data) {
                 if(top2 - top1 == 1) {
                         //space not available
-                        cout << "OVERFLOW int stack 1" << endl;
+                        cout << "OVERFLOW in stack 1" << endl;                    
                 }
                 else {
                         //space available
@@ -147,7 +148,7 @@ class Stack2{
 int main() {
 
   //CREATION
-  Stack s(5);
+stack<int> s;  //Stack s(5);
 
   //insertion
   s.push(10);
@@ -157,12 +158,13 @@ int main() {
   s.push(50);
   //s.push(60);
 
-  while(!s.isEmpty()) {
+  while(!s.isEmpty())   
+{
           cout << s.getTop() << " ";
           s.pop();
   }cout << endl;
 
-  cout << "Size of stack " << s.getSize() << endl;
+  cout << "Size of stack " << s.getSize() << endl; 
 
   s.pop();
 
@@ -186,14 +188,15 @@ int main() {
 
 //problems     
 
-//middle ofLL
+//middle of LL 
 // void printMiddle(stack<int> &s, int &totalSize) {
 //         if(s.size() == 0 ) {
 //                 cout << "There is no element in stack" << endl;
 //                 return ;
 //         }
-//         //base case
-//         if(s.size() == totalSize/2 + 1) {
+
+//         //base case           
+//         if(s.size() == totalSize/2 + 1)  {
 //                 cout << "Middle element is: " << s.top() << endl;
 //                 return;
 //         }

@@ -5,7 +5,8 @@
 #include <iostream>
 using namespace std;
 
-class Node{
+class Node
+{
         public:
         int data;
         Node* prev;
@@ -111,13 +112,13 @@ void insertAtPosition(Node* &head, Node* &tail, int data, int position) {
                         prevNode = prevNode ->next;
                         i++;
                 }
-                Node* curr = prevNode -> next;
+                Node* curr = prevNode -> next; 
 
                 //step2: create a node
                 Node* newNode  = new Node(data);
 
                 //step3:
-                 newNode -> prev = prevNode;
+                newNode -> prev = prevNode;
                 prevNode -> next = newNode;
                 newNode ->next = curr;
                 curr -> prev = newNode;
@@ -154,7 +155,8 @@ void deleteFromPos(Node* &head, Node* &tail, int position) {
                 return;
         }
         
-        if(position == len) {
+        if(position == len) 
+        {
                 //delete last node
                 Node* temp = tail;
                 tail = tail -> prev;
