@@ -213,9 +213,34 @@ int celebraty(vector<vector<int>> &M,int n)
 
     //then mightBeCelebraty is the celebraty
     return mightBeCelebraty;
-
-
 }
+
+
+// 5 online stock span
+class StockSpanner {
+public:
+   stack<pair<int,int>>st;
+
+    StockSpanner() {
+        
+    }
+    
+    int next(int price) {
+        int span=1;
+        while(!st.empty()  && st.top().first<price)
+        {
+            span=span+st.top().second;
+            st.pop();
+        }
+
+        st.push({price,span});
+        return span;
+        
+    }
+};
+
+
+//6
 
 int main()
 {

@@ -132,7 +132,6 @@ public:
 };
 
 
-
 //3 Merge two sorted LL
 /**
  * Definition for singly-linked list.
@@ -268,6 +267,181 @@ public:
 
 
 // 5 flatten linked list
+//in sumple way sarii linked list ko merge krna hai bs
+
+Node* merge(Node* a,Node* b)
+{
+    if(a==NULL) return b;
+    if(b==NULL) return a;
+
+    Node* ans=NULL;
+
+    if(a->data<b->data)
+    {
+        ans=a;
+        a->bottom=merge(a->bottom,b);
+    }
+    else
+    {
+        ans=b;
+        b->bottom=merge(a,b->bottom);
+    }
+    return ans;
+}
+
+Node* flatten(Node* root)
+{
+    if(root==NULL)
+    {
+        return NULL;
+    }
+
+    Node* mergedLL=merge(root,flatten(root->next));
+    return mergedLL;
+
+}
+
+
+//6 clone Linked list with Random pointer
+
+//7 Rotate List
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    int getLength(ListNode* head)
+    {
+        int len=0;
+        ListNode* temp=head;
+        while(temp!=NULL)
+        {
+            len++;
+            temp=temp->next;
+        }
+        return len;
+    }
+  
+    ListNode* rotateRight(ListNode* head, int k) {
+        
+        if(head==NULL) return NULL;
+
+        int len=getLength(head);
+        int actualRotateK=(k%len);
+        if(actualRotateK==0)  return head; //jaisi hai vaisi 
+        int newLastNodePos=len-actualRotateK-1;
+        ListNode* newLastNode=head;
+        for(int i=0;i<newLastNodePos;i++)
+        {
+            newLastNode=newLastNode->next;
+        }
+
+        ListNode* newHead=newLastNode->next;
+        newLastNode->next=NULL;
+
+        ListNode* it=newHead;
+        while(it->next)
+        {
+            it=it->next;
+        }
+        it->next=head;
+        return newHead;
+    }
+};
+
+//8 Delete N nodes after M Nodes
+void linkdelete(struct Node* head,int M,int N)
+{
+    if(head==NULL) return;
+    Node* it=head;
+    for(int i=0;i<M-1;i++)
+    {
+        //if M nodes are not available
+        if(it==NULL) return;
+        it=it->next;
+    }
+
+    //it->would be at Mth node
+    if(it==NULL)  return;
+
+    Node* MthNode=it;
+    it=MthNode->next;
+    for(int i=0;i<N;i++)
+    {
+        if(it==NULL) break;
+
+        Node* temp=it->next;
+        delete it;
+        it=temp;
+    }
+    MthNode->next=it;
+    linkdelete(it,M,N);
+}
+
+//9 find min/max number between critical points (LC-2058)
+
+//10 merge nodes in between zeros
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* mergeNodes(ListNode* head) {
+        
+        if(head==NULL) return NULL;
+
+        ListNode *slow=head,*fast=head->next,*newLastNode=NULL;
+        int sum=0;
+
+        while(fast)
+        {
+            if(fast->val!=0)
+            {
+                sum+=fast->val;
+            }
+            else
+            {
+                //jaise hi fast ki val 0 ho gyi
+                //fast->val=0 2 consecutive 0 mil gye
+                slow->val=sum;
+                newLastNode=slow;
+                slow=slow->next;
+                sum=0;
+            }
+
+            fast=fast->next;
+        }
+
+        ListNode *temp=newLastNode->next;
+
+        //just former new list
+        newLastNode->next=NULL;
+
+      //deleting old list
+        while(temp)
+        {
+            ListNode* nxt=temp->next;
+            delete temp;
+            temp=nxt;
+        }
+
+        return head;
+    }
+};
 
 
 

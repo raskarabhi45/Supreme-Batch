@@ -1,7 +1,7 @@
 //tree lecture start
 //5/5/2023
-//friday
-//again same repreated on  saturday 6/5/2023
+//friday 
+//again same repreated on  saturday 6/5/2023 qki bhaiya ki friday wala lecture achha nhi lga bt bdiya tha O bhi
 //node root parent child sibling(same level pe exist kr rhe he) 
 //ancestor (node ke upar ke sare) decendant(node ke niche kr sare) 
 //leaf (is node la koi bhi child nhi hota)
@@ -206,7 +206,7 @@ int height(Node* root)
 //7 Diameter of a Tree
 //longest path between any two nodes weather 
 //it contains root or not isi me answer hai dhundo
-//return edges not number of nodes
+//return edges not number of nodes   edges=nodes-1
   int diameterOfBinaryTree(TreeNode* root) {
         if(root==NULL)
         {

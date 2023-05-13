@@ -116,7 +116,7 @@ if(root==NULL)
 {
     return false;
 }
-
+//find p
 if(root->data==p->data)
 {
     return true;
@@ -131,7 +131,7 @@ if(leftAns|| rightAns)
 {
     k--;
 }
-
+//means kth node mil gyi
 if(k==0)
 {
     cout<<root->data;
@@ -140,7 +140,7 @@ if(k==0)
 }
 
 
-//5 path sum 2 leetcode
+//5 path sum 2 leetcode reviseeeeeeeeeeeeeeee
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -163,7 +163,7 @@ public:
         }
 
         //leaf node
-        if(root-<left==NULL && root->right==NULL)
+        if(root->left==NULL && root->right==NULL)
         {
             //include curr node
              path.push_back(root->val);
@@ -173,8 +173,8 @@ public:
             {
                 ans.push_back(path);
             }
-            exclude
-             path.pop_back(root->val);
+            //exclude
+             path.pop_back();
              currSum=currSum-root->val;
 
             return ;
