@@ -96,11 +96,11 @@ int countRev(string s)
 
         if(a==b)
         {
-            ans+=1;
+            ans+=1; //ek reversal krna pdega
         }
         else
         {
-            ans+=2;
+            ans+=2;  //2 reversal krne pdenge
         }
     }
 
@@ -154,7 +154,7 @@ public:
 // jb tk stack ka size 1 nhi hota tb tk 2 2 person nikalenege 
 //kya a b ko janta hai
 //celebraty kisko nhi janta and sb celebraty ko jante hai
-//ahr stack 1 size of ho gya to that single person in stack might be the celebraty
+//agr stack 1 size of ho gya to that single person in stack might be the celebraty
 //lets verify it
 int celebraty(vector<vector<int>> &M,int n)
 {
@@ -216,7 +216,10 @@ int celebraty(vector<vector<int>> &M,int n)
 }
 
 
-// 5 online stock span
+//5 n stack in array
+
+
+// 6 online stock span
 class StockSpanner {
 public:
    stack<pair<int,int>>st;
@@ -240,7 +243,13 @@ public:
 };
 
 
-//6
+//6 Simply path
+
+//7 Check if word is valid after substutions
+
+//8 decode string
+
+//9 max rectangle in binary matrix
 
 int main()
 {

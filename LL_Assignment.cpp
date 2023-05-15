@@ -387,6 +387,7 @@ void linkdelete(struct Node* head,int M,int N)
 
 //9 find min/max number between critical points (LC-2058)
 
+
 //10 merge nodes in between zeros
 /**
  * Definition for singly-linked list.

@@ -3,6 +3,8 @@
 //22/4/23
 //pointer replacement must do in LL questions instead of data replacement
 
+//little bit difficulty in problem  4 and 5 only
+
 #include<iostream>
 using namespace std;
 
@@ -71,7 +73,8 @@ bool checkPalindrome(Node* head)
     // for greater than one node     
     //   step A find middle node
     Node* slow=head;
-    Node* fast=head->next;  //just for we want exact half middle not )n+1 / wala    while(fast!=NULL)
+    Node* fast=head->next;  //just for we want exact half middle not )n+1 / wala    
+    while(fast!=NULL)
     {
         fast=fast->next;
 
@@ -132,7 +135,7 @@ void removeDuplicatesLL(Node* &head)
     {
         if((curr->next!=NULL) && (curr->data==curr->next->data))
         {
-            Node* temp=curr->next;
+           Node* temp=curr->next;
            curr->next=curr->next->next;   //this importaant
            //delete node
            temp->next=NULL;
@@ -160,6 +163,7 @@ void removeDuplicatesLL(Node* &head)
 // |2|->|2|->|0|->|1|->|1|->
 // |0|->|1|->|1|->|2|->|2|->
 //tc O(n)  sc(1)
+//very easy approach
 void sortZeroOneTwo(Node* &head)
 {
     int zero=0;
@@ -250,7 +254,7 @@ Node* sort2(Node* head)
         }
         else if(curr->data==1)
         {
-             Node* temp=curr;  //one wali node deparate ki
+            Node* temp=curr;  //one wali node deparate ki
             curr=curr->next;
             temp->next=NULL;
 
@@ -316,6 +320,7 @@ Node* sort2(Node* head)
     //return head of modified ll
     return zeroHead;
 }
+
 
 //5 add two numbers represented by linked list
 //steps

@@ -109,7 +109,7 @@ Node* reversekNodes(Node* &head,int k)
     int cnt=0;
 
     while(cnt<k)
-    {
+    {  //simple reverse LL logic
         forward=curr->next;  //aage ki node nikalo
         curr->next=prev;
         prev=curr;
@@ -117,11 +117,13 @@ Node* reversekNodes(Node* &head,int k)
         cnt++;
 
     }
+
     //step B : recursive call
     if(forward!=NULL)
     {
         //we still have nodes left to reverse
-        Node* recursionKaAns=reversekNodes(forward,k); // yaha pr forward hi head node hoga
+        //recursive call
+       Node* recursionKaAns=reversekNodes(forward,k); // yaha pr forward hi head node hoga
        head->next= recursionKaAns;
     }
 
@@ -177,7 +179,6 @@ bool checkForLoop(Node* &head)
     //fast Null hoya
     return false;
 }
-
 
 
 //5 starting point of loop find kro

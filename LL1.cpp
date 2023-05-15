@@ -15,8 +15,8 @@
 // plate me daldo
 
 /////////////////////////////////////////////////
-// ek bat dhyan me rkho ki linked list ke code me tum glti krne hi wale hai edge case pe
-// so handle it later
+// ek bat dhyan me rkho ki linked list ke code me tum glti krne hi wale hai edge case pe to uspe jyada dhyan do
+// so handle 
 
 #include <iostream>
 using namespace std;
@@ -206,7 +206,7 @@ void deleteNode(int pos, Node *&head, Node *&tail)
         Node *temp = head;
         head = head->next;
         temp->next = NULL;
-        delete temp; // write destructor to delete node homework
+        delete temp; // write destructor to delete node   homework
         return;
     }
 

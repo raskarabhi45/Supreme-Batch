@@ -166,9 +166,9 @@ void deleteFromPos(Node* &head, Node* &tail, int position) {
                 return;
         }
 
-        //delete from middle of linked list
+        // delete from middle of linked list
 
-        //step1: find left, curr, right
+        // step1: find left, curr, right
         int i = 1;
         Node* left = head;
         while( i < position - 1) {
