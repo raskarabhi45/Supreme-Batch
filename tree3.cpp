@@ -44,7 +44,7 @@ int findPosition(int arr[],int n,int element)
     return -1;
 }
 
-
+                    ///LNR    //NLR
 //build tree from inorder and preorder traversal
 Node* buildTreeFromPreorderinorder(int inorder[],int preorder[],int size,int &preIndex,int inorderStart,int inorderEnd)
 {
@@ -115,6 +115,7 @@ void levelOrderTraversal(Node* root)
 
 
 //2 create tree using inorder and postorder
+                    //LRN    LNR
 Node* buildTreeFromPostOrderInOrder(int inorder[],int postorder[],int &postIndex,int size,int inorderStart,int inorderEnd)
 {
     //base case;

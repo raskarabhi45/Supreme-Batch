@@ -143,7 +143,7 @@ void printTopView(Node* root) {
         //Level Order
         //we will store a pair consisting of Node and Horizontal Distance
         queue< pair<Node*, int> > q;
-        q.push(make_pair(root, 0));
+        q.push(make_pair(root, 0));  //initially root 0 and the left me gye to -1 krgenge and right me gye to +1
 
         while(!q.empty()) {
                 pair<Node*, int> temp = q.front();
@@ -156,7 +156,7 @@ void printTopView(Node* root) {
                 //or not
 			
                 if(topNode.find(hd) == topNode.end()) {
-                        //crete entry
+                        //means nhi mila to crete entry
                         topNode[hd] = frontNode->data;
                 }
 
@@ -196,7 +196,7 @@ void printBottomView(Node* root) {
                 int hd = temp.second;
 
                 //crete entry
-                topNode[hd] = frontNode->data;
+                topNode[hd] = frontNode->data;  //only change here in above code just remove the condition
 
 
                 if(frontNode -> left)
