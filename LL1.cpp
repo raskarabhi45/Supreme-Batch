@@ -1,11 +1,11 @@
 // Saturday 8/4/2023;
 // Linked List started
 // dynamically grow //shrink
-// non-continuous memory allotcation
+// non-continuous memory allocation
 // collection of nodes
 // node contains data and pointer to next node  [data,address]
 // singly circular doubly circular doubly
-//used in free memey in ram
+// used in free memory in ram
 //
 // maggi ka packet phod do
 // pani grm krlo

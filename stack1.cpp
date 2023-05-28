@@ -1,6 +1,7 @@
 //stack started
 //sunday 23/4/2023
 //follows LIFO order last in first out order   
+//**************middle elementt\
 
 #include<iostream>
 using namespace std;

@@ -7,6 +7,7 @@
 using namespace std;
 
 //////////Problem solving//////////////////////
+//********************sort a stack
 
 
 //  1  insert at bottom    

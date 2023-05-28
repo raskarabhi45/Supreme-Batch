@@ -2,7 +2,7 @@
 using namespace std;
 
 ////////Assignment solutions
-
+//need to understand all once in detail
 class Node
 {
 public:
@@ -304,6 +304,7 @@ Node* flatten(Node* root)
 
 //6 clone Linked list with Random pointer
 
+
 //7 Rotate List
 /**
  * Definition for singly-linked list.
@@ -355,6 +356,7 @@ public:
         return newHead;
     }
 };
+
 
 //8 Delete N nodes after M Nodes
 void linkdelete(struct Node* head,int M,int N)
