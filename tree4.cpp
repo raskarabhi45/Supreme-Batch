@@ -1,130 +1,133 @@
-//saturday 13/5/2023
-// tree third lecture 
+// saturday 13/5/2023
+//  tree third lecture
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 class Node
 {
-    public:
-    int data;
-    Node* left;
-    Node* right;
+public:
+	int data;
+	Node *left;
+	Node *right;
 
-    Node(int data)
-    {
-        this->data=data;
-        this->left=NULL;
-        this->right=NULL;
-    }
+	Node(int data)
+	{
+		this->data = data;
+		this->left = NULL;
+		this->right = NULL;
+	}
 };
 
-Node* buildTree() {
-	int data; 
+Node *buildTree()
+{
+	int data;
 	cout << "Enter the data: " << endl;
 	cin >> data;
 
-	if(data == -1) {
+	if (data == -1)
+	{
 		return NULL;
 	}
 
-	//Step A , B and C
-	Node* root = new Node(data);
+	// Step A , B and C
+	Node *root = new Node(data);
 
 	cout << "Enter data for left part of " << data << " node " << endl;
 	root->left = buildTree();
-	
+
 	cout << "Enter data for right part of " << data << " node " << endl;
-	root-> right = buildTree();
+	root->right = buildTree();
 
 	return root;
-	
 }
 
-
-void levelOrderTraversal(Node* root)
+void levelOrderTraversal(Node *root)
 {
-    if(root==NULL)
-    {
-        return;
-    }
-
-    queue<Node*> q;
-    //initially
-
-    q.push(root);
-    q.push(NULL);   //change here for new line
-    while(!q.empty())
-    {
-        Node* temp=q.front();
-        q.pop();
-
-        if(temp==NULL)  //change here for new line
-        {
-            cout<<endl;
-            if(!q.empty())   ///agr queue me elements presents hai to hi NULL dalo
-            {
-                q.push(NULL);
-            }
-
-        }
-        else
-        {
-            cout<<temp->data<<" ";
-
-        if(temp->left)
-        {
-            q.push(temp->left);
-        }
-
-        if(temp->right)
-        {
-            q.push(temp->right);
-        }
-
-        }  
-    }
-}
-
-
-//1 topView
-
-void inorderTraversal(Node* root) {
-	//base case
-	if(root == NULL) {
-		return ;
+	if (root == NULL)
+	{
+		return;
 	}
 
-	//LNR
+	queue<Node *> q;
+	// initially
+
+	q.push(root);
+	q.push(NULL); // change here for new line
+	while (!q.empty())
+	{
+		Node *temp = q.front();
+		q.pop();
+
+		if (temp == NULL) // change here for new line
+		{
+			cout << endl;
+			if (!q.empty()) /// agr queue me elements presents hai to hi NULL dalo
+			{
+				q.push(NULL);
+			}
+		}
+		else
+		{
+			cout << temp->data << " ";
+
+			if (temp->left)
+			{
+				q.push(temp->left);
+			}
+
+			if (temp->right)
+			{
+				q.push(temp->right);
+			}
+		}
+	}
+}
+
+// 1 topView
+
+void inorderTraversal(Node *root)
+{
+	// base case
+	if (root == NULL)
+	{
+		return;
+	}
+
+	// LNR
 	inorderTraversal(root->left);
-	cout << root -> data << " ";
+	cout << root->data << " ";
 	inorderTraversal(root->right);
 }
 
-void preorderTraversal(Node* root) {
-	//base case
-	if(root == NULL) {
-		return ;
+void preorderTraversal(Node *root)
+{
+	// base case
+	if (root == NULL)
+	{
+		return;
 	}
 
-	//NLR
-	cout << root -> data << " ";
+	// NLR
+	cout << root->data << " ";
 	preorderTraversal(root->left);
 	preorderTraversal(root->right);
 }
 
-void postorderTraversal(Node* root) {
-	if(root == NULL)
+void postorderTraversal(Node *root)
+{
+	if (root == NULL)
 		return;
 
-	//LRN
+	// LRN
 	postorderTraversal(root->left);
 	postorderTraversal(root->right);
-	cout << root -> data << " ";
+	cout << root->data << " ";
 }
 
-int height(Node* root) {
-	if(root == NULL) 
+int height(Node *root)
+{
+	if (root == NULL)
 		return 0;
 
 	int leftHeight = height(root->left);
@@ -133,203 +136,218 @@ int height(Node* root) {
 	return ans;
 }
 
-void printTopView(Node* root) {
-        if(root == NULL )
-                return;
-        
-        ///create a map for storing HD -> TopNode ->data
-        map<int, int> topNode;
+void printTopView(Node *root)
+{
+	if (root == NULL)
+		return;
+                            //Horizontal Distance
+	/// create a map for storing HD -> TopNode ->data
+	map<int, int> topNode;
+	// Level Order
+	// we will store a pair consisting of Node and Horizontal Distance
+	queue<pair<Node *, int>> q;
+	q.push(make_pair(root, 0)); // initially root 0 and the left me gye to -1 krgenge and right me gye to +1
 
-        //Level Order
-        //we will store a pair consisting of Node and Horizontal Distance
-        queue< pair<Node*, int> > q;
-        q.push(make_pair(root, 0));  //initially root 0 and the left me gye to -1 krgenge and right me gye to +1
+	while (!q.empty())
+	{
+		pair<Node *, int> temp = q.front();
+		q.pop();
 
-        while(!q.empty()) {
-                pair<Node*, int> temp = q.front();
-                q.pop();
+		Node *frontNode = temp.first;
+		int hd = temp.second;
 
-                Node* frontNode = temp.first;
-                int hd = temp.second;
+		// jo bhi horizontal distance aaya h , check if answer for that hd already exists
+		// or not
 
-                //jo bhi horizontal distance aaya h , check if answer for that hd already exists
-                //or not
-			
-                if(topNode.find(hd) == topNode.end()) {
-                        //means nhi mila to crete entry
-                        topNode[hd] = frontNode->data;
-                }
+		if (topNode.find(hd) == topNode.end())
+		{
+			// means nhi mila to crete entry
+			topNode[hd] = frontNode->data;
+		}
 
-                if(frontNode -> left)
-                        q.push(make_pair(frontNode->left, hd-1));
+		if (frontNode->left)
+			q.push(make_pair(frontNode->left, hd - 1));
 
-                if(frontNode -> right)
-                        q.push(make_pair(frontNode->right, hd+1));
-        }
+		if (frontNode->right)
+			q.push(make_pair(frontNode->right, hd + 1));
+	}
 
-        //ab aapka answer store hua hoga aapke map me 
-        cout << "Printing the answer: " << endl;
-        for(auto i: topNode) {
-                cout << i.first << " -> " << i.second << endl;
-        }
-}
-
-//2 bottomm view
-
-void printBottomView(Node* root) {
-        if(root == NULL )
-                return;
-        
-        ///create a map for storing HD -> TopNode ->data
-        map<int, int> topNode;
-
-        //Level Order
-        //we will store a pair consisting of Node and Horizontal Distance
-        queue< pair<Node*, int> > q;
-        q.push(make_pair(root, 0));
-
-        while(!q.empty()) {
-                pair<Node*, int> temp = q.front();
-                q.pop();
-
-                Node* frontNode = temp.first;
-                int hd = temp.second;
-
-                //crete entry
-                topNode[hd] = frontNode->data;  //only change here in above code just remove the condition
-
-
-                if(frontNode -> left)
-                        q.push(make_pair(frontNode->left, hd-1));
-
-                if(frontNode -> right)
-                        q.push(make_pair(frontNode->right, hd+1));
-        }
-
-        //ab aapka answer store hua hoga aapke map me 
-        cout << "Printing the answer: " << endl;
-        for(auto i: topNode) {
-                cout << i.first << " -> " << i.second << endl;
-        }
+	// ab aapka answer store hua hoga aapke map me
+	cout << "Printing the answer: " << endl;
+	for (auto i : topNode)
+	{
+		cout << i.first << " -> " << i.second << endl;
+	}
 }
 
 
-//3 left view
-void printLeftView(Node* root, vector<int> &ans, int level) {
-	//base case
-	if(root == NULL) 
+
+// 2 bottomm view
+
+void printBottomView(Node *root)
+{
+	if (root == NULL)
 		return;
 
-	if(level == ans.size()) {
+	/// create a map for storing HD -> TopNode ->data
+	map<int, int> topNode;
+
+	// Level Order
+	// we will store a pair consisting of Node and Horizontal Distance
+	queue<pair<Node *, int>> q;
+	q.push(make_pair(root, 0));
+
+	while (!q.empty())
+	{
+		pair<Node *, int> temp = q.front();
+		q.pop();
+
+		Node *frontNode = temp.first;
+		int hd = temp.second;
+
+		// create entry
+		topNode[hd] = frontNode->data; // only change here in above code just remove the condition
+
+		if (frontNode->left)
+			q.push(make_pair(frontNode->left, hd - 1));
+
+		if (frontNode->right)
+			q.push(make_pair(frontNode->right, hd + 1));
+	}
+
+	// ab aapka answer store hua hoga aapke map me
+	cout << "Printing the answer: " << endl;
+	for (auto i : topNode)
+	{
+		cout << i.first << " -> " << i.second << endl;
+	}
+}
+
+// 3 left view
+void printLeftView(Node *root, vector<int> &ans, int level)
+{
+	// base case
+	if (root == NULL)
+		return;
+
+	if (level == ans.size())
+	{
 		ans.push_back(root->data);
 	}
 
-	//left
-	printLeftView(root->left, ans, level+1);
-	//right
-	printLeftView(root->right, ans, level+1);
-	
+	// left
+	printLeftView(root->left, ans, level + 1);
+	// right
+	printLeftView(root->right, ans, level + 1);
 }
 
-
-
-//4 right view
-void printRightView(Node* root, vector<int> &ans, int level) {
-	//base case
-	if(root == NULL) 
+// 4 right view
+void printRightView(Node *root, vector<int> &ans, int level)
+{
+	// base case
+	if (root == NULL)
 		return;
 
-	if(level == ans.size()) {
+	if (level == ans.size())
+	{
 		ans.push_back(root->data);
 	}
 
-	//right
-	printRightView(root->right, ans, level+1);
+	// right
+	printRightView(root->right, ans, level + 1);
 
-	//left
-	printRightView(root->left, ans, level+1);
+	// left
+	printRightView(root->left, ans, level + 1);
 }
 
 
-void printLeftBoundary(Node* root) {
-	//base case
-	//if root is NULL, then go back
-	if(root == NULL)
+void printLeftBoundary(Node *root)
+{
+	// base case
+	// if root is NULL, then go back
+	if (root == NULL)
 		return;
-	//if root is a leaf node , then go back 
-	if(root->left == NULL && root->right == NULL)
+	// if root is a leaf node , then go back
+	if (root->left == NULL && root->right == NULL)
 		return;
 
 	cout << root->data << " ";
-	
-	if(root->left) {
+
+	if (root->left)
+	{
 		printLeftBoundary(root->left);
 	}
-	else {
+	else
+	{
 		printLeftBoundary(root->right);
 	}
 }
 
-void printLeafBoundary(Node* root) {
-	//base case
-	if(root == NULL)
+void printLeafBoundary(Node *root)
+{
+	// base case
+	if (root == NULL)
 		return;
-	if(root->left == NULL && root->right == NULL) {
+	if (root->left == NULL && root->right == NULL)
+	{
 		cout << root->data << " ";
 	}
 	printLeafBoundary(root->left);
 	printLeafBoundary(root->right);
 }
 
-void printRightBoundary(Node* root) {
-	//base case
-	if(root == NULL)
+void printRightBoundary(Node *root)
+{
+	// base case
+	if (root == NULL)
 		return;
-	if(root->left == NULL && root->right == NULL)
-		return ;
+	if (root->left == NULL && root->right == NULL)
+		return;
 
-	if(root->right) {
+	if (root->right)
+	{
 		printRightBoundary(root->right);
 	}
-	else {
+	else
+	{
 		printRightBoundary(root->left);
 	}
-	
+
 	cout << root->data << " ";
 }
 
-
-//5 boundary traversal
-void boundaryTraversal(Node* root) {
-	if(root == NULL)
+// 5 boundary traversal
+void boundaryTraversal(Node *root)
+{
+	if (root == NULL)
 		return;
 
 	cout << root->data << " ";
-	//A
+	// A
 	printLeftBoundary(root->left);
-	//B
+	// B
 	printLeafBoundary(root);
-	//C
+	// C
 	printRightBoundary(root->right);
 }
- 
-int main() {
 
-        Node* root = buildTree();
-        // printBottomView(root);
-	 //    vector<int> ans;
-		// int level = 0;
-	 //    printRightView(root, ans, level);
+int main()
+{
 
-		// cout << "Printing the Right View: " << endl;
-		// for(auto i: ans) {
-		// 	cout << i << " ";
-		// }
+	Node *root = buildTree();
+	// printBottomView(root);
+	//    vector<int> ans;
+	// int level = 0;
+	//    printRightView(root, ans, level);
+
+	// cout << "Printing the Right View: " << endl;
+	// for(auto i: ans) {
+	// 	cout << i << " ";
+	// }
 
 	boundaryTraversal(root);
-	//10 20 30 60 70 90 80
-	// 10 20 30 -1 -1 50 70 90 -1 -1 80 -1 -1 60 -1 -1 40 -1 100 -1 120 110 -1 -1 130 -1 -1 
-	
-	
+	// 10 20 30 60 70 90 80
+	//  10 20 30 -1 -1 50 70 90 -1 -1 80 -1 -1 60 -1 -1 40 -1 100 -1 120 110 -1 -1 130 -1 -1
+
 	return 0;
 }

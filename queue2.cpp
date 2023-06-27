@@ -1,5 +1,7 @@
 //sunday 30th April 2023
 //2nd lecture of stack 
+//Think about the controllables only
+//its result which puts pressure on us 
 
 #include <iostream>
 #include<queue>
@@ -63,7 +65,7 @@ void reverseK(queue<int> &q, int k ) {
                         break;
         } 
 
-        //stepB: stack -> q me qapas
+        //stepB: stack -> q me vapas
         while(!s.empty()) {
                 int temp = s.top();
                 s.pop();
@@ -123,6 +125,7 @@ void interleaveQueue(queue<int> &q) {
         }
 }
 
+
 void solve(int arr[],int n, int k ) {
         deque<int> q;
         //process first window of size k 
@@ -132,9 +135,9 @@ void solve(int arr[],int n, int k ) {
                 }
         }
 
-        //remaining window ko process kro
+        // remaining window ko process kro
         for(int i=k; i<n; i++) {
-                //answer dedo purani wondow ka 
+                //answer dedo purani window ka 
                 if(q.empty()) {
                         cout << 0 << " ";
                 }

@@ -1,71 +1,70 @@
-//sunday  29/4/2023
-// Queue started
-// mostly used in the graph and sliding window 
-// also in Operating System
-// FIFO first in first out 
-// rear always represent empty block
-// push ->  rear and pop front
+// sunday  29/4/2023
+//  Queue started
+//  mostly used in the graph and sliding window
+//  also in Operating System
+//  FIFO first in first out
+//  rear always represent empty block
+//  push ->  rear and pop front
 
-#include<iostream>
-#include<queue>
-#include<deque>
+#include <iostream>
+#include <queue>
+#include <deque>
 using namespace std;
-// 0 wali game me rear empty block pe hota  hai 
-// and -1 wali game me rear data wale block pe hota hai 
+// 0 wali game me rear empty block pe hota  hai
+// and -1 wali game me rear data wale block pe hota hai
 
 class Queue
 {
-    public:                                                                      
+public:
     int *arr;
     int size;
     int front;
-    int rear;  
+    int rear;
 
     Queue(int size)
-    { 
-        this->size=size;
-        arr=new int[size];
-        front=0;
-        rear=0;
-    } 
-                                           
+    {
+        this->size = size;
+        arr = new int[size];
+        front = 0;
+        rear = 0;
+    }
+
     void push(int data)
     {
-        if(rear==size){
-            cout<<"Queue is full"<<endl;
+        if (rear == size)
+        {
+            cout << "Queue is full" << endl;
         }
         else
         {
-            arr[rear]=data;
+            arr[rear] = data;
             rear++;
         }
     }
-    
 
     void pop()
     {
-        if(front==rear)
+        if (front == rear) 
         {
-              cout<<"Q is empty"<<endl;
+            cout << "Q is empty" << endl;
         }
         else
         {
-            arr[front]=-1;
+            arr[front] = -1;
             front++;
-            if(front==rear)
+            if (front == rear)
             {
-                front=0;
-                rear=0;
+                front = 0;
+                rear = 0;
             }
         }
     }
 
     int getFront()
     {
-        if(front==rear)
+        if (front == rear)
         {
-            cout<<"Q is empty"<<endl;
-
+            cout << "Q is empty" << endl;
         }
         else
         {
@@ -75,7 +74,7 @@ class Queue
 
     bool isEmpty()
     {
-        if(front==rear)
+        if (front == rear)
         {
             return true;
         }
@@ -83,24 +82,19 @@ class Queue
         {
             return false;
         }
-
     }
-
-
 
     int getSize()
     {
-        return rear-front;
+        return rear - front;
     }
-
 };
 
-
-//Circular queue
-//front==rear==-1 at start
+// Circular queue
+// front==rear==-1 at start
 class CQueue
 {
-    public:
+public:
     int size;
     int *arr;
     int front;
@@ -108,71 +102,66 @@ class CQueue
 
     CQueue(int size)
     {
-        this-size=size;
-        arr=new int[size];
-        front=-1;
-        rear=-1;
+        this -> size = size;
+        arr = new int[size];
+        front = -1;
+        rear = -1;
     }
 
     void push(int data)
     {
-        //queue full  //add one more condition
-         if((front==0) && (rear==size-1))
+        // queue full  //add one more condition
+        if ((front == 0) && (rear == size - 1))
         {
-            cout<<"Q is full "<<endl;
+            cout << "Q is full " << endl;
         }
 
-        //single element case first elem
-        else if(front==-1)
+        // single element case first elem
+        else if (front == -1)
         {
-            front=rear=0;
-            arr[rear]=data;
-            // rear++;    
+            front = rear = 0;
+            arr[rear] = data;
+            // rear++;
         }
 
-        //circular nature
-        else if(rear==size-1  && front !=0)
+        // circular nature
+        else if (rear == size - 1 && front != 0)
         {
-            rear=0;
-            arr[rear]=data;
+            rear = 0;
+            arr[rear] = data;
         }
 
-        //normal flow
+        // normal flow
         else
         {
             rear++;
-            arr[rear]=data;
+            arr[rear] = data;
         }
-
-       
     }
 
     void pop()
     {
-        //empty check
-        if(front==-1)
+        // empty check
+        if (front == -1)
         {
-            cout<<"Q is empty"<<endl;
+            cout << "Q is empty" << endl;
         }
 
-        //single element check /q empty ho gyi to front rear=-1
-        else if(front==rear)
+        // single element check /q empty ho gyi to front rear=-1
+        else if (front == rear)
         {
-            arr[front]=-1;
-            front=-1;
-            rear=-1;
-
+            arr[front] = -1;
+            front = -1;
+            rear = -1;
         }
 
-        
-        //cricular nature maintain
-        else if(front==size-1)
+        // cricular nature maintain
+        else if (front == size - 1)
         {
-            front=0;
+            front = 0;
         }
 
-
-        //normal flow
+        // normal flow
         else
         {
             front++;
@@ -181,18 +170,16 @@ class CQueue
 };
 
 // input restricted queue
-//rear input push back pop back pop front
-
+// rear input push back pop back pop front
 
 // output restricted queue
-// 
+//
 
-
-//Doubly Ended Queue  (deque  deck pronounce krte hai)
-//push rear push front pop rear pop front
+// Doubly Ended Queue  (deque  deck pronounce krte hai)
+// push rear push front pop rear pop front
 class Deque
 {
-    public:
+public:
     int size;
     int *arr;
     int front;
@@ -200,101 +187,97 @@ class Deque
 
     Deque(int size)
     {
-        this->size=size;
-        arr=new int[size];
-        front=-1;
-        rear=+1;
+        this->size = size;
+        arr = new int[size];
+        front = -1;
+        rear = +1;
     }
 
     void pushRear(int data)
     {
-         //queue full  //add one more condition
-         if((front==0) && (rear==size-1))
+        // queue full  //add one more condition
+        if ((front == 0) && (rear == size - 1))
         {
-            cout<<"Q is full "<<endl;
+            cout << "Q is full " << endl;
             return;
         }
 
-        //single element case first elem
-        else if(front==-1)
+        // single element case first elem
+        else if (front == -1)
         {
-            front=rear=0;
-            arr[rear]=data;
-            // rear++;    
+            front = rear = 0;
+            arr[rear] = data;
+            // rear++;
         }
 
-        //circular nature
-        else if(rear==size-1  && front !=0)
+        // circular nature
+        else if (rear == size - 1 && front != 0)
         {
-            rear=0;
-            arr[rear]=data;
+            rear = 0;
+            arr[rear] = data;
         }
 
-        //normal flow
+        // normal flow
         else
         {
             rear++;
-            arr[rear]=data;
+            arr[rear] = data;
         }
-
     }
 
     void pushFront(int data)
     {
-        //queue full  //add one more condition
-         if((front==0) && (rear==size-1))
+        // queue full  //add one more condition
+        if ((front == 0) && (rear == size - 1))
         {
-            cout<<"Q is full "<<endl;
+            cout << "Q is full " << endl;
             return;
         }
 
-        //single element case first elem
-        else if(front==-1)
+        // single element case first elem
+        else if (front == -1)
         {
-            front=rear=0;
-            arr[rear]=data;
-            // rear++;    
+            front = rear = 0;
+            arr[rear] = data;
+            // rear++;
         }
 
-        //circular nature
-        else if(front==0 && rear!=size-1)
+        // circular nature
+        else if (front == 0 && rear != size - 1)
         {
-            front=size-1;
-            arr[rear]=data;
+            front = size - 1;
+            arr[rear] = data;
         }
 
-        //normal flow
+        // normal flow
         else
         {
             front--;
-            arr[rear]=data;
+            arr[rear] = data;
         }
     }
 
-
     void popFront()
     {
-        //empty check
-        if(front==-1)
+        // empty check
+        if (front == -1)
         {
-            cout<<"Q is empty"<<endl;
-
+            cout << "Q is empty" << endl;
         }
 
-        //single element check /q empty ho gyi to front rear=-1
-        else if(front==rear)
+        // single element check /q empty ho gyi to front rear=-1
+        else if (front == rear)
         {
-            arr[front]=-1;
-            front=-1;
-            rear=-1;
-
+            arr[front] = -1;
+            front = -1;
+            rear = -1;
         }
-        //cricular nature maintain
-        else if(front==size-1)
+        // cricular nature maintain
+        else if (front == size - 1)
         {
-            front=0;
+            front = 0;
         }
-        //normal flow
+        // normal flow
         else
         {
             front++;
@@ -303,46 +286,36 @@ class Deque
 
     void popRear()
     {
-        //empty check
-        if(front==-1)
+        // empty check
+        if (front == -1)
         {
-            cout<<"Q is empty"<<endl;
-
+            cout << "Q is empty" << endl;
         }
 
-        //single element check /q empty ho gyi to front rear=-1
-        else if(front==rear)
+        // single element check /q empty ho gyi to front rear=-1
+        else if (front == rear)
         {
-            arr[front]=-1;
-            front=-1;
-            rear=-1;
-
+            arr[front] = -1;
+            front = -1;
+            rear = -1;
         }
-        //cricular nature maintain
-        else if(rear==0)
+        // cricular nature maintain
+        else if (rear == 0)
         {
-            rear=size-1;
+            rear = size - 1;
         }
-        //normal flow
+        // normal flow
         else
         {
             rear--;
         }
     }
-
-
-
-
-    };
-
-
-
-
+};
 
 int main()
 {
-    //creation
-    // queue<int> q;
+    // creation
+    //  queue<int> q;
 
     // //insertion
     // q.push(11);
@@ -366,7 +339,6 @@ int main()
     //     cout<<"not empty"<<endl;
     // }
 
-
     Queue q(10);
     q.push(11);
     q.push(21);
@@ -376,6 +348,6 @@ int main()
 
     deque<int> dq;
 
-    cout<<q.getSize();
+    cout << q.getSize();
     return 0;
 }

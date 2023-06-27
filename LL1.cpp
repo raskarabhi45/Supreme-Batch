@@ -13,10 +13,11 @@
 // masala dal do
 // 3 min wait
 // plate me daldo
+// fir khao
 
 /////////////////////////////////////////////////
 // ek bat dhyan me rkho ki linked list ke code me tum glti krne hi wale hai edge case pe to uspe jyada dhyan do
-// so handle 
+// so handle
 
 #include <iostream>
 using namespace std;
@@ -85,7 +86,7 @@ void insertAtHead(Node *&head, Node *&tail, int data)
         //  {
         //      //empty list first node add hogi
         //     tail=newNode;
-        //  }                                              
+        //  }
         head = newNode;
     }
 }
@@ -112,22 +113,6 @@ void insertAtTail(Node *&head, Node *&tail, int data)
         // step 3
         tail = newNode;
     }
-
-    // step1 create a node
-    //  Node* newNode=new Node(data);
-    // step 2 connect with tail node
-    // first nide add hoine wali hai
-    //  if(tail==NULL)
-    //  {
-    //      tail=newNode;
-    //       head=newNode;
-    //  }
-    //  else
-
-    // tail->next=newNode;
-
-    // step 3
-    // tail=newNode;
 }
 
 int findLength(Node *&head)
@@ -164,7 +149,7 @@ void insertAtPosition(Node *&head, Node *&tail, int data, int pos)
         insertAtTail(head, tail, data);
         return;
     }
-    // bich me insert 
+    // bich me insert
     // step 1 find that position
     int i = 1;
     Node *prev = head;
@@ -210,14 +195,14 @@ void deleteNode(int pos, Node *&head, Node *&tail)
         return;
     }
 
-    int len = findLength(head);       
+    int len = findLength(head);
     if (pos == len)
     {
         // delete last
         // find previous
         int i = 1;
         Node *prev = head;
-        while (i < pos - 1)
+        while (i < pos - 1) //usse pehle aa ke rukna hai so uske aage ko delete kr ske
         {
             prev = prev->next;
             i++;
@@ -231,92 +216,91 @@ void deleteNode(int pos, Node *&head, Node *&tail)
         return;
     }
 
-
-
-    //deleting middle node
-    //find prev and curr
-    int i=1;
-    Node* prev=head;
-    while(i<pos-1)
+    // deleting middle node
+    // find prev and curr
+    int i = 1;
+    Node *prev = head;
+    while (i < pos - 1)
     {
-        prev=prev->next;
+        prev = prev->next;
         i++;
-
     }
 
-    Node* curr=prev->next;
+    Node *curr = prev->next;
 
-    //step2
-     prev->next=curr->next;
+    // step2
+    prev->next = curr->next;
 
-     //step3
-     curr->next=NULL;
+    // step3
+    curr->next = NULL;
 
-     delete curr;
-
+    delete curr;
 }
 
-Node* reverseusingLoop(Node* head ) {
-        Node* prev = NULL;
-        Node* curr = head;
+Node *reverseusingLoop(Node *head)
+{
+    Node *prev = NULL;
+    Node *curr = head;
 
-        while(curr != NULL ) {
-                Node* forward = curr ->next;
-                curr ->next = prev;
-                prev = curr;
-                curr = forward;
-        }
-        return prev;
-}
-Node* reverseusingRecursion(Node* prev, Node* curr) {
-        //base case                    
-        if(curr == NULL) 
-                return prev;
-
-        Node* forward = curr ->next;
-        curr ->next = prev;
+    while (curr != NULL)
+    {
+        Node *forward = curr->next;
+        curr->next = prev;
         prev = curr;
         curr = forward;
+    }
+    return prev;
+}
+Node *reverseusingRecursion(Node *prev, Node *curr)
+{
+    // base case
+    if (curr == NULL)
+        return prev;
 
-        //recursion sambhal lega
-        return reverseusingRecursion(prev, curr);
+    Node *forward = curr->next;
+    curr->next = prev;
+    prev = curr;
+    curr = forward;
+
+    // recursion sambhal lega
+    return reverseusingRecursion(prev, curr);
 }
 
+int main()
+{
 
-int main() {
+    Node *head = NULL;
+    Node *tail = NULL;
+    insertAtHead(head, tail, 20);
+    insertAtHead(head, tail, 50);
+    insertAtHead(head, tail, 60);
+    insertAtHead(head, tail, 90);
+    insertAtTail(head, tail, 77);
 
-        Node* head = NULL;
-        Node* tail = NULL;
-        insertAtHead(head, tail,20);
-        insertAtHead(head, tail,50);
-        insertAtHead(head, tail,60);
-        insertAtHead(head,tail, 90);
-        insertAtTail(head, tail, 77);
+    print(head);
+    cout << endl;
+    // cout << "head: " << head -> data << endl;
+    // cout << "tail: " << tail->data << endl;
 
-        print(head);
-        cout << endl;
-        // cout << "head: " << head -> data << endl;
-        // cout << "tail: " << tail->data << endl;
+    // insertAtPosition(101, 5, head, tail);
+    // cout<< "Printing after insert at position call" << endl;
+    // print(head);
+    // cout << endl;
+    // cout << "head: " << head -> data << endl;
+    // cout << "tail: " << tail->data << endl;
 
-        // insertAtPosition(101, 5, head, tail);
-        // cout<< "Printing after insert at position call" << endl;
-        // print(head);
-        // cout << endl;
-        // cout << "head: " << head -> data << endl;
-        // cout << "tail: " << tail->data << endl;
+    // deleteNode(9, head, tail);
+    // cout << endl;
+    // print(head);
+    cout << endl;
 
-       // deleteNode(9, head, tail);
-        // cout << endl;
-        // print(head);
-         cout << endl;
+    Node *prev = NULL;
+    Node *curr = head;
+    cout << "printing reverse list" << endl;
+    head = reverseusingRecursion(prev, curr);
+    cout << endl;
+    print(head);
+    cout << endl;
 
-        Node* prev = NULL;
-        Node* curr = head;
-        cout << "printing reverse list" << endl;
-        head = reverseusingRecursion(prev, curr);
-        cout << endl;
-        print(head);
-        cout << endl;
-
-        return 0;
+    return 0;
 }

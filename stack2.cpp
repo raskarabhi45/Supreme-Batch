@@ -1,197 +1,180 @@
-//26/4/2023
-//wednesday
-//stack 2 lecture
-#include<iostream>
-#include<stack>
-#include<string>
+// 26/4/2023
+// wednesday
+// stack 2 lecture
+#include <iostream>
+#include <stack>
+#include <string>
 using namespace std;
 
 //////////Problem solving//////////////////////
 //********************sort a stack
 
-
-//  1  insert at bottom    
-
-void insertAtBottom(stack<int> &s,int target)
+//  1  insert at bottom
+void insertAtBottom(stack<int> &s, int target)
 {
-    //base case
-    if(s.empty())
+    // base case
+    if (s.empty())
     {
         s.push(target);
         return;
     }
 
-    int topElement=s.top();
+    int topElement = s.top();
     s.pop();
 
-    //recursive call
-    insertAtBottom(s,target);
+    // recursive call
+    insertAtBottom(s, target);
 
-    //BT
+    // BT
     s.push(topElement);
 }
 
-
-//reverse stack
-//101 51 21 11 
-//11 21 51 101 
+// reverse stack
+// 101 51 21 11
+// 11 21 51 101
 void reverseStack(stack<int> &s)
 {
-    //top
-    //pop
-    //recursive call
-    //insertatbottom
-    //base case
-    if(s.empty())
+    // top
+    // pop
+    // recursive call
+    // insertatbottom
+    // base case
+    if (s.empty())
     {
         return;
     }
 
-    int target=s.top();
+    int target = s.top();
     s.pop();
 
-    //reverse stack
+    // reverse stack
     reverseStack(s);
 
-    //insertAtBottom target
-    insertAtBottom(s,target);
+    // insertAtBottom target
+    insertAtBottom(s, target);
 }
 
-
-//3 very very important
-// valid parenthesis problem
+// 3 very very important
+//  valid parenthesis problem
 bool isValidParenthesis(string str)
 {
-    stack<char>s;
+    stack<char> s;
 
-    for(int i=0;i<str.size();i++)
+    for (int i = 0; i < str.size(); i++)
     {
-        char ch=str[i];
+        char ch = str[i];
 
-        //opening bracket
-        if(ch=='(' || ch=='{' ||  ch=='[')
+        // opening bracket
+        if (ch == '(' || ch == '{' || ch == '[')
         {
             s.push(ch);
         }
         else
         {
-            //closing bracket        
-            if(!s.empty())
+            // closing bracket
+            if (!s.empty())
             {
-                char topCh=s.top();
-                if(ch==')' && topCh=='(')
+                char topCh = s.top();
+                if (ch == ')' && topCh == '(')
                 {
-                    //matching bracktes
+                    // matching bracktes
                     s.pop();
                 }
-                else if(ch==']' && topCh=='[')
+                else if (ch == ']' && topCh == '[')
                 {
-                    //matching bracktes
+                    // matching bracktes
                     s.pop();
                 }
-                else if(ch=='}' && topCh=='{')
+                else if (ch == '}' && topCh == '{')
                 {
-                    //matching bracktes
+                    // matching bracktes
                     s.pop();
                 }
                 else
                 {
-                    //brackets not matching
+                    // brackets not matching
                     return false;
                 }
-                
             }
             else
             {
                 return false;
             }
-
-           
         }
-
     }
-
     return true;
-        
-
 }
 
-//4 sort a stack
-//top bda and niche wale element chote
+// 4 sort a stack
+// top bda and niche wale element chote
 
-void insertSorted(stack<int> &s,int target)
+void insertSorted(stack<int> &s, int target)
 {
-    //base case
-    if(s.empty())
+    // base case
+    if (s.empty())
     {
         s.push(target);
         return;
     }
 
-    if(s.top()>=target)
+    if (s.top() >= target)
     {
         s.push(target);
         return;
     }
 
-    int topElem=s.top();
+    int topElem = s.top();
     s.pop();
 
-    insertSorted(s,target);
+    insertSorted(s, target);
 
-   //BT
+    // BT
     s.push(topElem);
 }
 
 void sortStack(stack<int> &s)
 {
-    //base case
-    if(s.empty())
+    // base case
+    if (s.empty())
     {
         return;
     }
 
-    int topElem=s.top();
+    int topElem = s.top();
     s.pop();
 
     sortStack(s);
 
-    insertSorted(s,topElem);
-
+    insertSorted(s, topElem);
 }
 
-//todays last question
-//5 remove redudant brackets
-
-
-
-
+// todays last question
+// 5 remove redudant brackets
 
 int main()
 {
-    stack<int>s;
+    stack<int> s;
     s.push(11);
     s.push(21);
     s.push(51);
     s.push(101);
     s.push(111);
 
-    
     // while(!s.empty())
     // {
     //     cout<<s.top()<<" ";
     //     s.pop();
     // }
 
-    if(s.empty())
+    if (s.empty())
     {
-        cout<<"stack is empty"<<endl;
+        cout << "stack is empty" << endl;
     }
-    
-    int target=s.top();  ///pehle make sure kro ki stack empty nhi hai
+
+    int target = s.top(); /// pehle make sure kro ki stack empty nhi hai
     s.pop();
 
-   // insertAtBottom(s,target);
+    // insertAtBottom(s,target);
 
     // while(!s.empty())
     // {
@@ -199,38 +182,37 @@ int main()
     //     s.pop();
     // }
 
-    //2
-    //  while(!s.empty())
-    // {
-    //     cout<<s.top()<<" ";
-    //     s.pop();
-    // }
-    // reverseStack(s);
-    //      while(!s.empty())
-    // {
-    //     cout<<s.top()<<" ";
-    //     s.pop();
-    // }
+    // 2
+    //   while(!s.empty())
+    //  {
+    //      cout<<s.top()<<" ";
+    //      s.pop();
+    //  }
+    //  reverseStack(s);
+    //       while(!s.empty())
+    //  {
+    //      cout<<s.top()<<" ";
+    //      s.pop();
+    //  }
 
-    //3
-    // string str="([{}])";
-    // bool ans=isValidParenthesis(str);
-    // cout<<ans;
+    // 3
+    //  string str="([{}])";
+    //  bool ans=isValidParenthesis(str);
+    //  cout<<ans;
 
-    //4
-      while(!s.empty())
+    // 4
+    while (!s.empty())
     {
-        cout<<s.top()<<" ";
+        cout << s.top() << " ";
         s.pop();
     }
-    //op 101 51 21 11 
+    // op 101 51 21 11
     sortStack(s);
     //       while(!s.empty())
     // {
     //     cout<<s.top()<<" ";
     //     s.pop();
     // }
-
 
     return 0;
 }

@@ -201,8 +201,86 @@ using namespace std;
 // 5 find first Repeating Element
 //Remaining gfg
 
+int firstRepeated(int arr[],int n)
+{
+    //approach 1
+    // for(int i=0;i<n;i++)
+    // {
+    //     bool isRepeated=false;
+    //     for(int j=i+1;j<n;i++)
+    //     {
+    //         if(arr[i]==arr[j])
+    //         {
+    //             isRepeated=true;
+    //             return i+1;
+    //         }
+    //     }
+    // }
+
+    // return -1;
+
+    //optimized solution
+    //approach 2
+    unordered_map<int,int>hash;
+    for(int i=0;i<n;i++)
+    {//by default 0 se initialze hota hai
+        hash[arr[i]]++;
+    }
+    for(int i=0;i<n;i++)
+    {
+        if(hash[arr[i]]>1)
+        {
+            //yani ki repeated hai
+            return i+1;
+        }
+    }
+    return -1;
+}
+
+
+
+
 // 6  common element in 3 sorted array
 //remaining gfg
+
+vector<int> commonElement(int a[],int b[],int c[],int n1,int n2,int n3)
+{
+    vector<int> ans;
+    set<int>st;
+    int i,j,k;
+    i=j=k=0;
+    while(i<n1 && j<n2 && k<n3)
+    {
+        if(a[i]==b[j]  && b[j]==c[k])
+        {
+            // ans.push_back(a[i]);
+            st.insert(a[i]);
+            i++;j++;k++;
+        }
+        else if(a[i]<b[j])
+        {
+            i++;
+        }
+        else if(b[j]<c[k])
+        {
+            j++;
+        }
+        else
+        {
+            k++;
+        }
+    }
+
+    for(auto i:st)
+    {
+        ans.push_back(i);
+    }
+
+
+
+    return ans;
+}
+
 
 // 7 wave print a matrix
 

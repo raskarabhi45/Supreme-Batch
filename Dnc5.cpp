@@ -8,24 +8,29 @@ public:
    
    void solve(int open,int close,string op,vector<string> &v)
    {
+    //base case maine sare brackets use krlia hai
        if(open==0 && close==0)
        {
            v.push_back(op);
            return;
        }
-
+      //include open bracket
        if(open!=0)
        {
            string op1=op;
            op1.push_back('(');
            solve(open-1,close,op1,v);
+           //backtrack
+           op.pop_back();
        }
-
+       //include close bracket
        if(close>open)
        {
            string op2=op;
            op2.push_back(')');
            solve(open,close-1,op2,v);
+           //backtrack
+           op.pop_back();
        }
    }
 
@@ -54,7 +59,7 @@ class Solution {
         }
 
         // recursion
-        int number=digits[index]-'0';
+        int number=digits[index]-'0';  //to convert char to int
         string value=mapping[number];
         
         for(int i=0;i<value.length();i++)
