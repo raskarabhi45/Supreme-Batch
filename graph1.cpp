@@ -28,27 +28,26 @@
 //  A->B->C->D->A weighted cyclic directed graph
 // weighted acyclic directed graph
 
-//jroori nhi hai ki graph ki edges ek dusre se connected ho
-//use disconnectd graph kehte hai
+// jroori nhi hai ki graph ki edges ek dusre se connected ho
+// use disconnectd graph kehte hai
 
 #include <iostream>
 #include <vector>
 #include <list>
-#include<queue>
+#include <queue>
 #include <unordered_map>
 using namespace std;
 
 // implementaion of graph
 // 1 using adjancency matrix (2D array)
 // 2 adjecency List (Map/ Vector/ set se) //will use this mostly
-template<typename T>  //for generic graph
+template <typename T> // for generic graph
 class Graph
 {
 public:
     // ek integer ke coresponds vector of map hai qki hme pta lgana hai ki yaha se hum kaha kaha ja skte
-     unordered_map<T, list<T>> adjList;
+    unordered_map<T, list<T>> adjList;
     // unordered_map<int, list<pair<int,int>>> adjList;  for storing weight we made pair over here
-
 
     // void addEdge(int u, int v ,bool direction)
     // {
@@ -63,7 +62,7 @@ public:
     //     }
     // }
 
-     void addEdge(T u, T v ,bool direction)
+    void addEdge(T u, T v, bool direction)
     {
         // direction =0 undirected graph
         // direction =1 directed graph or edge
@@ -76,27 +75,26 @@ public:
         }
     }
 
-    //with weight
-       void addEdge(int u, int v,int weight, bool direction)
+    // with weight
+    void addEdge(int u, int v, int weight, bool direction)
     {
         // direction =0 undirected graph
         // direction =1 directed graph or edge
-        adjList[u].push_back({v,weight}); // create edge from u top v
+        adjList[u].push_back({v, weight}); // create edge from u top v
         if (direction == 0)
         {
             // undirected edge
             // means edge in both direction
-            adjList[v].push_back({u,weight}); // create edge from v top u
+            adjList[v].push_back({u, weight}); // create edge from v top u
         }
     }
-
 
     void printAdjacencyList()
     {
         for (auto i : adjList)
         {
-            cout << i.first << "->";   
-            for (auto neighbour : i.second) //i ke corresponding mapping jo ki lost me pdi hai
+            cout << i.first << "->";
+            for (auto neighbour : i.second) // i ke corresponding mapping jo ki lost me pdi hai
             {
                 cout << neighbour << ",";
             }
@@ -104,61 +102,64 @@ public:
         }
     }
 
-//for weighted graph
-//      void printAdjacencyList()
-//     {
-//         for (auto node : adjList)
-//         {
-//             cout << node.first << "->";
-//             for (auto neighbour : node.second)
-//             {
-//                 cout << neighbour.first << ",";  //here pair node val node.first and its weight that node.second
-//                 cout<<neighbour.second<<" ";
-//             }
-//             cout << endl;
-//         }
-//     }
+    // for weighted graph
+    //       void printAdjacencyList()
+    //      {
+    //          for (auto node : adjList)
+    //          {
+    //              cout << node.first << "->";
+    //              for (auto neighbour : node.second)
+    //              {
+    //                  cout << neighbour.first << ",";  //here pair node val node.first and its weight that node.second
+    //                  cout<<neighbour.second<<" ";
+    //              }
+    //              cout << endl;
+    //          }
+    //      }
 
-// BFS (Breadth first search)  (same as level order traversal)
+    // BFS (Breadth first search)  (same as level order traversal)
 
-void bfs(T src){
-    queue<int>q;
-    unordered_map<int,bool>visited;
+    void bfs(T src)
+    {
+        queue<int> q;
+        unordered_map<int, bool> visited;
 
-    q.push(src);
-    visited[src]=true;
+        q.push(src);
+        visited[src] = true;
 
-    while(!q.empty()){
-        int frontNode=q.front();
-        q.pop();
-        cout<<frontNode<<" ";
+        while (!q.empty())
+        {
+            int frontNode = q.front();
+            q.pop();
+            cout << frontNode << " ";
 
-        //insert neighbor
-        for(auto neighbour:adjList[frontNode]){  //frontnode ke list me se neighbour nikalo
-            if(!visited[neighbour]){ //agr neighbour visited nhi hai to hi queue me push kro
-                q.push(neighbour);
-                visited[neighbour]=true;
+            // insert neighbor
+            for (auto neighbour : adjList[frontNode])
+            { // frontnode ke list me se neighbour nikalo
+                if (!visited[neighbour])
+                { // agr neighbour visited nhi hai to hi queue me push kro
+                    q.push(neighbour);
+                    visited[neighbour] = true;
+                }
             }
         }
     }
-}
 
+    // DFS (depth first search)  (same as inorder preorder and postorder)
+    void dfs(int scr, unordered_map<int, bool> &visited)
+    {
+        cout << src << " ,";
+        visited[src] = true;
 
-
-//DFS (depth first search)  (same as inorder preorder and postorder)
-void dfs(int scr,unordered_map<int,bool> &visited){
-    cout<<src<<" ,";
-    visited[src]=true;
-
-    for(auto neighbour: adjList[src]){
-        if(!visited[neighbour]){
-            dfs(neighbour,visited); //recursive call again
+        for (auto neighbour : adjList[src])
+        {
+            if (!visited[neighbour])
+            {
+                dfs(neighbour, visited); // recursive call again
+            }
         }
     }
-}
-
-
- };
+};
 
 int main()
 {
@@ -216,7 +217,7 @@ int main()
     // 1->0,2,
     // 0->1,2,
 
-    // weighted directed graph 
+    // weighted directed graph
     // Graph G;
     // G.addEdge(0, 1,5, 1);
     // G.addEdge(1, 2,4, 1);
@@ -224,23 +225,21 @@ int main()
     // G.printAdjacencyList();
     // 1->2,
     // 0->1,2,
-    // 1->2,4 
+    // 1->2,4
     // 0->1,5 2,4
 
     Graph<char> g;
-    g.addEdge('a','b',0);
-    g.addEdge('b','c',0);
-    g.addEdge('a','c',0);
+    g.addEdge('a', 'b', 0);
+    g.addEdge('b', 'c', 0);
+    g.addEdge('a', 'c', 0);
     g.printAdjacencyList();
 
-// c->b,a,
-// b->a,c,
-// a->b,c,
-
+    // c->b,a,
+    // b->a,c,
+    // a->b,c,
 
     return 0;
 }
 
-
 // BFS (Breadth first search)  (same as level order traversal)
-//DFS (depth first search)  (same as inorder preorder and postorder)
+// DFS (depth first search)  (same as inorder preorder and postorder)
