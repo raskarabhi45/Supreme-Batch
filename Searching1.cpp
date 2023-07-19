@@ -1,8 +1,9 @@
-// Friday 17/02/2023
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 
+// Friday 17/02/2023
 //Searching and sorting 1
 //binary search condition :
-//all elements should be in monotonic order
+//all elements should be in monotonic order(means either in increasing order or in descrasing order)
 //time complexity O(log(n))
 #include<iostream>
 #include<vector>
@@ -14,7 +15,6 @@ using namespace std;
 // {
 //     int start=0;
 //     int end=size-1;
-
 //     int mid=start+(end-start)/2;
 
 //     while(start<=end)
@@ -35,7 +35,6 @@ using namespace std;
 //             //search in right
 //             start=mid+1;
 //         }
-
 //         mid=start+(end-start)/2;
 //     }
 //     return -1;
@@ -43,12 +42,13 @@ using namespace std;
 
 
 // // 2 Find 1st occurance of an element
+//approach 1 traverse loop from start then return whenever u will find tha target
 
+//approach2
 // int firstOccurance(vector<int> v,int target)
 // {
 //     int s=0;
 //     int e=v.size()-1;
-
 //     int mid= (s+e)/2;
 //     int ans=-1;
 
@@ -80,12 +80,13 @@ using namespace std;
 
 
 // 3 Find last occurance of an element
+//approach 1 traverse loop from end then return whenever u will find tha target
 
+//approach 2
 // int lastOccurance(vector<int> v,int target)
 // {
 //     int s=0;
 //     int e=v.size()-1;
-
 //     int mid= s+(e-s)/2;;
 //     int ans=-1;
 
@@ -93,7 +94,7 @@ using namespace std;
 //     {
 //         if(v[mid]==target)
 //         {
-//             //store ans and then right
+//             //store ans and then right qki hme last occurance nikalna hai bs
 //             ans=mid;
 //             s=mid+1;
 //         }
@@ -129,6 +130,8 @@ using namespace std;
 //  int mid=s+(e-s)/2;
 // }
 
+
+//  next kecture me solve kiye hai
 
 // 6 Peak element in a mountain Array
 // 7 find pivot using BinarySearch

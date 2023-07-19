@@ -1,3 +1,5 @@
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee 
+//##############just need to look at char arr[]  pointer there is  change
 // pointers 3
 // sunday 05//3/2023
 

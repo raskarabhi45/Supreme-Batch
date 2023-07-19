@@ -1,3 +1,11 @@
+//###################################
+//Duplicate number negative marking method and third approach
+//4 find missing number   didnt understood
+//9 factorial of large number
+//###################################
+
+
+
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -50,7 +58,7 @@ using namespace std;
 //         //         i++;
 //         //     }
 
-//Approach 3
+//Approach  the best one
 //             //inplace shuffle 
 //             //  pointer approach
 //            //best Approach
@@ -74,11 +82,10 @@ using namespace std;
 //                     h--;
 //                 }
 //             }
-
-    
 //     }
 // };
 
+//very easy 
 // 2 move all negavtive numbers to left side of an array
 // approach one sort 
 //dutch national flag
@@ -123,6 +130,7 @@ using namespace std;
 
     // Approach 2     REMEMBER++    
     //Negative marking Method
+    //just simply one by one mark negative
     // int ans=-1;
     // for(int i=0;i<nums.size();i++)
     // {
@@ -246,7 +254,7 @@ int firstRepeated(int arr[],int n)
 vector<int> commonElement(int a[],int b[],int c[],int n1,int n2,int n3)
 {
     vector<int> ans;
-    set<int>st;
+    set<int>st;// created set to store unique element
     int i,j,k;
     i=j=k=0;
     while(i<n1 && j<n2 && k<n3)
@@ -282,7 +290,7 @@ vector<int> commonElement(int a[],int b[],int c[],int n1,int n2,int n3)
 }
 
 
-// 7 wave print a matrix
+// 7 wave print a matrix   easy oneeee
 
 // void wavePrintMatrix(vector<vector<int>> v)
 // {
@@ -291,7 +299,7 @@ vector<int> commonElement(int a[],int b[],int c[],int n1,int n2,int n3)
 // for(int startcol=0;startcol<col;startcol++)
 // {
 //     //even number of column print -> Top to Bottom
-//     if(startcol &1==0)
+//     if(startcol &1==0) //even number case
 //     {
 //         for(int i=0;i<row;i++)
 //         {
@@ -370,7 +378,7 @@ vector<int> commonElement(int a[],int b[],int c[],int n1,int n2,int n3)
 // };
 
 
-//9 factorail of large number
+//9 factorial of large number
 
 
 

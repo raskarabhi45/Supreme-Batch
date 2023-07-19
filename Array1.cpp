@@ -1,3 +1,5 @@
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+
 //website cpp reference .com   c++.com    
 #include<iostream>
 #include<limits.h>
@@ -52,7 +54,7 @@ int main()
     // cout<<&arr<<endl;
     // cout<<main<<endl;
 
-    //Array Initailization
+    //Array Initailization 
     // int arr[]={11,21,51,101,111};
     // int brr[]={11,21,51,101,111};
     // cout<<"Array initialized successfully"<<endl;

@@ -241,13 +241,163 @@ void toSumTree(Node* root)
     sum(root);
 }
 
-
+//##########################################################DO it againn
 //7 Vertical order Traversal of a binary tree
 //leetcode
 //done but I havent code it coz it seems little bit difficult
+//yes seems it is much more difficult
 
-int main()
-{
 
-    return 0;
-}
+class Solution {
+public:
+    vector<vector<int>> verticalTraversal(TreeNode* root) {
+        //too much data structures are needed for this problem thats why it seems difficult
+        vector<vector<int>>ans;
+        queue<pair<TreeNode*,pair<int,int>>>q ;//Node,{row,col} store
+        q.push({root,{0,0}});                           //multiset for sorted order
+        map<int,map<int,multiset<int>>>mp; //col ->{row: [x,y,z...]}
+
+        while(!q.empty()){
+            auto front=q.front();
+            q.pop();
+            TreeNode* &node=front.first;
+            auto coordinate=front.second;
+            int &row=coordinate.first;
+            int &col=coordinate.second;
+            mp[col][row].insert(node->val);
+            if(node->left){
+                q.push({node->left,{row+1,col-1}});
+            }
+            if(node->right){
+                q.push({node->right,{row+1,col+1}});
+            }
+        }
+
+        //store final vertical order into ans vector
+        for(auto it:mp){
+            auto &colMap=it.second;
+            vector<int>vLine;
+            for(auto colMapIt:colMap){
+                auto &mset=colMapIt.second;
+                vLine.insert(vLine.end(),mset.begin(),mset.end());
+            }
+            ans.push_back(vLine);
+        }
+        return ans;
+
+    }
+};
+
+
+
+
+
+//8 K sum paths leetcode
+//break it down
+//Kya root se path aata hai
+//preorder traversal krenge
+
+class Solution {
+public:
+    int ans=0;
+    void pathFromOneRoot(TreeNode* root,long long sum){
+        if(!root) return ;
+        
+        if(sum==root->val){
+            ans++;  //paths exist count that is ans
+        }
+        //NLR preorder traversal
+        pathFromOneRoot(root->left,sum-root->val);
+        pathFromOneRoot(root->right,sum-root->val);
+    }
+
+    int pathSum(TreeNode* root, long long targetSum) {
+       //preorder traversal
+       if(root){
+        pathFromOneRoot(root,targetSum);
+        pathSum(root->left,targetSum);
+        pathSum(root->right,targetSum);
+       }
+        return ans;  
+    }
+};
+
+//9 Morris traversal
+
+
+//10 Flatten a binary tree into linked list
+//means left pointer hmesh null ki trh behave krega
+//and right pointer next ki  trh behave krega
+//preorder traveersal krna hai
+//and ALGORITHM
+//jb current ka left avalable hai to
+// pred->right=curr->right
+// curr->right=curr->left
+//curr->left=NULL
+//curr=curr->right
+
+class Solution {
+public:
+    void flatten(TreeNode* root) {
+        TreeNode* curr=root;
+        while(curr){
+            if(curr->left){
+                TreeNode* pred=curr->left;
+                while(pred->right){
+                    pred=pred->right;
+                }
+
+                pred->right=curr->right;
+                curr->right=curr->left;
+                curr->left=NULL;
+
+            }
+            curr=curr->right;
+        }
+        
+    }
+};
+
+//11 Maximum sumof non adjacent nodes GFG
+//sumA include all nodes at that level
+//sumB dont include nodes at that level
+class Solution{
+    public:
+    int getMaxSUm(Node* root){
+
+    }
+};
+
+
+//12 Sum of the length bloodline of The tree
+
+
+//13 Burning Tree
+
+
+//14 Find duplicates subtrees
+ class Solution {
+ public:
+  vector<TreeNode*> findDuplicateSubtrees(TreeNode* root) {
+    vector<TreeNode*> ans;
+    unordered_map<string, int> count;
+    solve(root, count, ans);
+    return ans;
+  }
+
+ private:
+  string solve(TreeNode* root, unordered_map<string, int>& count,
+                vector<TreeNode*>& ans) 
+    {
+    if (root == nullptr)
+      return "";
+
+    const string solved = to_string(root->val) + "#" +
+                           solve(root->left, count, ans) + "#" +
+                           solve(root->right, count, ans);
+                           //# for encoding null left and right childs
+    if (++count[solved] == 2)//duplicate subtree
+      ans.push_back(root);//add the roots
+    return solved;
+  }
+};

@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-//K diff pairs in an array
+//1 K diff pairs in an array
 // class Solution {
 // public:
 //     int findPairs(vector<int>& nums, int k) {
@@ -90,8 +90,24 @@ using namespace std;
 //     }
 // };
 
-int main()
-{
+//2 Find k closest element
 
-    return 0;
-}
+
+//3 Exponentioan search ans unbounded Binary search
+
+
+//4 Book Allocation problem
+
+
+//5 painters partition problem
+
+
+//6 Aggresive cows
+
+
+//7 EKO SPOJ
+
+
+//8 PRATA SPOJ
+
+

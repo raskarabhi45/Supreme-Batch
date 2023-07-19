@@ -1,5 +1,6 @@
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 //11/3/2k23 saturday
-#include<iostream>  SB 
+#include<iostream>  
 #include<vector>
 #include<limits.h>
 using namespace std;
@@ -78,10 +79,10 @@ int main()
 //      cout<<"Vector drr is empty or not "<<drr.empty()<<endl;;
 
 
-////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////
 //Problem Solving on vectors
 
-//1 find UNIQE  element  very important
+//1 find UNIQE  element  very important  //by using XOR ^ operaor cause xor of same element is zero
 // int n;
 // cout<<"Enter the size of array"<<endl;
 // cin>>n;
@@ -97,8 +98,9 @@ int main()
 // cout<<"Unique element is "<<uniqueElement<<endl;
 
 
-//2 UNION of 2 arrays 
 
+//2 UNION of 2 arrays  
+//here just use map to avoid the duplicates number after union of two arrays
 //create an answer vector
 //put all elements of a[] into ans vector
 //put all elements of b[] into ans vector here first assuming no duplicates
@@ -153,6 +155,7 @@ int main()
 //         }
 //     }
 // }
+
 
 // //print ans
 // for(auto value: ans)
@@ -241,6 +244,11 @@ int main()
 // }
 
 // 7  SORT 0s AND 1s
+//m1   sort method
+//m2    cnt 0 and 1 and then indert  in the array
+//m3  also you can do it with start  and end pointer approach
+
+//m3 more optimized
 vector<int> arr{1,0,0,0,1,1,0,0,1,1,0,1,1};
 //0 0 0 0 0 0 1 1 1 1 1 1 1
 

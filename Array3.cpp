@@ -1,3 +1,5 @@
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+
 // Sunday 12/2/23 @12pm 
 // 2d arrays    
 #include<iostream>
@@ -5,7 +7,7 @@
 #include<limits.h>
 using namespace std;
 
-//linear mapping index at linear=c*i+j; c=number of columns i=ro w index j=col index
+//linear mapping index at linear=c*i+j; c=number of columns i=row index j=col index
 //n rows  index= 0 to n-1;
 //m col index= 0 to m-1              
 
@@ -14,7 +16,6 @@ using namespace std;
 //VECTOR OF VECTOR
 //outer   inner datatype name
 //access v[][]  same like array;
-
 
 ////////////////////////////////////////////////////////////////////////
 //Problem Solving
@@ -58,7 +59,7 @@ bool findKey(int arr[][3],int row,int col,int key)
   {
     for(int j=0;j<col;j++)
     {
-        if(arr[i][j]==key)                                     
+        if(arr[i][j]==key)          //**                           
         {
             return true;
         }
@@ -102,8 +103,8 @@ int getMin(int arr[][3],int row,int col)
         
     }
     return min;
-
 }
+
 //Maximum number is 9
 //Minimum number is 1
 

@@ -1,5 +1,11 @@
 // PATTERN PRINTING JUST TO BUILD YOUR LOGIC
 // Just remember formula
+
+// ################################### 
+//Line 300 Hollow diamond and down flipped diamond
+//and 16 17 problem thats it
+//######################################
+
 #include<iostream>
 using namespace std;
 
@@ -12,7 +18,6 @@ int main()
 * * * * * 
 * * * * * 
 */
-
     //outer loop = row observe
     // for(row=0;row<3;row++)
     // {
@@ -21,7 +26,7 @@ int main()
     //     {
     //         cout<<"* ";
     //     }
-    //     cout<<endl;
+    //     cout<<endl; 
     // }
 
     // 2) solid  Square
@@ -102,7 +107,7 @@ int main()
     
     //4) half Pyramid pattern                    
 /*
-*
+*                         
 *       *
 *       *       *
 *       *       *       *
@@ -216,7 +221,7 @@ int main()
     * *
      *
      */
-    // int n;
+    // int n; 
     // cin>>n;
     // for(int row=0;row<n;row++)
     // {
@@ -263,7 +268,7 @@ int main()
         
     //     cout<<endl;
     // }
-
+//inverted
     // for(int row=0;row<n;row++)
     // {
     //     for(col=0;col<row;col++)
@@ -363,6 +368,7 @@ int main()
 */
     // int n;
     // cin>>n;
+    //upper diamond
     // for(row=0;row<n;row++)
     // {
     //     // half pyramid
@@ -383,7 +389,7 @@ int main()
     //     cout<<endl;
     // }
         
-
+    //lower diamond
     //     // half pyramid
     //     for(row=0;row<n;row++)
     //     {
@@ -518,12 +524,12 @@ ABCDEDCBA
     //solid half diamond
     //fancy pattern #3
     //floyds traingle
-    //pascals traingle
+    //pascals traingle 
     //butterfly pattern
 
     // pattern 16 Numeric Full Pyramid
     /*
-5
+
     1
    232
   34543

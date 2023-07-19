@@ -4,7 +4,7 @@ using namespace std;
 #include<algorithm>
 
 //1 Find pivot element in an array
-//where order breaks
+// where order breaks
 // for example arr[]=[1,4,7,8,3,2]  here 8 is the pivot element 
 // int findPivot(vector<int> arr)
 // {
