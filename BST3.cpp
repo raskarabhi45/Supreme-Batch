@@ -1,6 +1,9 @@
 // Saturday //20/5/23
 // only three questions
 // at bottom
+//###################################################
+//Lasts question
+//#################################################
 
 #include <iostream>
 #include <queue>
@@ -55,11 +58,12 @@ void convertIntoSortedDLL(Node *root, Node *&head)
 	// right subtree into LL
 	convertIntoSortedDLL(root->right, head);
 
-	// atach root node
+	// atach kro root ke  right me right  wali LL
 	root->right = head;
 
+ //agr head Null nhi hai
 	if (head != NULL)
-		head->left = root;
+		head->left = root; 
 
 	// update head
 	head = root;

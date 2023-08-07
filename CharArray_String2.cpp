@@ -1,4 +1,7 @@
 // Sunday 26/02/2023
+//###########################################################
+//2-3  problems remainingg
+//###########################################################
 
 #include<iostream>
 #include<vector>
@@ -10,17 +13,17 @@ using namespace std;
 //problem solving
 //1 Remove all duplicate adjacent   leetcode
 //ip :s= abbcddcssscddc
-//op: ans:
+//op: as:
 // class Solution {        
 // public:
 //     string removeDuplicates(string s) {   
 //         string ans="";
 //         int i=0;
          //int n=ans.length();
-//         while(i<s.length())
+//         while(i<s.length()) //will travserse that string
 //         {
                // before popback check whether there is element in the array or not ...      
-//             if(ans.length()>0 && ans[n-1]==s[i])
+//             if(ans.length()>0 && ans[n-1]==s[i]) //ans string ke end ka last element ko s string ke curr eleme se compare kro
 //             {
 //                 ans.pop_back();
 //             }
@@ -50,6 +53,7 @@ using namespace std;
 // };
 
 
+//###################################
 //3 valid palindrome 2
 // class Solution {
 // public:
@@ -90,7 +94,10 @@ using namespace std;
 // };
 
 
+//Easy hai bs dhyan se dekh0
 //4  Minimum time difference leetcode 
+// Input: timePoints = ["23:59","00:00"]
+// Output: 1
 
 // class Solution {
 // public:
@@ -104,7 +111,7 @@ using namespace std;
 //             int min=stoi(curr.substr(3,2));
 //             int totalMinutes=hours*60+min;
 //             //pure array ko minutes mai convert kr diya
-//             minutes.push_back(totalMinutes);
+//             minutes.push_back(totalMinutes);  //total minutes ko minutes waly array me push kr diya
 //         }
 
 //         //step 2 : sort 
@@ -120,15 +127,16 @@ using namespace std;
 
 //         }
 //         Tum yahape fsoge                                             //remember++
-//         //something missing important 
+//         // important 
 //         //compare 1st and last cause watch is circular
-//         int lastdiff=(minutes[0]+1440)-minutes[n-1];
+//         int lastdiff=(minutes[0]+1440)-minutes[n-1];  //#####
 //         mini=min(mini,lastdiff);
 
 //         return mini;
 //     }
 // };
 
+//#######################
 //5 palindromic substrings leetcode                                 AGAIN and AGAIN
 // class Solution {
 // public:
@@ -158,11 +166,11 @@ using namespace std;
 
 //         for(int i=0;i<n;i++)
 //         {
-//             //odd case
+//             //odd case  //i ki val i and jj ki val i
 //             int oddKaAns=expandAroundIndex(s,i,i);
 //             cnt=cnt+oddKaAns;
 
-//             //even case
+//             //even case //i ki val i and jj ki val i+1
 //             int evenKaAns=expandAroundIndex(s,i,i+1);
 //             cnt=cnt+evenKaAns;
 
