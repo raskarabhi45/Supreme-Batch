@@ -1,3 +1,7 @@
+// ############################################
+//important questions almost done
+// #######################################################
+
 //Level Recursion level4
 //15/03/2023
 //wednesday
@@ -10,12 +14,13 @@ using namespace std;
 //wildcard pattern matching
 //chicken and bulldozer question
 
+//easyyy
 //1 Coin change problem
 //infinite supply of coins
 //find out the minimum coins that matches the target
 int solve(vector<int> &arr,int target)
 {
-    //base case
+    //base case   0 bnabe ke lia kitne element lgege
     if(target==0)  //zero to without element ho jayega
     {
         return 0;
@@ -26,49 +31,54 @@ int solve(vector<int> &arr,int target)
     }
 
     //lets solve 1 case
+    //hr ek element ke lia array  me jitne bhi element hai unki call ja rhi hai to    travere kro
     int mini=INT_MAX;
     for(int i=0;i<arr.size();i++)
     {
-        int ans=solve(arr,target-arr[i]);
-        if(ans!=INT_MAX)
+        int ans=solve(arr,target-arr[i]); //target ko km ktre jana hai bs
+        if(ans!=INT_MAX)  //qki o ans ki range se bahr nikl skta hai
         {
-        mini=min(mini,ans+1);
+        mini=min(mini,ans+1); //qki hme target create krna hai  upr target -arr[i] kr rhe hai to yha +1
         }
     }
-
     return mini;
    
-
-
 }
 
-
+//easy
 //2 cut into segments rod problem
+//find maximum number of segments u can make  out of x,y,x lenghts
+//maximum kitne kr skte
+//exponentional time complexity
 int solve2(int n,int x,int y,int z)
 {
     //base case
-    if(n==0)
+    if(n==0) //jb rod ki length 0 ho gyi to rook gye
     {
-        return 0;
+        return 0; //agr rod ki len 0 hai to simply 0 seg hi cut ho payenge na
     }
 
-    if(n<0)
+    if(n<0) //rod ki len negative 
     {
         return INT_MIN;
     }
 
     //
-    int ans1=solve2(n-x,x,y,z)+1;
-    int ans2=solve2(n-y,x,y,z)+1;
-    int ans3=solve2(n-z,x,y,z)+1;
+    int ans1=solve2(n-x,x,y,z)+1;//n me se x wala piece kat liya
+    int ans2=solve2(n-y,x,y,z)+1; //n me se y wala piece kat liya
+    int ans3=solve2(n-z,x,y,z)+1; //n me se z wala piece kat liya
     
 
     int ans=max(ans1,max(ans2,ans3));                                                                                                               
     return ans;
 }
 
-//3 maximum sum of non adjacent element
 
+//3 maximum sum of non adjacent element
+//inclusion exclusion problem same as house robber problem
+//example
+//int arr[]={2,1,4,9}
+//op    11
 void solve3(vector<int>& arr,int i,int sum,int &maxi)
 {
     //base case
@@ -77,7 +87,6 @@ void solve3(vector<int>& arr,int i,int sum,int &maxi)
         //update maxi
         maxi=max(sum,maxi);
         return;
-
     }
 
     //include
@@ -85,8 +94,6 @@ void solve3(vector<int>& arr,int i,int sum,int &maxi)
 
     //exclude
     solve3(arr,i+1,sum,maxi);
-
-
     
 }
 

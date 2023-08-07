@@ -1,7 +1,12 @@
 // 17/6/2023 saturday
+//#########################################
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeee
+//#################################
+
 // graph started
 // the most important the bang topic
-// areeee ye to aasssaaaan hai mzak hai
+// areeee ye to aasssaaaan hai mzak hai.......................!!!
+
 // graph is DS which is combination of Nodes(to store data) and edges(to connect nodes)
 // complex data structure facebook and google map
 // real world applications of the graph
@@ -41,6 +46,7 @@ using namespace std;
 // implementaion of graph
 // 1 using adjancency matrix (2D array)
 // 2 adjecency List (Map/ Vector/ set se) //will use this mostly
+
 template <typename T> // for generic graph
 class Graph
 {
@@ -119,11 +125,10 @@ public:
 
     // BFS (Breadth first search)  (same as level order traversal)
 
-    void bfs(T src)
+    void bfs(int src)
     {
         queue<int> q;
         unordered_map<int, bool> visited;
-
         q.push(src);
         visited[src] = true;
 
@@ -133,7 +138,7 @@ public:
             q.pop();
             cout << frontNode << " ";
 
-            // insert neighbor
+            // insert neighbour
             for (auto neighbour : adjList[frontNode])
             { // frontnode ke list me se neighbour nikalo
                 if (!visited[neighbour])
@@ -168,7 +173,7 @@ int main()
     // int n;
     // cout<<"Enter number of nodes "<<endl;
     // cin>>n;
-
+   //2d matrix
     // vector<vector<int>> adj(n,vector<int>(n,0));
 
     // int e;

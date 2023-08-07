@@ -1,5 +1,9 @@
 // 26/4/2023
 // wednesday
+//###################################################
+//Almost Done
+//###################################################
+
 // stack 2 lecture
 #include <iostream>
 #include <stack>
@@ -25,7 +29,7 @@ void insertAtBottom(stack<int> &s, int target)
     // recursive call
     insertAtBottom(s, target);
 
-    // BT
+    // Back Tracking
     s.push(topElement);
 }
 
@@ -106,7 +110,7 @@ bool isValidParenthesis(string str)
 }
 
 // 4 sort a stack
-// top bda and niche wale element chote
+// top bda and niche wale element chote  pop ke baad
 
 void insertSorted(stack<int> &s, int target)
 {

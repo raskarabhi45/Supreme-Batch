@@ -1,3 +1,6 @@
+//############################################################
+// oddOccurance using binary search remianing
+
 #include<iostream>
 #include<vector>
 #include<algorithm>
@@ -16,7 +19,7 @@ int BinarySearch(vector<int> arr,int target)
         {
             return mid;
         }
-        if(arr[mid-1]>=0 && arr[mid-1]==target)
+        if(arr[mid-1]>=0 && arr[mid-1]==target)  
         {
             return mid-1;
         }
@@ -26,7 +29,7 @@ int BinarySearch(vector<int> arr,int target)
         }
         else if(arr[mid]>target)
         {
-            e=mid-2;
+            e=mid-2; ///bcoz baju wale hum dekh chuke hai islia yha +2 kiya hai
         }
         else
         {
@@ -49,7 +52,7 @@ int DividebyTwo(int dividend,int divisor)
 
     while(s<=e)
     {
-        //perfect solution
+        //for perfect solution
         if(abs(mid*divisor)==abs(dividend))
         {
             return mid;
@@ -68,7 +71,7 @@ int DividebyTwo(int dividend,int divisor)
         mid=s+(e-s)/2;
     }
      // for handling negative conditions
-    if((divisor<0 && dividend<0) || (divisor>0 && dividend>0))
+    if((divisor<0 && dividend<0) || (divisor>0 && dividend>0)) //for positive answer as --=+  and ++=+
     return ans;
     else
     {
@@ -78,12 +81,14 @@ int DividebyTwo(int dividend,int divisor)
 }
 
 //very important REMEMBER++++++++                          REVISE
-//first approach using xor operator very easy
+//first approach using xor operator very easy xor ^
+
 // 3 find odd occuring elements in array
 // all elements occur even number of time except one find that number which comes odd number of times
 // even odd me ans right me hoga 
 // and odd even me ans left me hoga
 // ans ka index always even index pe hoga thoda socho
+
 int oddOccurance(vector<int> arr)
 {
     int s=0;

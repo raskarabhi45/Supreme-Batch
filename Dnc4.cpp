@@ -1,4 +1,8 @@
 //divide and conquer 4
+// /almost Doneeeeeeeeeeeeeeeeeee
+// niche wala bcha hai leetcode wala 
+
+
 //n queen problem  8 type of movememnts
 //n queen such that no queen can attack each other
 //output
@@ -45,6 +49,8 @@ bool isSafe(int row,int col,vector<vector<int>> &board,int n)
     int i=row;
     int j=col;
 
+    //mai sirf 3 movement check krta hoo
+
     //check now
     while(j>=0)
     {
@@ -87,7 +93,7 @@ bool isSafe(int row,int col,vector<vector<int>> &board,int n)
 
 void solve(vector<vector<int>> &board,int col,int n)
 {
-    //base case
+    //base case  //sare ke sare column me agr hum queen place kr paye  to
     if(col>=n)
     {
         printSolution(board,n);
@@ -102,7 +108,7 @@ void solve(vector<vector<int>> &board,int col,int n)
             //safe hai to queen rakhdo
             board[row][col]=1;  //queen at the cell
 
-            //recurion solution
+            //recurion solution  agle column ke lia
             solve(board,col+1,n);
 
             //backtracking

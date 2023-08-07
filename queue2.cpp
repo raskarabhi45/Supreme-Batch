@@ -1,4 +1,8 @@
 //sunday 30th April 2023
+///////////////////////////////////////////
+//last sliding window wala question
+//##########################################
+
 //2nd lecture of stack 
 //Think about the controllables only
 //its result which puts pressure on us 
@@ -55,6 +59,7 @@ void reverseK(queue<int> &q, int k ) {
         if(k <= 0 || k > n)
                 return ;
 
+           //starting ke k variable ko stack me push kr diya
         while(!q.empty()){
                 int temp = q.front();
                 q.pop();
@@ -104,6 +109,7 @@ void interleaveQueue(queue<int> &q) {
                 if(count == k)
                         break;
         }
+        //yahapr mera first and second half alg alg ho gya hai
 
         //stepB: interleaving start krdo
         while(!q.empty() && !q2.empty()) {
@@ -114,11 +120,10 @@ void interleaveQueue(queue<int> &q) {
 
                 int second = q.front();
                 q.pop();
-
                 q.push(second);
         }
         //odd wala case
-        if(n&1) {
+        if(n&1) {  //qki q me bcha hoga wo element
                int element = q.front();
                q.pop();
                q.push(element);
@@ -126,12 +131,14 @@ void interleaveQueue(queue<int> &q) {
 }
 
 
+
+
 void solve(int arr[],int n, int k ) {
         deque<int> q;
         //process first window of size k 
         for(int i=0; i<k; i++) {
-                if(arr[i] < 0) {
-                        q.push_back(i);
+                if(arr[i] < 0) { //koi bhi -ve number mila ko q ke andruska index push krunga
+                        q.push_back(i);//q ki index se me pta lga skta ki ye elem is window me aarha hai ya nhi
                 }
         }
 
@@ -146,7 +153,7 @@ void solve(int arr[],int n, int k ) {
                 }
 
                 //out of window elements ko remove krdo
-                while((!q.empty()) && (i - q.front() >= k)) {
+                while((!q.empty()) && (i - q.front() >= k)) { //remember+++
                         q.pop_front();
                 }
 
@@ -156,7 +163,7 @@ void solve(int arr[],int n, int k ) {
 
         }
 
-        //answer print karonfor last window
+        //answer print karon for last window
        if(q.empty()) {
                 cout << 0 << " ";
         }

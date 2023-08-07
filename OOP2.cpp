@@ -1,10 +1,13 @@
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeee
 //Sunday
 //2/4/2023
 #include<iostream>
 using namespace std;
+
 //subkuch abstraction hai 
+
 //4 pillars of OOP reusability in all OOPs concepts
-// abstrcation  ex girlfriend thappd  
+// abstrcation  ex girlfriend thappd  wo nhi btayegi thappad q mari sirf mar ke chli jayegi
 // isme hm implementation hide krte hai
 // encapsulation inheritance polymorphism abstraction
 // sbke pitaji abstracion is pr base hai sare OOP concepts

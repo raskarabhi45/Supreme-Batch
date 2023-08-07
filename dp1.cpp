@@ -1,10 +1,14 @@
 // Dynamic programming lecture 1
+//#############################
+//DOneeeeeeeeeeeeeeeeeeeeeee
+//###################
+
 // DP= recursion + memorisation
 // kahavat :-> Those who forget the past are condemed to repeat it
 // past ke experience se sikho
 // jo chiz ek baar calcuate kr chuke ho use dubara calculate krne ki need nhi hai simple
 // main tumahara code optimize , TC km kr dungi , speed increases bs use store kr lena
-// DP ek tumahara dost hai vo tumhe dream company me leke hayegi for sure
+// DP ek tumahara dost hai vo tumhe dream company me leke jayegi for sure
 
 // Top- Down approach  = recurion+ memorisation
 // bottom up approach  = tabulation method = iterative way
@@ -12,7 +16,7 @@
 // ek baar jo calculate kiya hai use hum dubara calculate nhi krte
 
 // when to apply DP
-// overlapping subproblems same problame ko bar baar solve krna
+// overlapping subproblems same problam ko bar baar solve krna
 // optimal substructure optimal solution of bigger problem can be calculated by optimal solution of smaller problem
 
 // fibonacci number
@@ -22,7 +26,7 @@
 //  1 vector<int> dp(n+1,-1)
 //  2 ans ko store kro dp me
 //  3 return kro dp array ko
-//  4 base case ke just baar check kto if dp[n]!=-1 //if ans laready exists
+//  4 base case ke just baad check kto if dp[n]!=-1 //means if ans laready exists
 
 #include <iostream>
 #include <vector>
@@ -41,7 +45,7 @@ int recSolve(int n)
     return ans;
 }
 
-// top dowm n se 2 tk ka solutoipn
+// top dowm n se 2 tk ka solution
 int topDownSolve(int n, vector<int> &dp)
 {
     // base case
@@ -50,13 +54,14 @@ int topDownSolve(int n, vector<int> &dp)
         return n;
     }
 
-    // step 3  check of ans already exists or not
+    // step 3  check of ans already exists or not in the dp 
     if (dp[n] != -1)
     {
         return dp[n];
     }
 
     // step 2:  replace ans in dp
+    //return krne se pehle store krlo dp me
     dp[n] = topDownSolve(n - 1, dp) + topDownSolve(n - 2, dp);
     return dp[n];
 }
@@ -74,15 +79,11 @@ int bottomUpSolve(int n) // tabulation method
         return dp[0];
     }
     dp[1] = 1;
-    // if(n==1)
-    // {
-    //     return dp[1];
-    // }
 
     // step 3  top dowm approach me n kaise travel kr rha hai uske ulta kro
     for (int i = 2; i <= n; i++)
     {
-        dp[i] = d[i - 1] + dp[i - 2];
+        dp[i] = d[i - 1] + dp[i - 2];//same expression
     }
     return dp[n];
 }

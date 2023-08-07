@@ -11,7 +11,7 @@ using namespace std;
 //     int ans=0;
 //     for(int i=0;i<arr.size();i++)
 //     {
-//         ans=ans^arr[i];  // using xor ^ operation         
+//         ans=ans^arr[i];  // using xor ^ operation  will cance out the common elem       
 //     }
 //     return ans;
 // }
@@ -245,7 +245,7 @@ int main()
 
 // 7  SORT 0s AND 1s
 //m1   sort method
-//m2    cnt 0 and 1 and then indert  in the array
+//m2    cnt 0 and 1 and then insert  in the array
 //m3  also you can do it with start  and end pointer approach
 
 //m3 more optimized

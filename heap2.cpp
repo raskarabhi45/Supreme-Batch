@@ -1,4 +1,6 @@
 // wednesday 24/5/2023
+//####################################################333
+//almost 
 
 #include <iostream>
 #include <queue>
@@ -22,6 +24,7 @@ using namespace std;
 // max heap se solve aana chahia
 // max heap ka logic kaise work krta hai
 // TC O(n)   SC O(k)
+
 // 1 kth smallest element
 int getKthSmallestElement(int arr[], int n, int k)
 {
@@ -44,7 +47,7 @@ int getKthSmallestElement(int arr[], int n, int k)
             pq.push(elem);
         }
     }
-
+//qki kth smallest elem top ke hoga dry run kro smj jaoge
     int ans = pq.top();
     return ans;
 }

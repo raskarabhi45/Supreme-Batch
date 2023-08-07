@@ -1,14 +1,18 @@
 // 17/5/2023
 // wednesday BST second lecture
+//####################################
+//Almost Done last 2 dekhne honge
+//###########################
 #include <iostream>
 using namespace std;
 
 // 1 Height and diameter of binary tree same as BST
 
 // 2 Validate Binary tree
-// approach 1 inorder
+// approach 1 inorder  that is sorted hona chahia bs
 // qki binary search ka inorder always sorted hota hai
 // approach 2 using intmin and intmax
+
 class Solution
 {
 public:
@@ -52,8 +56,7 @@ public:
         {
             return NULL;
         }
-        // case 1  dono bde hai
-
+        // case 1  dono chote hai p and  q to left mai hi milega ancestors
         if (p->val < root->val && q->val < root->val)
         {
             return lowestCommonAncestor(root->left, p, q);
@@ -112,7 +115,7 @@ Node *bstUsingInorder(int inorder[], int s, int e)
     }
 
     int mid = (s + e) / 2;
-    // mid ke lia ek node create kro
+    // mid ke lia ek node create kro qki inorder LNR
     int element = inorder[mid];
     Node *root = new Node[element];
 
@@ -145,7 +148,6 @@ public:
 
     bool findTarget(TreeNode *root, int k)
     {
-
         vector<int> inorder;
         storeInorder(root, inorder);
 

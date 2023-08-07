@@ -1,5 +1,9 @@
 //Sudoku solver 
 // 26/03/2023 Sunday
+//###########################################
+//REmaining
+// ##########################################
+
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -28,7 +32,7 @@ bool isSafe(int val,int board[][9],int curr_row,int curr_col)
     //3*3 box check
     for(int i=0;i<9;i++)
     {
-        if(board[3*(curr_row/3)+(i/3)][3*(curr_row/3)+(i%3)]==val)
+        if(board[3*(curr_row/3)+(i/3)][3*(curr_row/3)+(i%3)]==val)  //formula rememeber
         {
             return false;
         }
@@ -37,6 +41,7 @@ bool isSafe(int val,int board[][9],int curr_row,int curr_col)
     return true;
 
 }
+
 
 //this function returns true or false on basis we found solution or not
 bool solveSudoku(board[9][9],int n)

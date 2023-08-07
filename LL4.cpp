@@ -3,7 +3,9 @@
 // 22/4/23
 // pointer replacement must do in LL questions instead of data replacement
 
+// #################################################
 // little bit difficulty in problem  4 and 5 only
+//################################################
 
 #include <iostream>
 using namespace std;
@@ -91,7 +93,7 @@ bool checkPalindrome(Node *head)
     // step C start comparison
     Node *temp1 = head;
     Node *temp2 = reverseLLHead;
-    while (temp2 != NULL)
+    while (temp2 != NULL)  //or whuile(temp1!=NULL)
     {
         if (temp1->data != temp2->data)
         {
@@ -116,7 +118,7 @@ bool checkPalindrome(Node *head)
 //  |10|->|20|->|40|->
 void removeDuplicatesLL(Node *&head)
 {
-    if (head == NULL && head->next == NULL)
+    if (head == NULL && head->next == NULL)//ek elem hoga to kyahi duplicate milenge
     {
         cout << "No duplicates" << endl;
         return;
@@ -204,7 +206,7 @@ void sortZeroOneTwo(Node *&head)
 }
 
 
-// approach 2  pyari approach
+// approach 2  pyari wali approach
 
 // // zerokahead onekahead twokahead
 // |2|->|2|->|0|->|1|->|1|->
@@ -308,6 +310,7 @@ Node *sort2(Node *head)
 }
 
 
+
 // 5 add two numbers represented by linked list
 // steps
 // 1 reverse both linked list
@@ -328,15 +331,15 @@ Node *solve(Node *&head1, Node *head2)
     {
         return head1;
     }
-
+    
     // 1 reverse both ll
     head1 = reverse(head1);
     head2 = reverse(head2);
-
+   
     // 2 add both ll
     Node *ansHead = NULL;
     Node *ansTail = NULL;
-    int carry = 0;
+    int carry = 0;      
 
     while (head1 != NULL && head2 != NULL)
     {

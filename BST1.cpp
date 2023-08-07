@@ -1,9 +1,17 @@
 // sunday 14/5/2023
 // Binary search tree started
+//#######################################
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeee
+//bs deleteNodeInBST iski last wali case dekhni hogi
+//####################################
+
 // for every node values at left of node are lesser than main node
 // and for right side it is greater than node val
+//isse hi tum bohot sare questions kr paogee
 // inorder of BST is always sorted IMPPPPPPPPPPPPPP
+
 // BST ke deletion ka varition  for sure pucha jata hai interview me
+
 #include <iostream>
 #include <queue>
 using namespace std;
@@ -23,6 +31,7 @@ public:
     }
 };
 
+
 void levelOrderTraversal(Node *root)
 {
     if (root == NULL)
@@ -31,7 +40,6 @@ void levelOrderTraversal(Node *root)
     }
     queue<Node *> q;
     // initially
-
     q.push(root);
     q.push(NULL); // change here for new line
     while (!q.empty())
@@ -76,7 +84,7 @@ Node *insertIntoBST(Node *root, int data)
     }
 
     // not the first node
-    // then decide left me insert krna hai ya rigth me
+    // then decide left me insert krna hai ya right me
     if (root->data > data)
     {
         // insert in left
@@ -230,7 +238,7 @@ Node *deleteNodeInBST(Node *root, int target)
     {
         // iso ko delete krna hai
         // 4 cases
-
+         //single node hogi
         if (root->left == NULL && root->right == NULL)
         {
             // leaf node
@@ -240,7 +248,7 @@ Node *deleteNodeInBST(Node *root, int target)
         else if (root->left == NULL && root->right != NULL)
         {
             Node *child = root->right;
-            delete root;
+            delete root; //qki hme wo node delete krni hai
             return child;
         }
         else if (root->left != NULL && root->right == NULL)
@@ -249,8 +257,8 @@ Node *deleteNodeInBST(Node *root, int target)
             delete root;
             return child;
         }
-        else
-        {
+        else   //important
+        {   
             // dono child honge
             // inoder predessor of left subtree->left subtree me max val
             int inorderpre = maxValBST(root->left); // left me se max val nikal di

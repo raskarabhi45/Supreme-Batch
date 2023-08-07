@@ -1,4 +1,8 @@
 //stack assignments
+//######################################/
+//Remaining
+//#####################################
+
 #include<iostream>
 using namespace std;
 
@@ -109,17 +113,8 @@ int countRev(string s)
 }
 
 
-// 3 Next greater element in Linked list
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- */
+// 3 Next greater element in Linked list  //just go for it @Google @Microsoft @Facebook @Amazon @Netflix @Adobe
+
 class Solution {
 public:
     vector<int> nextLargerNodes(ListNode* head) {
@@ -247,7 +242,52 @@ public:
 
 //7 Check if word is valid after substutions
 
+
+//stillll not got ittt seems     little bit tougher
 //8 decode string
+class Solution {
+public:
+    string decodeString(string s) {
+        stack<string>st;
+        for(auto ch:s){
+            if(ch==']'){
+                string stringToRepeat="";
+                while(!st.empty() && !isdigit(st.top()[0])){
+                    string top=st.top();
+                    stringToRepeat+=top=="["?"":top;
+                    st.pop();
+                }
+                string numericTimes="";
+                while(!st.empty() && isdigit(st.top()[0])){
+                    numericTimes+=st.top();
+                    st.pop();
+                }
+                reverse(numericTimes.begin(),numericTimes.end());
+                int n=stoi(numericTimes);
+
+                //final decoding
+                string currdecode="";
+                while(n--){
+                    currdecode+=stringToRepeat;
+                }
+                st.push(currdecode);
+
+            }else {
+                string temp(1,ch);
+                st.push(temp);
+            }
+            
+        }
+        string ans;
+            while(!st.empty()){
+                ans+=st.top();
+                st.pop();
+            }
+        reverse(ans.begin(),ans.end());
+        return ans;
+        
+    }
+};
 
 //9 max rectangle in binary matrix
 // largest area in histogram prerequisite

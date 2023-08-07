@@ -1,5 +1,30 @@
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+
 #include<iostream>
 using namespace std;
+
+//print all prime numbers from 1 to n    REMEMBER++
+void printprime(int no)
+{
+    int i,j,cnt;
+    for(i=2;i<no;i++)
+    {
+        cnt=0;
+        for(j=1;j<=i;j++)
+        {
+            if(i%j==0)
+            {
+                cnt++;
+            }
+
+        }
+        if(cnt==2)
+        {
+            cout<<i<<endl;
+        }
+        
+    }
+}
 
 // //Uncle Babbar print kr lena 
 void printName()       //function defination
@@ -118,28 +143,6 @@ void Prime(int no)
     }
 }
 
-//print all prime numbers from 1 to n    REMEMBER++
-void printprime(int no)
-{
-    int i,j,cnt;
-    for(i=2;i<no;i++)
-    {
-        cnt=0;
-        for(j=1;j<=i;j++)
-        {
-            if(i%j==0)
-            {
-                cnt++;
-            }
-
-        }
-        if(cnt==2)
-        {
-            cout<<i<<endl;
-        }
-        
-    }
-}
 
 
 

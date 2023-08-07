@@ -104,7 +104,7 @@ public:
             }
             while(blen--)
             {
-              headB=headB->next;
+              headB=headB->next;//to B hum aage se start krrnege
             }
         }
         else
@@ -151,7 +151,7 @@ public:
         if(right==NULL) return left;
 
         ListNode* ans=new ListNode(-1);
-        ListNode* mptr=ans;
+        ListNode* mptr=ans; //merge pointer
         while(left && right)
         {
             if(left->val<=right->val)
@@ -267,7 +267,7 @@ public:
 
 
 // 5 flatten linked list
-//in sumple way sarii linked list ko merge krna hai bs
+//in simple way sarii linked list ko merge krna hai bs
 
 Node* merge(Node* a,Node* b)
 {

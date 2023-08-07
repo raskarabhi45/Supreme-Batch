@@ -1,9 +1,12 @@
 // queue 3rd lecture
+//###########################################
+//revise AGAIN
+////#######################################
 #include <iostream>
 #include <queue>
 using namespace std;
 
-// 1
+// 1 first non- repeating character in a string
 string solve(string str)
 {
     int freq[26] = {0};
@@ -16,7 +19,7 @@ string solve(string str)
         char ch = str[i];
 
         // increment frequency
-        freq[ch - 'a']++;
+        freq[ch - 'a']++; //aski of a=97 mapping 0 se krne le lia -'a' kr rhe hai
         // q.push
         q.push(ch);
 
@@ -24,15 +27,15 @@ string solve(string str)
         {
             if (freq[q.front() - 'a'] > 1)
             {
-                q.pop();
+                q.pop(); //repeated he to pop kr diya
             }
             else
             {
-                ans.push_back(q.front());
+                ans.push_back(q.front()); //non repeated mila to push kr diya
                 break;
             }
         }
-
+ //agr hme non repeating character nhi mila to # push kr diya
         if (q.empty())
         {
             ans.push_back('#');
@@ -50,7 +53,9 @@ int main()
     return 0;
 }
 
-// 2
+
+//little bit tricky
+// 2/petrol station wala problme
 class Solution
 {
 public:
@@ -67,16 +72,16 @@ public:
         for (int i = 0; i < gas.size(); i++)
         {
             balance += gas[i] - cost[i];
-            if (balance < 0)
+            if (balance < 0) //petrol km pd gys
             {
                 // yahi pr galti hogi
-                deficit += abs(balance);
+                deficit = deficit+ abs(balance);
                 start = i + 1;
                 balance = 0;
             }
         }
 
-        if (balance >= deficit)
+        if (balance >= deficit) //circle comple ho gya hai
         {
             return start;
         }
@@ -88,7 +93,8 @@ public:
 };
 
 
-// 3
+//yahapr wwindoiw me sbse pehla maximum number btana hai
+// 3  maxSlidingWindow
 class Solution
 {
 public:
@@ -105,7 +111,7 @@ public:
             {
                 dq.pop_back();
             }
-            // inserting index, so tht we can checkout of window element
+            // inserting index, so that we can checkout of window element
             dq.push_back(i);
         }
 
@@ -116,12 +122,12 @@ public:
         for (int i = k; i < nums.size(); i++)
         {
             // out of window element ko remove krdia
-            if (!dq.empty() && i - dq.front() >= k)
+            if (!dq.empty() && i - dq.front() >= k) //same last lecture jaisa
             {
                 dq.pop_front();
             }
 
-            // ab ferse current element k liyue chotte element
+            // ab firse current element k liyue chotte element
             // ko remove krna h
             while (!dq.empty() && nums[i] >= nums[dq.back()])
             {

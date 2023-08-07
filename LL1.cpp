@@ -1,4 +1,6 @@
 // Saturday 8/4/2023;
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+
 // Linked List started
 // dynamically grow //shrink
 // non-continuous memory allocation
@@ -130,7 +132,7 @@ int findLength(Node *&head)
 // insertion  at position position and value basis
 void insertAtPosition(Node *&head, Node *&tail, int data, int pos)
 {
-    if (pos == 0)
+    if (pos == 1)
     {
         insertAtHead(head, tail, data);
         return;
@@ -153,7 +155,7 @@ void insertAtPosition(Node *&head, Node *&tail, int data, int pos)
     // step 1 find that position
     int i = 1;
     Node *prev = head;
-    while (i < pos)
+    while (i < pos-1)
     {
         prev = prev->next;
         i++;
@@ -244,7 +246,7 @@ Node *reverseusingLoop(Node *head)
 
     while (curr != NULL)
     {
-        Node *forward = curr->next;
+        Node *forward = curr->next;   ///aage ki LL Kho na jaye is lia
         curr->next = prev;
         prev = curr;
         curr = forward;

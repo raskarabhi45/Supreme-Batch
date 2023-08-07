@@ -1,3 +1,5 @@
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeee
+
 //saturday 11/02/2023
 //Recursion 2
 #include<iostream>
@@ -141,7 +143,7 @@ void checkKey(string &str,int i,char &key,vector<int>&v)
 // using recursion  
 void digits(int no)
 {
-    //base case
+    //base case working my code
     // if(no>0)
     // {
     //     int digit=no%10;

@@ -1,5 +1,7 @@
 // 12/5/2023
 // friday
+//#####################################
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 // tree 3rd lecture
 #include <iostream>
 using namespace std;
@@ -121,18 +123,18 @@ Node *buildTreeFromPostOrderInOrder(int inorder[], int postorder[], int &postInd
         return NULL;
     }
 
-    // A
+    // step A
     int element = postorder[postIndex];
     postIndex--;
     Node *root = new Node(element);
 
     int pos = findPosition(inorder, size, element);
 
-    // step B root ka left
-    root->left = buildTreeFromPostOrderInOrder(inorder, postorder, size, postIndex, pos + 1, inorderEnd);
+    // step B root ka right
+    root->right = buildTreeFromPostOrderInOrder(inorder, postorder, size, postIndex, pos + 1, inorderEnd);
 
-    // step C root ka right
-    root->right = buildTreeFromPostOrderInOrder(inorder, preorder, size, postIndex, inorderStart, pos - 1);
+    // step C root ka left
+    root->left = buildTreeFromPostOrderInOrder(inorder, preorder, size, postIndex, inorderStart, pos - 1);
 
     return root;
 }
@@ -141,7 +143,7 @@ Node *buildTreeFromPostOrderInOrder(int inorder[], int postorder[], int &postInd
 
 // 3 homeword
 //  build tree from preorder and postorder
-
+//bhaiya ne bhi isli lecture me liya hai bs code nhi kiya
 // homework
 // zigzag
 // boundary

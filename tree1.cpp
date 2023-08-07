@@ -1,5 +1,9 @@
 // tree lecture start
-// 5/5/2023
+//#####################################
+//DONEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+// /######################################
+
+// 5/5/2023 its May
 // friday
 // again same repreated on  saturday 6/5/2023 qki bhaiya ki friday wala lecture achha nhi lga bt bdiya tha O bhi
 // node root parent child sibling(same level pe exist kr rhe he)

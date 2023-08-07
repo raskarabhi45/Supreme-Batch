@@ -171,15 +171,15 @@ using namespace std;
 // for(int i=0;i<n;i++)
 // {
 //     int index=abs(arr[i]);
-//     if(arr[index-1]>0)
+//     if(arr[index-1]>0) //coz array index strating from zero
 //     {
-//         arr[index-1]*=-1;
+//         arr[index-1]*=-1; //mark visited that is -1
 //     }
 // }
 
 // for(int i=0;i<n;i++)
 // {
-//     if(arr[i]>0)
+//     if(arr[i]>0)  //agr not visited mila to vhi wala number missing hai
 //     cout<<i+1<<" ";
 // }
 
@@ -378,7 +378,87 @@ vector<int> commonElement(int a[],int b[],int c[],int n1,int n2,int n3)
 // };
 
 
-//9 factorial of large number
+//8 Add two numbers represented by 2 array   GFG
+//same like adding  two LL
+class Solution{
+    public:
+    string calc_Sum(int *a,int n,int *b,int m){
+    // Complete the function
+    string ans;
+    int i=n-1;
+    int j=m-1;
+    int carry=0;
+    
+    while(i>=0 && j>=0){
+        int x=a[i]+b[j]+carry;
+        int digit=x%10;
+        carry=x/10;
+        ans.push_back(digit+'0');  //for storing in string we added '0'
+        i--,j--;
+    }
+    
+    while(i>=0){
+        int x=a[i]+carry;
+        int digit=x%10;
+        carry=x/10;
+        ans.push_back(digit+'0');
+        i--;
+    }
+    
+    while(j>=0){
+        int x=b[j]+carry;
+        int digit=x%10;
+        carry=x/10;
+        ans.push_back(digit+'0');
+        j--;
+    }
+    
+    if(carry){
+        int x=carry;
+        ans.push_back(x+'0');
+    }
+    
+    while(ans[ans.size()-1]=='0'){ //qki niche hum reverse kr rhe hai to last me zero hai O aage aayenge na so pop krdo
+        ans.pop_back();  
+    }
+    
+    reverse(ans.begin(),ans.end());
+    return ans;
+    
+    
+    }
+};
+
+
+//################################
+//9 factorial of large number  GFG
+
+class Solution {
+public:
+    vector<int> factorial(int N){
+        // code here
+        //for big number we cant store fact in int so that here we are storing that in array
+        vector<int> ans;
+        ans.push_back(1); //initialize iwth 1
+        int carry=0;
+        for(int i=2;i<=N;i++){
+            for(int j=0;j<ans.size();j++){ //main LOGIC
+                int x=ans[j]*i+carry;
+                ans[j]=x%10; //remainder
+                carry=x/10;  //carry
+            }
+            while(carry){ //if carry exists
+                ans.push_back(carry%10); //for bda carry
+                carry=carry/10;
+            }
+            
+        }
+        
+        reverse(ans.begin(),ans.end());
+        return ans;
+        
+    }
+};
 
 
 

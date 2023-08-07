@@ -154,5 +154,5 @@ int main()
 }
 //homework
 //padding and greedy algorithm
-//memory lean
+//memory leak
 //garbage collection

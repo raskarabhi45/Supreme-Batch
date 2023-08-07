@@ -1,4 +1,7 @@
 // saturday 13/5/2023
+//########################################
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeee
+//###################################
 //  tree third lecture
 
 #include <iostream>
@@ -136,12 +139,15 @@ int height(Node *root)
 	return ans;
 }
 
+//very east
+//just level order traversal kiya hai
+//jb bhi mere pas koi nya Horizontal dist aayega to me store kr lunga
 void printTopView(Node *root)
 {
 	if (root == NULL)
 		return;
                             //Horizontal Distance
-	/// create a map for storing HD -> TopNode ->data
+	/// create a map for storing HD se TopNode ->data
 	map<int, int> topNode;
 	// Level Order
 	// we will store a pair consisting of Node and Horizontal Distance
@@ -153,13 +159,13 @@ void printTopView(Node *root)
 		pair<Node *, int> temp = q.front();
 		q.pop();
 
-		Node *frontNode = temp.first;
-		int hd = temp.second;
+		Node *frontNode = temp.first; //Node nikali
+		int hd = temp.second;  //dist nikala
 
 		// jo bhi horizontal distance aaya h , check if answer for that hd already exists
 		// or not
 
-		if (topNode.find(hd) == topNode.end())
+		if (topNode.find(hd) == topNode.end())//mtlb search krte krte end tk pohch gye to nhi mila
 		{
 			// means nhi mila to crete entry
 			topNode[hd] = frontNode->data;
@@ -181,7 +187,7 @@ void printTopView(Node *root)
 }
 
 
-
+//very simple yahape bs hme horizintal dist update krte rehna hai
 // 2 bottomm view
 
 void printBottomView(Node *root)
@@ -223,19 +229,21 @@ void printBottomView(Node *root)
 	}
 }
 
+//level order se bhi krna hai homework hai
+//muze hr level ki first node chahia
 // 3 left view
 void printLeftView(Node *root, vector<int> &ans, int level)
 {
 	// base case
 	if (root == NULL)
 		return;
-
+    //observationn of printing level   wise left view
 	if (level == ans.size())
 	{
 		ans.push_back(root->data);
 	}
 
-	// left
+	//pehle left me jana hai
 	printLeftView(root->left, ans, level + 1);
 	// right
 	printLeftView(root->right, ans, level + 1);
@@ -253,13 +261,16 @@ void printRightView(Node *root, vector<int> &ans, int level)
 		ans.push_back(root->data);
 	}
 
-	// right
+	// right me jana hai
 	printRightView(root->right, ans, level + 1);
 
 	// left
 	printRightView(root->left, ans, level + 1);
 }
 
+
+
+//5 Boundary Traversalll
 
 void printLeftBoundary(Node *root)
 {
@@ -288,6 +299,7 @@ void printLeafBoundary(Node *root)
 	// base case
 	if (root == NULL)
 		return;
+		//leaf mila to print krlo
 	if (root->left == NULL && root->right == NULL)
 	{
 		cout << root->data << " ";
@@ -312,9 +324,10 @@ void printRightBoundary(Node *root)
 	{
 		printRightBoundary(root->left);
 	}
-
+  //qki right me backtrack aate vkt print krna haiaaa
 	cout << root->data << " ";
 }
+
 
 // 5 boundary traversal
 void boundaryTraversal(Node *root)

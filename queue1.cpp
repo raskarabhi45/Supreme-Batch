@@ -92,6 +92,7 @@ public:
 
 // Circular queue
 // front==rear==-1 at start
+
 class CQueue
 {
 public:
@@ -124,7 +125,7 @@ public:
             // rear++;
         }
 
-        // circular nature
+        // circular nature rear ko firse aage se lao
         else if (rear == size - 1 && front != 0)
         {
             rear = 0;
@@ -155,7 +156,7 @@ public:
             rear = -1;
         }
 
-        // cricular nature maintain
+        // cricular nature maintain sare pop krne ke baad
         else if (front == size - 1)
         {
             front = 0;
@@ -263,6 +264,7 @@ public:
         if (front == -1)
         {
             cout << "Q is empty" << endl;
+            return ;
         }
 
         // single element check /q empty ho gyi to front rear=-1
@@ -300,7 +302,7 @@ public:
             rear = -1;
         }
         // cricular nature maintain
-        else if (rear == 0)
+        else if (rear == 0) //q ki pop hai
         {
             rear = size - 1;
         }

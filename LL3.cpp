@@ -1,9 +1,11 @@
 // friday
 // 21/04/2023
+///Doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+
 #include <iostream>
 using namespace std;
 
-/// problems
+/// problems on Linked List
 
 class Node
 {
@@ -171,7 +173,7 @@ bool checkForLoop(Node *&head)
 }
 
 // 5 starting point of loop find kro
-// step A slow nad fast ko meet kravo taki pta chle loop hai
+// step A slow and fast ko meet kravo taki pta chle loop hai
 // step B  slow ko start se shuru kro
 // step C fir jaha slow and fast meet kegenge no wo starting point hoga
 // Starting point of loop is 50
@@ -250,7 +252,7 @@ void removeLoop(Node *&head)
         slow = slow->next;
         fast = fast->next;
     }
-    prev->next = NULL;
+    prev->next = NULL;  //here we are breaking the loop
 
     // slow
 }

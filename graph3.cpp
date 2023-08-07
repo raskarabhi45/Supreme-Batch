@@ -1,14 +1,18 @@
 // graph 3rd lecture
+//#########################################
+//almost done na but topo by BFS remaiining
+//#################################
 // /special class very important
 // topological sort..............
 // konse question me topological sort lgaoge isme dimak lgega baki ye aasaan hai
+//online test me bohot jyada pocha jata hai
 
 // questions very important
 // rotton oranges
 // number of irland
 // burning tree
 // bridge in graph
-// snake and ladder problme
+// snake and ladder problem
 
 // ek baaat dhyan me rkho interviwer tumhe yhi sare concept puchecha exact as it is but
 // wo ek kahani bnake puchega taki tumhe lge kuch nya puch liya
@@ -31,6 +35,9 @@ using namespace std;
 // vvvimp
 //  cyclic graph ke andar  topological sort ke andar kbhi ki topological sort ki length number of nodes ke equal nhi holgi
 // length !=nodes
+
+//hr edge ke lia u v se  pehle aa rha hai
+
 
 template <typename T>
 class Graph
@@ -105,6 +112,8 @@ public:
 	}
 
 	// topological sort using dfs
+	//isme stack ki need pdegi
+	//same just  little change
 	void topoSortDfs(int src, unordered_map<int, bool> &visited, stack<int> &ans)
 	{
 
@@ -122,11 +131,14 @@ public:
 		ans.push(src);
 	}
 
+
+
+
 	// kahns agorithm
 	// queue ke andar vahi aayega jo independent  hoga jiski indegree 0 hogi jo kisipe depened hoga jiske piche koi node nhi hogi
 	void topoSortBfs(int n, vector<int> &ans)
 	{
-		queue<int> q;
+		queue<int> q; //q ke andr vhi aayega vo indepened hoga yani aazaf hoga
 		unordered_map<int, int> indegree; // to store the indegree that is connected number of graphs
 
 		// indegree calculate
@@ -159,7 +171,7 @@ public:
 
 			for (auto nbr : adjList[fNode])
 			{
-				indegree[nbr]--;
+				indegree[nbr]--;  //jb bhi remoce krto hai to indegree ko -1 krdo
 				// check for zero again
 				if (indegree[nbr] == 0)
 				{

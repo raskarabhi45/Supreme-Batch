@@ -2,7 +2,10 @@
 //25/03/2023
 //Sunday
 
-// 1 Generate parynthesis leetcodef
+//Almost Done but revise
+
+// 1 Generate parynthesis leetcode
+//just include exclude patern
 class Solution {
 public:
    
@@ -15,16 +18,16 @@ public:
            return;
        }
       //include open bracket
-       if(open!=0)
+       if(open!=0) //agr open wale brackets available hai to
        {
            string op1=op;
            op1.push_back('(');
            solve(open-1,close,op1,v);
-           //backtrack
-           op.pop_back();
+           //backtrack recursive call se aane ke baaad
+           op.pop_back(); 
        }
        //include close bracket
-       if(close>open)
+       if(close>open)     //REVISEEE
        {
            string op2=op;
            op2.push_back(')');
@@ -75,6 +78,7 @@ class Solution {
 public:
     vector<string> letterCombinations(string digits) {
         vector<string> ans;
+        //emptry string ke lia array empty send krna hai
         if(digits.length()==0)
         {
             return ans;

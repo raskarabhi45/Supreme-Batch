@@ -1,5 +1,9 @@
 // friday 28/4/23
 // stack last lecture
+//####################################################
+// Dekhna pdega acchese
+//####################################################
+
 // 1 Min stack
 #include <iostream>
 #include <vector>
@@ -61,7 +65,7 @@ using namespace std;
 //                 st.push(i);
 //             }
 //             else
-//             {
+//             { //2 case   //close me pop krrhe hai
 //                 st.pop();
 //                 if(st.empty())
 //                 {
@@ -143,6 +147,9 @@ vector<int> nextSmaller(vector<int> &input)
         return ans;
 }
 
+
+//hum yahapar
+//prevsmaller elem tk extend krte hai and right side me next smaller eleemnt
 int getRectangularAreaHistogram(vector<int> &height)
 {
 
@@ -164,7 +171,7 @@ int getRectangularAreaHistogram(vector<int> &height)
                         next[i] = size;
                 }
 
-                int width = next[i] - prev[i] - 1;
+                int width = next[i] - prev[i] - 1; //formula by observation
 
                 int area = length * width;
                 maxArea = max(maxArea, area);

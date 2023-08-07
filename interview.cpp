@@ -18,12 +18,12 @@
 //1 English (your 1st choice) just talk  prefer this
 //2 Hinglish (thoda Hindi and Thoda English)
 //3 Hindi
-//articulate krna hai yani ek flow me answer dena chaihia
+//articulate krna hai yani ek flow me answer dena chahia
 //Precise rehna hai aapko
 //limited consize answer dena hai
 //aurrr HERO nhi bnnnaa hai
 
-//  EXPECTATION: ye honi chahia ki samne wali interviewer hi hai
+//  EXPECTATION: ye honi chahia ki samne wala interviewer hi hai
 //hme  question ko poora listen krna hia
 //interviewer ko lgna chahia ki........
 ///////////////HE IS A PROFESSIONAL: GUY
@@ -31,7 +31,7 @@
 //PROBLEM SOLVING SKILL : achhi honi hi chahiya 
 //revise krna pdta hai bohot qki ye temporary store rehta hai
 //islia practice krooa
-//atleast daily 1 queation
+//atleast daily 1 question
 //CONSISTANCY matters
 
 //CODE KAISE KRNA HIA
@@ -57,12 +57,12 @@
 //dr ko minimize kaise kre
 //ek lambi saas bhre and chod de
 //mock interview very importnt
-// seriousness honi chahia frienda me
+// seriousness honi chahia friends me
 //ya fir front camera on krke try kro and fir mirror me dekhke kro
-//interviewer tumhe hmesh help hi krta hai
+//interviewer tumhe hmesha help hi krta hai
 
 //agr tumhe code pta hai
-//agr wo tumhe nhi lena chahta to dificlut question puchega
+//agr wo tumhe nhi lena chahta to difiicul question puchega
 //to tumhe tumhara best krna hai
 //brute force
 //optimize

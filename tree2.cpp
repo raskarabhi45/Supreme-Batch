@@ -1,6 +1,9 @@
 // sunday 7/5/2023
 // tree second lecture
+//#########################################
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 //#########################4th problem
+
 #include <iostream>
 using namespace std;
 
@@ -43,7 +46,6 @@ bool isBalanced(TreeNode *root)
 }
 
 
-
 // 2 very important question
 //  chech weather binary tree is sum tree or not
 // or convert binary tree into sum tree
@@ -62,6 +64,7 @@ int converIntoSumTree(Node *root)
 
     return root->data;
 }
+
 
 // 3 lowest common ancestors
 
@@ -125,7 +128,7 @@ bool kthAncestor(Node *root, int k, Node *p)
 
     // waps aa rhe honge
     // check left ye right mai answer mila ya nhi
-    if (leftAns || rightAns)
+    if (leftAns || rightAns) //left me ya right me hi tree mila hoga
     {
         k--;
     }
@@ -133,8 +136,10 @@ bool kthAncestor(Node *root, int k, Node *p)
     if (k == 0)
     {
         cout << root->data;
-        return leftAns || rightAns;
+        k=-1;
+        
     }
+    return leftAns || rightAns;
 }
 
 // 5 path sum 2 leetcode reviseeeeeeeeeeeeeeee
@@ -149,7 +154,7 @@ public:
             return;
         }
 
-        // leaf node
+        // leaf node pe pohche to check kro currsum  target sum ke brabr hue ya nhi 
         if (root->left == NULL && root->right == NULL)
         {
             // include curr node
@@ -160,6 +165,7 @@ public:
             {
                 ans.push_back(path);
             }
+
             // exclude   //backtracking
             path.pop_back();
             currSum = currSum - root->val;
@@ -173,7 +179,8 @@ public:
 
         solve(root->left, targetSum, currSum, path, ans);
         solve(root->right, targetSum, currSum, path, ans);
-
+ 
+        //waps aate vkt 
         // backtrack
         path.pop_back();
         currSum = currSum - root->val;

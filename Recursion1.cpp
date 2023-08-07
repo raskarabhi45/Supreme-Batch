@@ -1,3 +1,5 @@
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeee
+
 // 10/03/2023 friday
 // Recursion 
 //magical line
@@ -29,7 +31,6 @@ int fact(int no)
     }
     int ans=no*fact(no-1);
     return ans;
-
 }
 
 

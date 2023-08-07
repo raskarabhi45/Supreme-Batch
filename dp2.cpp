@@ -1,4 +1,7 @@
 // dynamming programming lecture lecture 2
+//#######################################
+//Almost done
+//######################################
 //  only 2 problems
 #include <iostream>
 using namespace std;
@@ -65,18 +68,21 @@ public:
         return dp[amount];
     }
 
+//revise again
+   //Tabulation method
     // bottom up approach
     int solveTab(vector<int> coins, int amount)
     {
         vector<int> dp(amount + 1, INT_MAX)
             dp[0] = 0;
         // bottom hum 0 se target tk jayenge
+        //bt zero already assign kiya hai upr so 1 se start kro
         for (int target = 1; target <= amount; target++)
         {
             for (int j = 0; j < coins.size(); j++)
             {
-                if (target - coins[j] >= 0)
-                    &&dp[target - coins[j]] != INT_MAX;
+                if (target - coins[j] >= 0)  //
+                    && dp[target - coins[j]] != INT_MAX;
                 {
                     int ans = dp[target - coins[j]];
                     dp[target] = min(dp[target], 1 + ans);
@@ -123,6 +129,7 @@ class Solution {
 public:
 
    //n-> represents the index of current house
+   //include exclude pattern
    int solveUsingRecursion(vector<int> &nums,int n)
    {
        if(n<0)
@@ -133,8 +140,9 @@ public:
        {
            return nums[0];
        }
-
-       int include=solveUsingRecursion(nums,n-2)+nums[n];  //include
+       
+       //jb pehla include krte hai tb 
+       int include=solveUsingRecursion(nums,n-2)+nums[n];  //include isme nums[n] inlcude kr rhe hai
        int exclude=solveUsingRecursion(nums,n-1)+0;  //exclude
 
        return max(include,exclude);
@@ -173,7 +181,7 @@ public:
        for(int i=1;i<n;i++)
        {
            int temp=0;
-           if(i-2>=0)
+           if(i-2>=0) //check i-2 >0 or not valid index
            { 
                temp=dp[i-2];
                
@@ -190,6 +198,7 @@ public:
    }
 
 //with space optimisation
+//qki 2 pe hi depenedent hai prev1 and prev2
    int solveUsingTabulation(vector<int> & nums,int n)
    {
        prev2=0;

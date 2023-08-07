@@ -1,3 +1,9 @@
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+  //check once again
+    // int a=5;
+    // cout<<(++a)*(++a)<<endl;
+    //ans is 49
+    
 #include<iostream>
 using namespace std;
 
@@ -89,10 +95,7 @@ int main()
     
 
 
-    //check once again
-    // int a=5;
-    // cout<<(++a)*(++a)<<endl;
-    //ans is 49
+  
 
     //increment and decrement operators
 

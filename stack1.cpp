@@ -1,4 +1,7 @@
 // stack started
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+//################################################
+//just look again for middle element of a stack
 // sunday 23/4/2023
 // follows LIFO order last in first out order
 //**************middle element

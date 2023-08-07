@@ -1,7 +1,8 @@
 //# 22/2//2023
 //#Divide and  Conquer
 //wednesday
-//tooo easy just focus more
+//tooo easy 
+//Doneeeeeeeeeeeeeeeeeeeeeeeee
 
 #include<iostream>
 #include<vector>
@@ -14,9 +15,9 @@ bool isSafe(int i,int j,int row,int col,int arr[3][3],vector<vector<bool>> & vis
    // 1 x and y 2d array ke andar ane chahia
    //2 array ke andr us cell pr one pda hona chahia
    //3 visited false hona chahia pehle visit nhi
-   if(((i>=0 && i<=row) &&(j>=0 && j<=col) 
-   && ( arr[i][j]==1) 
-   && (visisted[i][j]==false)))
+   if(((i>=0 && i<=row) &&(j>=0 && j<=col) //range me hone chahia i and j
+   && ( arr[i][j]==1)    // vhapr jana possible hona chahia
+   && (visisted[i][j]==false)))  //visited nhi hona chahia pehle se
    {
       return true;
    }
@@ -36,6 +37,7 @@ void solveMaze(int arr[3][3],int row,int col,int i,int j,vector<vector<bool>> &v
       path.push_back(output);   
       return;
    }
+   //simple 4 direction me to move krna hai bs
 
    //DLRU
    //down i+1,j
@@ -88,6 +90,7 @@ void solveMaze(int arr[3][3],int row,int col,int i,int j,vector<vector<bool>> &v
       //op printing the results
           //  DDRR DRDR
           if(maze[0][0]==0)
+          //jb starting point hi zeroo hoga
           {
             cout<<"No path exists"<<endl;
           }

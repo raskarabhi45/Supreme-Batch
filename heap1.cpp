@@ -1,4 +1,7 @@
 //Heap lecture 1
+//###################################
+//almost doneeeeeeeeeee
+//################################
 //sunday 21/5/2023
 #include<iostream>
 using namespace std;
@@ -12,9 +15,11 @@ using namespace std;
 //uska visualization trees ki trh krenge
 //max heap property
 //current node apne child se bdi hogi
+
 //mean heap property
 //current node apne child se choti hogi
 
+///formulas
 //parent to child
 // index 1 
 //parent i pe hoga tb
@@ -60,29 +65,31 @@ class heap
     void insert(int value)
     {
         //val insert kro end me
-        size=size+1;
+        size=size+1; //size bdha do
         int index=size;
         arr[index]=value;
 
         //is value ko place at correct position
-        while(index>1)
+        while(index>1)  //jb tk index greater than one hei means parent tk chekc krenege
         {
             int parentIndex=index/2;
 
             if(arr[index]>arr[parentIndex])
             {
                 swap(arr[index],arr[parentIndex]);
-                index=parentIndex;
+                index=parentIndex; //update the index
             }
             else
-            {
+            {//means curr elem parentIndex se chota hai
                 break;
             }
         }
     }
+    //jb bhi hum heap me delete operation krte hai to hum root ko hi delete krte haiii 
       //too easy just understood by visualizing BST
       //deletion in heap
       //1 replace last val with root node
+      //delete krne ke baaad
      //2 root node curr position
      //pehle walo ko delete krna hai
      public:
@@ -96,12 +103,12 @@ class heap
         int index=1;
         while(index<size)
         {
-            int ans=arr[1];
-            int left=2*index;
-            int right=2*index+1;
+            int ans=arr[1]; //yani root node
+            int left=2*index; //left child
+            int right=2*index+1; //right child
 
             int largest=index; //starting me index ko hi largest assume krlo
-
+//hmnw jo lwdt right parent me se jo bda hai uska index store kr diya
             if(left<size && arr[left]> arr[index])  //means left me jo element hai vo bda hoga index se
             {
                largest=left;
@@ -112,13 +119,13 @@ class heap
                largest=right;
             }
 
-            if(largest ==index)
+            if(largest ==index) //agr index hi large hai no deed to update
             {
                 //val is at corrrect position
                 break;
             }
             else
-            {
+            { //
                 swap(arr[index],arr[largest]);
                 index=largest;
             }
@@ -130,11 +137,16 @@ class heap
 
 };
 
+//YAAD RKHNA YAHI HEAPIFY WALA FUNCTION BHOOLNA NHI HAI
+//HEAPIFY  hum kisi bhi array ko heap me convert kr skte
+//is node ko uske shi jgh pr pohcha do
+//for heap creation
 //build heap from array
 //1 no need to heapify leafnodes
 // n/2+1 -> no heafify
 //1 to n/2  ->heapify 
 //heap creation //heapify
+//ologn
 void heapify(int arr[],int n,int i)
 {
     int index=i;
@@ -142,6 +154,7 @@ void heapify(int arr[],int n,int i)
     int rightIndex=2*i+1;
     int largest=index;
 
+//largest ko update kr diya
         if(leftIndex<=n && arr[leftIndex]>arr[largest])
             {
                largest=leftIndex;
@@ -152,9 +165,10 @@ void heapify(int arr[],int n,int i)
                largest=rightIndex;
             }
 
+              //
             if(largest!=index)
             {
-                //left ya right child me se koi > hogya currentnode se
+                //left ya right child me se koi greater trhan hogya currentnode se
                 swap(arr[index],arr[largest]);
                 index=largest;
                 heapify(arr,n,index);  //just to create max heao from given data 
@@ -162,6 +176,7 @@ void heapify(int arr[],int n,int i)
             }
 
 }
+//n/2+1 se nth node sari leaf node hogi
 
 void buildheap(int arr[],int n)
 {
@@ -176,7 +191,6 @@ void buildheap(int arr[],int n)
 //swap first element to last
 //heapify 
 
-
 //heaSort very simple
 void heapSort(int arr[],int n)
 {
@@ -184,7 +198,7 @@ void heapSort(int arr[],int n)
     while(n!=1)
     {
         swap(arr[1],arr[n]);
-        n--;
+        n--;  //size minus
         //heapify
         heapify(arr,n,1);
     }

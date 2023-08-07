@@ -45,7 +45,7 @@ void printColWiseSum(int arr[][3],int row,int col)
         int sum=0;
         for(int j=0;j<col;j++)
         {
-            sum=sum+arr[j][i]; //only change
+            sum=sum+arr[j][i]; //only change i j ki jgh j i  bs
         }
         cout<<sum<<endl;
     }

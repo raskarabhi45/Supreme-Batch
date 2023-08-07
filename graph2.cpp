@@ -1,4 +1,7 @@
 // graph second lecture
+//#########################################
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeee
+//#################################
 
 // cycle detection 4 trike se sikhenge
 // directed BFS DFS
@@ -95,7 +98,7 @@ public:
 	{
 		queue<int> q;
 		unordered_map<int, int> parent; // to store parent ki kiska parent kon hai ye pta chle hme
-
+    //initial steps
 		q.push(src);
 		visited[src] = true;
 		parent[src] = -1;
@@ -107,12 +110,13 @@ public:
 
 			for (auto nbr : adjList[frontNode])
 			{
-				if (!visited[nbr])
-				{
-					q.push(nbr);
-					visited[nbr] = true;
-					parent[nbr] = frontNode; // frontnode hi to parent hogi neighbour ki
+				if (!visited[nbr]) //agr visited nhi hai
+				{ 
+					q.push(nbr); //q me push kro
+					visited[nbr] = true; //visited true kro
+					parent[nbr] = frontNode; //parent mark  krdo iska // frontnode hi to parent hogi neighbour ki
 				}
+				//already visisted
 				// agr koi node visited hai and jis node pe tum aa rhe hai o parent nhi hai
 				if (visited[nbr] && nbr != parent[frontNode])
 				{
@@ -124,21 +128,23 @@ public:
 		return false;
 	}
 
+//SAME LOGIC BROOOO 
 	// for undirected graph chech cycle using DFS
 	bool checkCyclicUsingDfs(int src, unordered_map<int, bool> &visited, int parent)
 	{
-
+     //source ko visited kr denge
 		visited[src] = true;
 
 		for (auto nbr : adjList[src])
 		{
-			if (!visited[nbr])
+			if (!visited[nbr]) //agr neioghbour visited nhi hai
 			{
 				bool checkAageKaAns = checkCyclicUsingDfs(nbr, visited, src); // src hi parent hoga aage ke lia
 				if (checkAageKaAns == true)
 					return true;
 			}
-			if (visited[nbr] && nbr != parent)
+			//neighbour already visited hai and pareent bhi nhi hai
+			if (visited[nbr] && nbr != parent)  //means cycle mil gyi
 			{ /// same logic as above
 				// cycle present
 				return true;
@@ -147,12 +153,19 @@ public:
 		return false;
 	}
 
+
+
+
+
+	//FOR DIRECTED GRAPH
+//muze track rkhna pdega ki kon kon si calls stack me pdi hai
 	// for directed graph cycle detection using DFS
 	bool checkCyclicDirectedGraphUsingDfs(int src, unordered_map<int, bool> &visited,
 										  unordered_map<int, bool> dfsVisited)
 	{
 
 		visited[src] = true;	// it cannot change we visited true
+		//call stack to store calls
 		dfsVisited[src] = true; // it can change again true or false that is signicant  difference
 		// is bande ki call recursion me pehle se hi pdi hai
 		// hmne dfsvisited kiya hai qki hme sare recursiom call stack chahia taki pta chle kona firse aaya hai call for cycle detection
@@ -176,7 +189,8 @@ public:
 	}
 };
 
-// BFS is remaining
+//ye badd me sikhayenge
+// BFS is remaining for  directed graph
 
 int main()
 {

@@ -1,11 +1,15 @@
 // dynamic programming lkecture 4
 // 2d array  only 1 question
+//###################################
+//Just space optimisation wala bcha hai
+//####################################
 
 #include <iostream>
 using namespace std;
 
 // 1 partition equal subset sum
 // leetcode
+
 class Solution
 {
 public:
@@ -146,6 +150,8 @@ public:
         return ans;
     }
 };
+
+
 
 // 2nd problem
 // number of dies roll with target sum

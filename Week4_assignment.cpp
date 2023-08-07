@@ -1,6 +1,11 @@
+//#####################################################
+//remaining questions
+//#####################################################
+
 #include<iostream>
 using namespace std;
 
+//done
 //1 K diff pairs in an array
 // class Solution {
 // public:
