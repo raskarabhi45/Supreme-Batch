@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-////////Assignment solutions
+//Assignment solutions
 //need to understand all once in detail
 class Node
 {

@@ -2,8 +2,8 @@
 // only three questions
 // at bottom
 //###################################################
-//Lasts question
-//#################################################
+//                  Lasts question                 //
+//###################################################
 
 #include <iostream>
 #include <queue>
@@ -33,9 +33,10 @@ public:
 	int maxVal;
 	bool validBST;
 
-	NodeData()
+	NodeData() //default constructor
 	{
 	}
+
 	NodeData(int size, int max, int min, bool valid)
 	{
 		this->size = size;
@@ -45,8 +46,8 @@ public:
 	}
 };
 
-// 1 BST to sorted Doubly Linked List
 
+// 1 BST to sorted Doubly Linked List
 void convertIntoSortedDLL(Node *root, Node *&head)
 {
 	// base case

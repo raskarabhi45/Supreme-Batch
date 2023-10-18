@@ -220,17 +220,18 @@ int sum(Node* root)
     {
         return 0;
     }
-
-    //agr leaf node ho to usko 0 krna hai
-    if(root->left==NULL && root->right==NULL)
-    {
-        int temp=root->data;
-        root->data=0;  //data update kiya
-        return temp;   //purani val return ki
-    }
+    //ye niche wala nhi likhoge to bhi chlega
+    // //agr leaf node ho to usko 0 krna hai
+    // if(root->left==NULL && root->right==NULL)
+    // {
+    //     int temp=root->data;
+    //     root->data=0;  //data update kiya
+    //     return temp;   //purani val return ki
+    // }
 
     int leftSum=sum(root->left);
     int rightSum=sum(root->right);
+    
     int temp=root->data;
     root->data=leftSum+rightSum;
     return root->data+temp;   // uper wali node niche sari ki sumhai touski sum left right ki temp ki sum hogi

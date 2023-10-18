@@ -101,7 +101,7 @@ public:
     //initial steps
 		q.push(src);
 		visited[src] = true;
-		parent[src] = -1;
+		parent[src] = -1;// qki src ka to koi parent nhi hoga n
 
 		while (!q.empty())
 		{
@@ -128,14 +128,14 @@ public:
 		return false;
 	}
 
-//SAME LOGIC BROOOO 
+// SAME LOGIC BROOOO 
 	// for undirected graph chech cycle using DFS
 	bool checkCyclicUsingDfs(int src, unordered_map<int, bool> &visited, int parent)
 	{
      //source ko visited kr denge
 		visited[src] = true;
 
-		for (auto nbr : adjList[src])
+		for (auto nbr : adjList[src]) //jitne src ke neighbour hai
 		{
 			if (!visited[nbr]) //agr neioghbour visited nhi hai
 			{
@@ -152,9 +152,6 @@ public:
 		}
 		return false;
 	}
-
-
-
 
 
 	//FOR DIRECTED GRAPH
@@ -178,7 +175,8 @@ public:
 				if (aageKaAnswer == true)
 					return true;
 			}
-			if (visited[nbr] == true && dfsVisited[nbr] == true) // loop present condition
+			//agr visited hai nrighbour and dfsvisited me O call pehle se hi pdi hai
+			if (visited[nbr] == true && dfsVisited[nbr] == true) // loop present condition  
 			{
 				return true;
 			}

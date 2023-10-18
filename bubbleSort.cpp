@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-     vector<int> brr{5, 4, 3, 2, 1, 8, 9, 7, 6};
+    vector<int> brr{5, 4, 3, 2, 1, 8, 9, 7, 6};
     int n1 = brr.size();
 
     for (int round = 0; round < n1 - 1; round++)  //or 1 se n tk lga skte hum loop

@@ -11,6 +11,7 @@ using namespace std;
 
 // //////////////////////////////////////////// very important->
 //problem solving
+
 //1 Remove all duplicate adjacent   leetcode
 //ip :s= abbcddcssscddc
 //op: as:
@@ -22,7 +23,7 @@ using namespace std;
          //int n=ans.length();
 //         while(i<s.length()) //will travserse that string
 //         {
-               // before popback check whether there is element in the array or not ...      
+               // before popback check whether there is element in the array or not ...     
 //             if(ans.length()>0 && ans[n-1]==s[i]) //ans string ke end ka last element ko s string ke curr eleme se compare kro
 //             {
 //                 ans.pop_back();
@@ -43,10 +44,10 @@ using namespace std;
 // public:
 //     string removeOccurrences(string s, string part) {
 //         int pos=s.find(part);
-//         while(pos!=string::npos)  //until we find the part of string in main string traverse
+//         while(pos!=string::npos)  // until we find the part of string in main string traverse
 //         {
-//             s.erase(pos,part.length());     //remove occurance
-//             pos=s.find(part);  //update position
+//             s.erase(pos,part.length());     // remove occurance
+//             pos=s.find(part);  // update position
 //         }
 //         return s;
 //     }
@@ -74,13 +75,12 @@ using namespace std;
 //     bool validPalindrome(string s) {
 //         int i=0;
 //         int j=s.length()-1;
-
 //         while(i<=j)
 //         {
 //             if(s[i]!=s[j])
 //             {
 //                 //ek baar i ko remove and ek bar j ko remove
-//                 return checkPalindrome(s,i+1,j) ||  checkPalindrome(s,i,j-1);                     //remember++
+//                 return checkPalindrome(s,i+1,j) ||  checkPalindrome(s,i,j-1);           // remember++
 //             }
 //             else
 //             {
@@ -103,10 +103,10 @@ using namespace std;
 // public:
 //     int findMinDifference(vector<string>& timePoints) {
 //         //step1 : convert time string to minute integer value
-//         vector<int>minutes;
+//         vector<int>minutes; //
 //         for(int i=0;i<timePoints.size();i++)
 //         {
-//             string curr=timePoints[i];
+//             string curr=timePoints[i];    
 //             int hours=stoi(curr.substr(0,2));
 //             int min=stoi(curr.substr(3,2));
 //             int totalMinutes=hours*60+min;
@@ -136,7 +136,8 @@ using namespace std;
 //     }
 // };
 
-//#######################
+
+// #######################
 //5 palindromic substrings leetcode                                 AGAIN and AGAIN
 // class Solution {
 // public:
@@ -154,7 +155,6 @@ using namespace std;
 //     return cnt;
 // }
 
-
 //     int countSubstrings(string s) {
 //         //approach 1
 //         //find all substrings
@@ -163,7 +163,6 @@ using namespace std;
 //         //approach 2 best way
 //         int cnt=0;
 //         int n=s.length();
-
 //         for(int i=0;i<n;i++)
 //         {
 //             //odd case  //i ki val i and jj ki val i

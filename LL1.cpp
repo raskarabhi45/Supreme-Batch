@@ -83,12 +83,6 @@ void insertAtHead(Node *&head, Node *&tail, int data)
         // step2
         newNode->next = head;
 
-        // step 3
-        //  if(head==NULL)
-        //  {
-        //      //empty list first node add hogi
-        //     tail=newNode;
-        //  }
         head = newNode;
     }
 }
@@ -162,10 +156,8 @@ void insertAtPosition(Node *&head, Node *&tail, int data, int pos)
     }
 
     Node *curr = prev->next;
-
     // step2 create node
     Node *newNode = new Node(data);
-
     // step3  newNode ke next ko curr
     newNode->next = curr;
     // prev ke next ko newnode

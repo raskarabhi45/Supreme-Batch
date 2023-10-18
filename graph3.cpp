@@ -14,7 +14,7 @@
 // bridge in graph
 // snake and ladder problem
 
-// ek baaat dhyan me rkho interviwer tumhe yhi sare concept puchecha exact as it is but
+// ek baaat dhyan me rkho interviewer tumhe yhi sare concept puchecha exact as it is but
 // wo ek kahani bnake puchega taki tumhe lge kuch nya puch liya
 
 #include <iostream>
@@ -127,8 +127,8 @@ public:
 			}
 		}
 
-		// while returning, store the node in stack //only change
-		ans.push(src);
+		// while returning, store the node in stack 
+		ans.push(src);         //only change
 	}
 
 
@@ -147,14 +147,14 @@ public:
 			int src = i.first;
 			for (auto nbr : i.second)
 			{ // i.second means list hogi
-				indegree[nbr]++;
+				indegree[nbr]++;  //mtlb ki ye neighbr kitno pr depend hai
 			}
 		}
 
 		// put all nodes inside queue, which has indegree=0
 		for (int i = 0; i < n; i++)
 		{
-			if (indegree[i] == 0)
+			if (indegree[i] == 0)   //means ye wala node kisipe bhi depend nhi hai
 			{
 				q.push(i);
 			}

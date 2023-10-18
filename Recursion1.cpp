@@ -1,6 +1,6 @@
 //Doneeeeeeeeeeeeeeeeeeeeeeeeeeeee
 
-// 10/03/2023 friday
+// 10/03/2023  friday
 // Recursion 
 //magical line
 //1 case solve kdro baki recursion sambhal lega
@@ -59,7 +59,7 @@ int fib(int n)
         return 0;
     }
     if(n==2)
-    {  //secon term
+    {  //second term
         return 1;
     }
     //f(n)=f(n-1)+f(n-2)

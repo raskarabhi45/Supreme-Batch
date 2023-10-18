@@ -8,7 +8,7 @@
 // past ke experience se sikho
 // jo chiz ek baar calcuate kr chuke ho use dubara calculate krne ki need nhi hai simple
 // main tumahara code optimize , TC km kr dungi , speed increases bs use store kr lena
-// DP ek tumahara dost hai vo tumhe dream company me leke jayegi for sure
+// DP ek tumahara dost hai jo tumhe dream company me leke jayegi for sure
 
 // Top- Down approach  = recurion+ memorisation
 // bottom up approach  = tabulation method = iterative way
@@ -26,7 +26,7 @@
 //  1 vector<int> dp(n+1,-1)
 //  2 ans ko store kro dp me
 //  3 return kro dp array ko
-//  4 base case ke just baad check kto if dp[n]!=-1 //means if ans laready exists
+//  4 base case ke just baad check kro if dp[n]!=-1 //means if ans laready exists
 
 #include <iostream>
 #include <vector>

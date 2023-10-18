@@ -1,7 +1,7 @@
 // 26/4/2023
 // wednesday
 //###################################################
-//Almost Done
+//Almost Done  Sort a stack wala dekhna pdega
 //###################################################
 
 // stack 2 lecture
@@ -73,9 +73,8 @@ bool isValidParenthesis(string str)
         {
             s.push(ch);
         }
-        else
+        else // closing bracket
         {
-            // closing bracket
             if (!s.empty())
             {
                 char topCh = s.top();

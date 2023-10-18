@@ -11,7 +11,7 @@ using namespace std;
 //n rows  index= 0 to n-1;
 //m col index= 0 to m-1              
 
-//VECTOR OF VECTOR
+// VECTOR OF VECTOR
 // vector<vector<int>> v;
 //VECTOR OF VECTOR
 //outer   inner datatype name

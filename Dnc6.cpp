@@ -10,7 +10,7 @@ using namespace std;
 
 bool isSafe(int val,int board[][9],int curr_row,int curr_col)
 {
-    //row check
+    //row check  agr us row me O val present hai
     for(int col=0;col<9;col++)
     {
         if(board[curr_row][col]==val)
@@ -20,7 +20,7 @@ bool isSafe(int val,int board[][9],int curr_row,int curr_col)
 
     }
 
-    //col check
+    //col check  agr us col  me O val present hai
     for(int row=0;row<0;row++)
     {
        if(board[row][curr_col]==val)
@@ -32,7 +32,7 @@ bool isSafe(int val,int board[][9],int curr_row,int curr_col)
     //3*3 box check
     for(int i=0;i<9;i++)
     {
-        if(board[3*(curr_row/3)+(i/3)][3*(curr_row/3)+(i%3)]==val)  //formula rememeber
+        if(board[3*(curr_row/3)+(i/3)][3*(curr_row/3)+(i%3)]==val)  //formula rememeber+++++++++++
         {
             return false;
         }

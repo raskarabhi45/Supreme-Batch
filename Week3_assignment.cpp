@@ -1,10 +1,8 @@
-//###################################
+//###################################...
 //Duplicate number negative marking method and third approach
 //4 find missing number   didnt understood
 //9 factorial of large number
-//###################################
-
-
+//###################################...
 
 #include<iostream>
 #include<vector>
@@ -17,7 +15,7 @@ using namespace std;
 //         //Approach 1 sort method
 //         // sort(nums.begin(),nums.end());
  
-   //Approach 2
+//             Approach 2
 //         //2 counting method
 //         // int ones,zeros,twos;
 //         // ones=zeros=twos=0;
@@ -58,10 +56,10 @@ using namespace std;
 //         //         i++;
 //         //     }
 
-//Approach  the best one
-//             //inplace shuffle 
-//             //  pointer approach
-//            //best Approach
+//             Approach  the best one
+//             // inplace shuffle 
+//             // pointer approach
+//             // best Approach
 //             int low=0;
 //             int h=nums.size()-1,i=0;
 //             while(i<=h)
@@ -111,7 +109,7 @@ using namespace std;
 
 // }
 
-//3 Find Duplicate number  Leetcode
+//3  Find Duplicate number Leetcode
 // class Solution {
 // public:
 //     int findDuplicate(vector<int>& nums) {
@@ -147,7 +145,6 @@ using namespace std;
     // return ans ;    
 
 
-
 // Approach 3 best one
 // positioning method try it once
 //     while(nums[0]!=nums[nums[0]])
@@ -155,11 +152,9 @@ using namespace std;
 //         swap(nums[0],nums[nums[0]]);
 //     }
 //     return nums[0];
-
-
-
 //     }
 // };
+
 
 
 //4 Find missing element in an array
@@ -208,47 +203,45 @@ using namespace std;
 
 // 5 find first Repeating Element
 //Remaining gfg
+// User function template in C++
 
-int firstRepeated(int arr[],int n)
-{
-    //approach 1
-    // for(int i=0;i<n;i++)
-    // {
-    //     bool isRepeated=false;
-    //     for(int j=i+1;j<n;i++)
-    //     {
-    //         if(arr[i]==arr[j])
-    //         {
-    //             isRepeated=true;
-    //             return i+1;
-    //         }
-    //     }
-    // }
-
-    // return -1;
-
-    //optimized solution
-    //approach 2
-    unordered_map<int,int>hash;
-    for(int i=0;i<n;i++)
-    {//by default 0 se initialze hota hai
-        hash[arr[i]]++;
+class Solution {
+  public:
+    // Function to return the position of the first repeating element.
+    int firstRepeated(int arr[], int n) {
+        // code here
+        //approach 1
+        //Working Time Limit exceeded
+        // int index=-1;
+        // for(int i=0;i<n;i++){
+        //     int val=arr[i];
+        //     for(int j=i+1;j<n;j++){
+        //         if(val==arr[j]){
+        //           return i+1;
+        //         }
+        //     }
+        // }
+        // return index;
+        
+        //approach 2
+       int index=-1;
+       unordered_map<int,int> mp;
+       
+       for(int i=0;i<n;i++){
+           mp[arr[i]]++;
+       }
+       
+       for(int i=0;i<n;i++){
+           if(mp[arr[i]]>1){
+               return i+1;
+           }
+       }
+       return index;
     }
-    for(int i=0;i<n;i++)
-    {
-        if(hash[arr[i]]>1)
-        {
-            //yani ki repeated hai
-            return i+1;
-        }
-    }
-    return -1;
-}
+};
 
 
-
-
-// 6  common element in 3 sorted array
+// 6  common element in 3 sorted array...
 //remaining gfg
 
 vector<int> commonElement(int a[],int b[],int c[],int n1,int n2,int n3)
@@ -432,14 +425,13 @@ class Solution{
 
 //################################
 //9 factorial of large number  GFG
-
 class Solution {
 public:
     vector<int> factorial(int N){
         // code here
-        //for big number we cant store fact in int so that here we are storing that in array
+        // for big number we cant store fact in int so that here we are stoaring that in array
         vector<int> ans;
-        ans.push_back(1); //initialize iwth 1
+        ans.push_back(1); //initialize with 1
         int carry=0;
         for(int i=2;i<=N;i++){
             for(int j=0;j<ans.size();j++){ //main LOGIC
@@ -456,7 +448,6 @@ public:
         
         reverse(ans.begin(),ans.end());
         return ans;
-        
     }
 };
 

@@ -21,7 +21,7 @@
 //articulate krna hai yani ek flow me answer dena chahia
 //Precise rehna hai aapko
 //limited consize answer dena hai
-//aurrr HERO nhi bnnnaa hai
+//aurrr HERO nhi bnnnaa hai  ##################################################
 
 //  EXPECTATION: ye honi chahia ki samne wala interviewer hi hai
 //hme  question ko poora listen krna hia
@@ -29,7 +29,7 @@
 ///////////////HE IS A PROFESSIONAL: GUY
 
 //PROBLEM SOLVING SKILL : achhi honi hi chahiya 
-//revise krna pdta hai bohot qki ye temporary store rehta hai
+//revise krna pdta hai bohot qki ye temporary store rehta hai ###########DSA#################
 //islia practice krooa
 //atleast daily 1 question
 //CONSISTANCY matters
@@ -54,15 +54,15 @@
 
 //On campus//onsite//Face to face interview
 
-//dr ko minimize kaise kre
+//dar ko minimize kaise kre
 //ek lambi saas bhre and chod de
 //mock interview very importnt
 // seriousness honi chahia friends me
 //ya fir front camera on krke try kro and fir mirror me dekhke kro
-//interviewer tumhe hmesha help hi krta hai
+//interviewer tumhe hmesha help hi krta hai         ###################Mere Pehle Interview me hi pta chl gya####################
 
 //agr tumhe code pta hai
-//agr wo tumhe nhi lena chahta to difiicul question puchega
+//agr wo tumhe nhi lena chahta to difiicult question puchega
 //to tumhe tumhara best krna hai
 //brute force
 //optimize
@@ -76,15 +76,16 @@
 //uncontrolable factors
 //LUCK 
 //mood off nhi krna hai
-//achha hua nhi hua ADOBE me me le lunga
+//achha hua nhi hua ADOBE me le lunga
 
 //VIRTUAL Interviews 
-//JO interview le rha hai 
+//JO interview le rha hai na
 //WO TUMSE   SHAAANAAA HAI
 
 //LAKSHAY BHAIYA INTERVIEW EXPERIENCEEE
-//TRUST ME AGR TUM BAAR BAAR JUST SUPREME BATCH KE QUESTIONS REVISE KROGE TO KAFII HAI BS
-//
+//#########################
+//TRUST ME AGR TUM BAAR BAAR JUST SUPREME BATCH KE QUESTIONS REVISE KROGE TO KAFII HAI BS 
+//#########################
 //TOP TECH COMPANIES HAI LIKE FAANG
 //WO JYADA Problem solving pe focus krti hai
 

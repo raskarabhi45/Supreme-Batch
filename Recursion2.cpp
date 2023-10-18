@@ -38,7 +38,7 @@ void printArray(int arr[],int n,int i)
     //ek case solve krdala
     cout<<arr[i]<<" ";
     //baki recursion sambha dega
-    printArray(arr,n,i+1);
+    printArray(arr,n,i +1);
 }
 
 //without passing index 

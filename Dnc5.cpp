@@ -1,7 +1,7 @@
 //Dnc class 5
 //25/03/2023
 //Sunday
-
+//////#####################################
 //Almost Done but revise
 
 // 1 Generate parynthesis leetcode
@@ -49,6 +49,9 @@ public:
 };
 
 
+
+
+//Phone Kaypad Leetcode
 //letter combinations of phone nmumber leetcode
 class Solution {
     private:
@@ -63,9 +66,9 @@ class Solution {
 
         // recursion
         int number=digits[index]-'0';  //to convert char to int
-        string value=mapping[number];
+        string value=mapping[number]; //us number ki mapping nikalo 
         
-        for(int i=0;i<value.length();i++)
+        for(int i=0;i<value.length();i++) //simply traverse the value wali string
         {
             output.push_back(value[i]);
             solve(digits,output,index+1,ans,mapping);

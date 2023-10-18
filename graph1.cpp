@@ -1,7 +1,7 @@
 // 17/6/2023 saturday
-//#########################################
-//Doneeeeeeeeeeeeeeeeeeeeeeeeeee
-//#################################
+// #########################################
+// Doneeeeeeeeeeeeeeeeeeeeeeeeeee
+// #################################
 
 // graph started
 // the most important the bang topic
@@ -100,7 +100,7 @@ public:
         for (auto i : adjList)
         {
             cout << i.first << "->";
-            for (auto neighbour : i.second) // i ke corresponding mapping jo ki lost me pdi hai
+            for (auto neighbour : i.second) // i ke corresponding mapping jo ki list me pdi hai
             {
                 cout << neighbour << ",";
             }
@@ -173,8 +173,8 @@ int main()
     // int n;
     // cout<<"Enter number of nodes "<<endl;
     // cin>>n;
-   //2d matrix
-    // vector<vector<int>> adj(n,vector<int>(n,0));
+    // 2d matrix
+    //  vector<vector<int>> adj(n,vector<int>(n,0));
 
     // int e;
     // cout<<"Enter number od edges "<<endl;

@@ -1,4 +1,5 @@
 //Binary Search Tree Assignments 
+//##############################Dekhna Pdega 4,7,9,11,12// Baki ho gye
 
 //1 Inorder Predecessor in BST (x)
 //method 1
@@ -16,7 +17,7 @@ Node* findPredecessor(Node* root, Node* p) {
 	
 	while(curr){
 		if(curr->data<p->data){
-			pred=curr;  //ek chota elem mil chuka hai kya pta ye pred sr ho
+			pred=curr;  //ek chota elem mil chuka hai kya pta ye predecor ho
 			curr=curr->right;    //fir uske right me check kre ye ya ha nhi
 		}
 		else{
@@ -52,9 +53,9 @@ class Solution{
         Node* curr=root;
         
         while(curr){
-            if(root->data > x->data){
+            if(root->data > x->data){ //change
                 succ=curr;
-                curr=curr->left;
+                curr=curr->left; //change
             }
             else{
                 curr=curr->right;
@@ -66,7 +67,7 @@ class Solution{
 };
 
 
-//adobe me poocha gya tha ye question Lakshahy Bhaiya se
+//adobe me poocha gya tha ye question Lakshay Bhaiya se
 //3 Build BST using Preorder traversal
 //method 1 BruteFforce
 //start se shuru krengre and insertkrte jayenge NLR
@@ -76,6 +77,7 @@ class Solution{
 // preorder se inorder nikalo and then BST bnao TC )(nlogn)+o(n)
 
 //m3 best method work in range
+//very easyyy solution just range me khelo
 class Solution {
 public:
     TreeNode* build(int &i,int min,int max,vector<int> &preorder){
@@ -102,7 +104,7 @@ public:
 
 
 //4 Brothers from different Roots
-//or COunt pair from 2 BST whoes sum is equal to given x
+//or COunt pair from 2 BST whose sum is equal to given x
 //approach 1 Brute force n2 x-root->val check kro bst2 me
 //m2
 //BST1 incresing order
@@ -219,7 +221,7 @@ public:
 
 
 //6 Find Median of BST
-//medain kya hota hai
+//median kya hota hai
 //1 odd number of elements ke case me
 //median=(n+/2)th term
 //and even number of elem me
@@ -254,11 +256,11 @@ float findMedian(struct Node *root)
       float ans=0;
       
       if (n % 2 != 0) { // odd number of elements
-        ans = in[n / 2];
+        ans = in[n / 2]; //to yhi median hoga
     } else { // even number of elements
         int t1 = in[n / 2];
         int t2 = in[(n / 2) - 1];
-        ans = (t1 + t2) / 2.0;
+        ans = (t1 + t2) / 2.0; //bich wale dono ka avg
     }
       
       return ans;
@@ -424,7 +426,7 @@ node* flatten(Node* root){
 }
 
 
-//10 Replace elements with least greater elements to ots RIght
+//10 Replace elements with least greater elements to its RIght
 //m1 using 2 for loops
 
 //m2
@@ -452,7 +454,7 @@ class Solution{
         }
         else
         {
-            //left me jayanege and succ updatye krenegfe 
+            //left me jayanege and succ updatye krenge 
             //latest succ update hoga
             succ=root->data;
             root->left=insert(root->left,val,succ);

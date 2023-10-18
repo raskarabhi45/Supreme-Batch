@@ -8,7 +8,6 @@ using namespace std;
 // 1 merge sort
 void merge(int s, int e, int *arr)
 {
-
     int mid = s + (e - s) / 2;
     int len1 = mid - s + 1;
     int len2 = e - mid;
@@ -24,13 +23,14 @@ void merge(int s, int e, int *arr)
     k = mid + 1;
     for (int i = 0; i < len2; i++)
     {
-        right[i] = arr[k++];
+        r59ight[i] = arr[k++];
     }
 
     int leftindex = 0;
     int rightindex = 0;
     int mainindex = s;
 
+//just compare
     while (leftindex < len1 && rightindex < len2)
     {
         if (left[leftindex] < right[rightindex])
@@ -43,7 +43,7 @@ void merge(int s, int e, int *arr)
         }
     }
 
-    while (leftindex < len1)
+    while (leftindex < len1)  //agr leftindex in range hai to
     { // jb tk
         arr[mainindex++] = left[leftindex++];
     }
@@ -56,7 +56,7 @@ void merge(int s, int e, int *arr)
     // delete[] right;
 }
 
-void mergesort(int s, int e, int *arr)
+void mergesort(int s, int e, int *arr)  //int arr[] =new int[33]
 {
     if (s >= e)
     {

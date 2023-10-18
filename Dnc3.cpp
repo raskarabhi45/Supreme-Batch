@@ -9,10 +9,10 @@
 using namespace std;
 
 // 1 Rat in maze problem
-
 bool isSafe(int i,int j,int row,int col,int arr[3][3],vector<vector<bool>> & visisted)
 {
-   // 1 x and y 2d array ke andar ane chahia
+   //Just 3 Condition Check krne hai bs
+   // 1 x and y 2d array ke andar ane chahia that is in range
    //2 array ke andr us cell pr one pda hona chahia
    //3 visited false hona chahia pehle visit nhi
    if(((i>=0 && i<=row) &&(j>=0 && j<=col) //range me hone chahia i and j

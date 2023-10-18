@@ -57,6 +57,7 @@ int getLength(Node *head)
         return len;
 }
 
+
 void insertAtHead(Node *&head, Node *&tail, int data)
 {
         if (head == NULL)
@@ -123,6 +124,7 @@ void insertAtPosition(Node *&head, Node *&tail, int data, int position)
                         insertAtTail(head, tail, data);
                         return;
                 }
+                
                 // insertion in middle
                 // step1: find prev && curr
                 int i = 1;

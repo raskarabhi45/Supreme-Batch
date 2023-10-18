@@ -2,7 +2,7 @@
 //########################################
 //Doneeeeeeeeeeeeeeeeeeeeeeeeeeeee
 //###################################
-//  tree third lecture
+//  tree fourth lecture
 
 #include <iostream>
 using namespace std;
@@ -54,7 +54,6 @@ void levelOrderTraversal(Node *root)
 
 	queue<Node *> q;
 	// initially
-
 	q.push(root);
 	q.push(NULL); // change here for new line
 	while (!q.empty())
@@ -139,7 +138,7 @@ int height(Node *root)
 	return ans;
 }
 
-//very east
+//very easy
 //just level order traversal kiya hai
 //jb bhi mere pas koi nya Horizontal dist aayega to me store kr lunga
 void printTopView(Node *root)

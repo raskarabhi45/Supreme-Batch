@@ -8,7 +8,7 @@
 // again same repreated on  saturday 6/5/2023 qki bhaiya ki friday wala lecture achha nhi lga bt bdiya tha O bhi
 // node root parent child sibling(same level pe exist kr rhe he)
 // ancestor (node ke upar ke sare) decendant(node ke niche kr sare)
-// leaf (is node la koi bhi child nhi hota)
+// leaf (is node la koi bhi child nhi hota...........)
 // interview questions
 // formula base questions on trees
 // 80-90% classical questions repeat krtee hai tree mai yaaaaaaad rkhna hmesha
@@ -21,6 +21,7 @@
 #include <queue>
 using namespace std;
 
+//This is our single node...
 class Node
 {
 public:
@@ -118,10 +119,10 @@ void levelOrderTraversal(Node *root)
         if (temp == NULL) // change here for new line
         {
             cout << endl;  ///agr NULL mila yani new level to new line print kro
-            if (!q.empty()) /// agr queue me elements presents hai to hi NULL dalo
+            if (!q.empty()) /// agr queue me elements presents hai to hi NULL dalo 
             {
                 q.push(NULL);
-            }
+            } 
         }
         else
         {
@@ -198,7 +199,6 @@ int height(Node *root)
     {
         return 0;
     }
-
     int leftHeight = height(root->left);
     int rightHeight = height(root->right);
 
@@ -220,7 +220,6 @@ int diameterOfBinaryTree(TreeNode *root)
     int op2 = diameterOfBinaryTree(root->right);
     int op3 = height(root->left) + height(root->right);
     // agr yha pr +1 krenge to hume number of nodes pta chlegi upr me
-
     int ans = max(op1, max(op2, op3));
     return ans;
 }

@@ -1,7 +1,7 @@
 // sunday 7/5/2023
 // tree second lecture
 //#########################################
-//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+//Doneeeeeeeeeeeeeeeeeeeeeeeeeeeeee........
 //#########################4th problem
 
 #include <iostream>
@@ -15,7 +15,6 @@ int height(struct TreeNode *node)
     {
         return 0;
     }
-
     int left = height(node->left);
     int right = height(node->right);
     int ans = max(left, right) + 1;
@@ -60,8 +59,10 @@ int converIntoSumTree(Node *root)
     int leftAns = converIntoSumTree(root->left);
     int rightAns = converIntoSumTree(root->right);
 
+    //int temp=node->data   //for gfg
     root->data = leftAns + rightAns + root->data;
 
+    //return temp+root->data;  //for gfg
     return root->data;
 }
 
@@ -78,7 +79,6 @@ public:
         {
             return NULL;
         }
-
         if (root->val == p->val)
             return p;
         if (root->val == q->val)
@@ -142,7 +142,10 @@ bool kthAncestor(Node *root, int k, Node *p)
     return leftAns || rightAns;
 }
 
+
+//easyy hai brooo
 // 5 path sum 2 leetcode reviseeeeeeeeeeeeeeee
+//tree me se O sare path dhundhne hai ki jinki sum target itni aa rhi hai just it is only
 class Solution
 {
 public:
@@ -163,7 +166,7 @@ public:
             // check for target
             if (currSum == targetSum)
             {
-                ans.push_back(path);
+                ans.push_back(path); ///egr path mil gya to simply ans pe push krdo
             }
 
             // exclude   //backtracking

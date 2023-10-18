@@ -1,6 +1,6 @@
 // wednesday 24/5/2023
 //####################################################333
-//almost 
+//almost  4 wala bcha hai
 
 #include <iostream>
 #include <queue>
@@ -17,7 +17,7 @@ using namespace std;
 // starting ke k element ka heap bnaya
 // agar new element heap ke top se chota hoga tbhi insert krunga top ko htake
 // max heap me k small elemnt hai
-// so istime top me kth smallest element hoga
+// so is time top me kth smallest element hoga
 
 // mean heap se solve krna aana chahia
 // but mean heap  q nhi lgana hai
@@ -56,7 +56,7 @@ int getKthSmallestElement(int arr[], int n, int k)
 
 getKthGreatestElement(int arr[], int n, int k)
 {
-    // create max heap
+    // create min heap
     priority_queue<int, vector<int>, greater<int>> pq;
 
     // insert initial k elements

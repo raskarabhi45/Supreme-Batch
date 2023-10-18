@@ -1,5 +1,7 @@
 // Quick sort and BackTracking
 //Doneeeeeeeeeeeeeeeeeeeeeeeeeee
+//String Permutation dekhna pdega 
+//######################
 
 //Sunday 19/3/2023
 #include<iostream>
@@ -12,7 +14,7 @@ int partition(int arr[],int s,int e)
 {
     //step1: choose pivot element
     int pivotIndex=s;
-    int pivotElement=arr[s];
+    int pivotElement=arr[s];  
 
     //step2 : find right position for pivot element and place it there    
     int cnt=0;
@@ -56,11 +58,10 @@ int partition(int arr[],int s,int e)
         swap(arr[i],arr[j]);
     }
     }
-   
-
     return pivotIndex;
 
 }
+
 
 void quickSort(int arr[],int s,int e)
 {
@@ -69,12 +70,11 @@ void quickSort(int arr[],int s,int e)
     {
         return;
     }
-
     //partition logic returns pivot index
-   int p= partition(arr,s,e);
+    int p= partition(arr,s,e);
     //recursion calls
     //pivot element ->left
-    quickSort(arr,s,p-1);       //coz povot is already placend at his right position
+    quickSort(arr,s,p-1);       //coz povot is already placed at his right position
 
     //pivot element->right
     quickSort(arr,p+1,e);                                

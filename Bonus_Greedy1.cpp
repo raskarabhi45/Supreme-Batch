@@ -66,7 +66,7 @@ int solve(int n, int arr[], int dept[])
 // 6 Fractional knapsack
 
 // val/wt sort kiya dec order
-// one by one item pick entire item and fravtional item picking
+// one by one item pick entire item and fractional item picking
 
 // 7 chocolcate distribution problem
 

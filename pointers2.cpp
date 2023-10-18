@@ -52,7 +52,7 @@ int main()
     // char* c="babbar";
     // cout<<c<<endl;
 
-    //Pointers with functions
+    //Pointers with    ...
     int arr[10]={1,2,3,4,5};
     cout<<"size inside main function : "<<sizeof(arr)<<endl;
     solve(arr);

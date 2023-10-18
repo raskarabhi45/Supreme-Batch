@@ -3,9 +3,9 @@
 // 22/4/23
 // pointer replacement must do in LL questions instead of data replacement
 
-// #################################################
-// little bit difficulty in problem  4 and 5 only
-//################################################
+//#################################################
+// little bit difficulty in problem  4 and 5 only  
+//#################################################
 
 #include <iostream>
 using namespace std;
@@ -52,7 +52,6 @@ Node *reverse(Node *head)
         prev = curr;
         curr = forward;
     }
-
     return prev;
 }
 
@@ -213,7 +212,7 @@ void sortZeroOneTwo(Node *&head)
 // |0|->|1|->|1|->|2|->|2|->
 Node *sort2(Node *head)
 {
-    if (head == NULL || head->next == NULL)
+    if (head == NULL )
     {
         return NULL;
     }

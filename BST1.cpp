@@ -1,6 +1,6 @@
 // sunday 14/5/2023
 // Binary search tree started
-//#######################################
+//####################################
 //Doneeeeeeeeeeeeeeeeeeeeeeeeeee
 //bs deleteNodeInBST iski last wali case dekhni hogi
 //####################################
@@ -10,8 +10,7 @@
 //isse hi tum bohot sare questions kr paogee
 // inorder of BST is always sorted IMPPPPPPPPPPPPPP
 
-// BST ke deletion ka varition  for sure pucha jata hai interview me
-
+// BST ke deletion ka variation  for sure pucha jata hai interview me -->
 #include <iostream>
 #include <queue>
 using namespace std;
@@ -31,7 +30,6 @@ public:
     }
 };
 
-
 void levelOrderTraversal(Node *root)
 {
     if (root == NULL)
@@ -41,7 +39,7 @@ void levelOrderTraversal(Node *root)
     queue<Node *> q;
     // initially
     q.push(root);
-    q.push(NULL); // change here for new line
+    q.push(NULL);  // change here for new line
     while (!q.empty())
     {
         Node *temp = q.front();
@@ -50,7 +48,7 @@ void levelOrderTraversal(Node *root)
         if (temp == NULL) // change here for new line
         {
             cout << endl;
-            if (!q.empty()) /// agr queue me elements presents hai to hi NULL dalo
+            if (!q.empty())    // agr queue me elements presents hai to hi NULL dalo
             {
                 q.push(NULL);
             }
@@ -58,12 +56,10 @@ void levelOrderTraversal(Node *root)
         else
         {
             cout << temp->data << " ";
-
             if (temp->left)
             {
                 q.push(temp->left);
             }
-
             if (temp->right)
             {
                 q.push(temp->right);
@@ -72,8 +68,7 @@ void levelOrderTraversal(Node *root)
     }
 }
 
-// 1 creation of BST Binary Search Tree
-
+// 1 creation of BST  Binary Search Tree
 Node *insertIntoBST(Node *root, int data)
 {
     if (root == NULL)
@@ -82,12 +77,11 @@ Node *insertIntoBST(Node *root, int data)
         root = new Node(data);
         return root;
     }
-
     // not the first node
     // then decide left me insert krna hai ya right me
     if (root->data > data)
     {
-        // insert in left
+        //  insert in left
         root->left = insertIntoBST(root->left, data);
     }
     else
@@ -95,20 +89,19 @@ Node *insertIntoBST(Node *root, int data)
         // insert into right
         root->right = insertIntoBST(root->right, data);
     }
-
     return root;
 }
 
 void takeInput(Node *&root)
 {
     int data;
-
     while (data != -1)
     {
         cin >> data;
         root = insertIntoBST(root, data);
     }
 }
+
 
 void preOrderTraversal(Node *root)
 {
@@ -117,7 +110,6 @@ void preOrderTraversal(Node *root)
     {
         return;
     }
-
     cout << root->data << " ";
     preOrderTraversal(root->left);
     preOrderTraversal(root->right);
@@ -159,7 +151,6 @@ Node *findNodeInBST(Node *root, int target)
     {
         return NULL; // answer nhi mila
     }
-
     if (root->data == target)
     {
         return root; // targte mil gya
@@ -257,7 +248,7 @@ Node *deleteNodeInBST(Node *root, int target)
             delete root;
             return child;
         }
-        else   //important
+        else   //important ######################################
         {   
             // dono child honge
             // inoder predessor of left subtree->left subtree me max val

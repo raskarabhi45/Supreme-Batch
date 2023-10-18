@@ -7,6 +7,7 @@
 using namespace std;
 
 // 1  coin change problem
+//question ye kehta hai ki minimum kitne coins lgenge ki hum is amount jitna bna payenge tumahare pass infinite supply of coins hai
 class Solution
 {
 public:
@@ -81,7 +82,7 @@ public:
         {
             for (int j = 0; j < coins.size(); j++)
             {
-                if (target - coins[j] >= 0)  //
+                if (target - coins[j] >= 0)  //  check target not becomed negative
                     && dp[target - coins[j]] != INT_MAX;
                 {
                     int ans = dp[target - coins[j]];
@@ -123,6 +124,7 @@ public:
 
 
 // 2 house robber problem leetcode
+//tumhe maximum money kmana hai bs 
 //professional robber no 2 adjacent can be robbed
 // dp[i]  ith index pe aate aate tum kitna money kma kuche ho
 class Solution {

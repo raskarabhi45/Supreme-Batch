@@ -44,7 +44,7 @@ int getLength(Node *&head)
 }
 
 // 1 find middle of element of linked list
-//   2 pointer approach
+// 2 pointer approach
 // tortoise approach fast and slow
 // t.c O(1)
 //  |10|->|20|->|30|->|40|->|50|->
@@ -98,7 +98,6 @@ Node *reversekNodes(Node *&head, int k)
         // cout<<"enter valid value for k"<<endl;
         return head;
     }
-
     // it means number of nodes in LL is >=k
     // step A: reverse first k nodes of LL
     Node *prev = NULL;
@@ -119,8 +118,7 @@ Node *reversekNodes(Node *&head, int k)
     if (forward != NULL)     // we still have nodes left to reverse
     {
         // recursive call
-        Node *recursionKaAns = reversekNodes(forward, k); // yaha pr forward hi head node hoga
-        head->next = recursionKaAns;
+        head->next=reversekNodes(forward,k);
     }
 
     // step c return head of modified LL that is previous
@@ -131,7 +129,7 @@ Node *reversekNodes(Node *&head, int k)
 // bhai tum head ho tum head ho tum head ho aise puchna hai bs ans mil jayega
 
 // 4
-// check loop is present or node
+// check loop is present or not
 // appraoch 1 using map key value address and true  map<Node*,bool>
 // approach 2 floyd cycle detection
 // slow and fast
@@ -161,7 +159,6 @@ bool checkForLoop(Node *&head)
             fast = fast->next;
             slow = slow->next;
         }
-
         if (slow == fast)  //means loop present hai
         {
             return true;

@@ -44,7 +44,7 @@ public:
 
     // Approach 2
 
-  //best one  //
+    //  best one  //...//...//...//...//...//...//...//...//...//
     int freqTable[256]={0};
     for(int i=0;i<s.size();i++)
     {
@@ -92,11 +92,11 @@ public:
                 i++;
                 j--;
             }
-            else if(!isalpha(s[i]))
+            else if(!isalpha(s[i])) //i alpha nhi hai
             {
                 i++;
-            }
-            else
+            } 
+            else  //j alpha nhi hai to piche lelo
             {
                 j--;
             }
@@ -115,10 +115,10 @@ public:
 class Solution {
 public:
     string longestCommonPrefix(vector<string>& strs) {
-        // int ans = s[0].length(), n = s.size();
+        // int ans = s[0].length()  , n = s.size();
         // for(int i=1; i<n; i++){
         //     int j = 0;
-        //     while(j<s[i].length() && s[i][j]==s[0][j])j++;
+        //     while(j<s[i].length() && s[i][j]==s[0][j])j++ ;
         //     ans = min(ans, j);
         // }
         // return s[0].substr(0, ans);

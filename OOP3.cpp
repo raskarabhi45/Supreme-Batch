@@ -17,7 +17,7 @@
 //public private protected
 // a group of many things
 //compile time and run time polymorphism
-//inheritance dymond problem
+//inheritance diamond problem
 ////////////////////////////// END OF OOP /////////////////////////////////
 
 #include<iostream>

@@ -19,7 +19,6 @@ using namespace std;
 // perfect encapulation : private sara hide  access through getters and setters
 // we achieve this through access modifires public private protected
 
-
 //2 Inheritance  reusability
 // we inherit the properties from parent class to child class
 // super class / base class / parent class 
@@ -28,11 +27,11 @@ using namespace std;
 
 //polymorphism 
 //compile time and run time
-//in compile time 1) funciton overloading and 2) operator overloading
+//in compile time 1) function overloading and 2) operator overloading
 
 
 
-// //encapulation
+// //encapsulation
 // class Animal
 // {
 //     public:   //full encapsulation

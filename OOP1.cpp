@@ -3,7 +3,6 @@
 //programming technique
 //object is an entity which contains state and behaviours
 
-
 #include<iostream>
 using namespace std;
 

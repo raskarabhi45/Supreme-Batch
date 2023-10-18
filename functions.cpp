@@ -18,7 +18,7 @@ void printprime(int no)
             }
 
         }
-        if(cnt==2)
+        if(cnt==2)  // qki prime number ko bs 1 and khudse hi divide hota hai
         {
             cout<<i<<endl;
         }
@@ -26,7 +26,7 @@ void printprime(int no)
     }
 }
 
-// //Uncle Babbar print kr lena 
+// Uncle Babbar print kr lena 
 void printName()       //function defination
 {
     int n;

@@ -159,7 +159,7 @@ mergesort(vector<int> &v,int s,int e)
 
 
 
-//3 maximum subarray sum
+//3 maximum subarray sum //kadane algorithm
 //approach 1 naive brute force
 //find all subarraya
 //find maximum of them

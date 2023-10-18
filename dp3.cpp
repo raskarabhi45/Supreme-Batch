@@ -1,7 +1,6 @@
 // lecture 3 dynamic programming
 // 2d dp
-//#########################################
-//Just space optimization remaining
+//###################################
 //##################################
 
 #include <iostream>
@@ -10,15 +9,15 @@ using namespace std;
 // 1d dp
 // 1 Painting Fence algorithm       (hard level problem)
 // dp third lecture
-//same color  3 baar nhi daal skte
-//2 se jyada same color pas nhi hone chahia
-//like no RRR no BBB no GGG 2 bar chlenge painj krna
+// same color  3 baar nhi daal skte
+// 2 se jyada same color pas nhi hone chahia
+// like no RRR no BBB no GGG 2 bar chlenge painj krna
 #include <iostream>
 #include <vector>
 using namespace std;
 
 //exponential complexity
-int solveUsingRecursion(int n, int k)
+int solveUsingRecursion(int n, int k)  //n yani fences and  k yani colors
 {
   if (n == 1)  //yani ek hi fence hai to R/G/B kr  skte to ans k yani 3 aayega
   {
@@ -109,6 +108,7 @@ int main()
 
   return 0;
 }
+
 
 
 //very important question

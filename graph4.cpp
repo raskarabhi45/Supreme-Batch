@@ -11,7 +11,7 @@ using namespace std;
 
 // shortest path shortest distance
 // ye yaaaaaad rkhna
-//  kya me ye lh skta  hu ki BFS ke dwara jb bhi mai kisi node ko visit krta hu
+//  kya me ye likh skta  hu ki BFS ke dwara jb bhi mai kisi node ko visit krta hu
 // for the first time O hi uska shortest path hota hai
 
 class Graph
@@ -21,8 +21,8 @@ public:
 
     void addEdge(int u, int v, int wt, bool direction)
     {
-        // direction =0 -> undirected graph
-        // direction =1 directed graph
+        // direction =0 -> directed graph
+        // direction =1 undirected graph
         adjList[u].push_back({v, wt});
 
         if (direction == 1)

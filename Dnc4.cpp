@@ -35,8 +35,8 @@ void printSolution(vector<vector<int>> &board,int n)
         cout<<endl;
     }
      cout<<endl;
-
 }
+
 //hme sirf 3 direction me check krna haoi
 // upper left diagonal
 // left row
@@ -70,7 +70,7 @@ bool isSafe(int row,int col,vector<vector<int>> &board,int n)
         {
             return false;
         }
-        i--;
+        i--;  //just dry run for this
         j--;
     }
 
@@ -83,7 +83,7 @@ bool isSafe(int row,int col,vector<vector<int>> &board,int n)
         {
             return false;
         }
-        i++;
+        i++; //just dry run for this
         j--;
     }
 

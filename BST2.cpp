@@ -22,7 +22,6 @@ public:
         {
             return true;
         }
-
         // root ka data in range
         if (root->val > min && root->val < max)
         {
@@ -56,24 +55,25 @@ public:
         {
             return NULL;
         }
-        // case 1  dono chote hai p and  q to left mai hi milega ancestors
+        // case 1  dono chote hai p and q to left mai hi milega ancestors
         if (p->val < root->val && q->val < root->val)
         {
             return lowestCommonAncestor(root->left, p, q);
         }
-        // case 2
+        // case 2  bde hai to right me milega ans
         if (p->val > root->val && q->val > root->val)
         {
             return lowestCommonAncestor(root->right, p, q);
         }
-
         // case 3 and 4
         return root;
     }
 };
 
+//Bhai easy hai e to bs LNR dekhlo and k-- krlo
 // 4 kth smallest element in BST
 // approach 1 inorder approach
+//approach 2
 class Solution
 {
 public:
@@ -98,7 +98,6 @@ public:
         {
             return root->val;
         }
-
         // right
         int rightAns = kthSmallest(root->right, k);
         return rightAns;
@@ -113,7 +112,6 @@ Node *bstUsingInorder(int inorder[], int s, int e)
     {
         return NULL;
     }
-
     int mid = (s + e) / 2;
     // mid ke lia ek node create kro qki inorder LNR
     int element = inorder[mid];

@@ -1,6 +1,6 @@
 //Heap lecture 1
-//###################################
-//almost doneeeeeeeeeee
+//################################
+//    almost doneeeeeeeeeee     //
 //################################
 //sunday 21/5/2023
 #include<iostream>
@@ -69,8 +69,8 @@ class heap
         int index=size;
         arr[index]=value;
 
-        //is value ko place at correct position
-        while(index>1)  //jb tk index greater than one hei means parent tk chekc krenege
+        // is value ko place at correct position
+        while(index>1)  //jb tk index greater than one hei means parent tk check krenge
         {
             int parentIndex=index/2;
 
@@ -80,7 +80,7 @@ class heap
                 index=parentIndex; //update the index
             }
             else
-            {//means curr elem parentIndex se chota hai
+            {// means curr elem parentIndex se chota hai
                 break;
             }
         }
@@ -95,7 +95,7 @@ class heap
      public:
      int delete()
      {
-        //step 1 replace node val with last node data
+        // step 1 replace node val with last node data
         arr[1]=arr[size];
         size--;  //last node hta di
 
@@ -108,18 +108,18 @@ class heap
             int right=2*index+1; //right child
 
             int largest=index; //starting me index ko hi largest assume krlo
-//hmnw jo lwdt right parent me se jo bda hai uska index store kr diya
-            if(left<size && arr[left]> arr[index])  //means left me jo element hai vo bda hoga index se
+        //hmnw jo left right parent me se jo bda hai uska index store kr diya
+            if(left<size && arr[left]> arr[index])  // means left me jo element hai vo bda hoga index se
             {
                largest=left;
             }
 
-            if(right<size && arr[right]> arr[index]) ///means right me jo element hai vo bda hoga index se
+            if(right<size && arr[right]> arr[index]) // means right me jo element hai vo bda hoga index se
             {
                largest=right;
             }
 
-            if(largest ==index) //agr index hi large hai no deed to update
+            if(largest ==index) //agr index hi large hai no need to update
             {
                 //val is at corrrect position
                 break;
@@ -137,7 +137,8 @@ class heap
 
 };
 
-//YAAD RKHNA YAHI HEAPIFY WALA FUNCTION BHOOLNA NHI HAI
+//YAAD RKHNA YAHI HEAPIFY WALA FUNCTION BHOOLNA NHI HAI 
+//BDE BDO KO NHI AATA YE INTERVIEW ME 
 //HEAPIFY  hum kisi bhi array ko heap me convert kr skte
 //is node ko uske shi jgh pr pohcha do
 //for heap creation
@@ -168,10 +169,10 @@ void heapify(int arr[],int n,int i)
               //
             if(largest!=index)
             {
-                //left ya right child me se koi greater trhan hogya currentnode se
+                //left ya right child me se koi greater than hogya currentnode se
                 swap(arr[index],arr[largest]);
                 index=largest;
-                heapify(arr,n,index);  //just to create max heao from given data 
+                heapify(arr,n,index);  //just to create max heap from given data 
 
             }
 
@@ -192,6 +193,7 @@ void buildheap(int arr[],int n)
 //heapify 
 
 //heaSort very simple
+//isnt it ro simple
 void heapSort(int arr[],int n)
 {
     //tb tk process krna hai element ko jbtk ek elemnt na bche

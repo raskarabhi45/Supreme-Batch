@@ -1,11 +1,9 @@
 //Doneeeeeeeeeeeeeeeeeeeeeeeeeeeee
-
 //12/03/2023
 //sunday
 #include<iostream>
 #include<vector>
 using namespace std;
-
 
 //1 is array sorted or not using recursion
 bool checkSorted(vector<int> &arr,int &n,int i) 
@@ -58,7 +56,7 @@ int binarySearch(vector<int> &v,int s,int e,int key)
 
 //3 very important best problem to understand recursion tree in depth pure example            revise 
 // subsequence of a string
-// c b bc a ac ab abc 
+// c b bc a ac ab abc   
 void  printSubsequence(string str,string op,int i,vector<string> &v)
 {
    //base case 
