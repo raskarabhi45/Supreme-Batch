@@ -1,7 +1,7 @@
 // 26/4/2023
 // wednesday
 //###################################################
-//Almost Done  Sort a stack wala dekhna pdega
+// Almost Done  Sort a stack wala dekhna pdega
 //###################################################
 
 // stack 2 lecture

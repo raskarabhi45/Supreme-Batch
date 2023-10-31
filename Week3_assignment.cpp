@@ -146,7 +146,7 @@ using namespace std;
 
 
 // Approach 3 best one
-// positioning method try it once
+// positioning method 
 //     while(nums[0]!=nums[nums[0]])
 //     {
 //         swap(nums[0],nums[nums[0]]);
@@ -154,7 +154,6 @@ using namespace std;
 //     return nums[0];
 //     }
 // };
-
 
 
 //4 Find missing element in an array
